@@ -1,0 +1,114 @@
+!!! 5
+%html
+	%head
+		%title= "MY TITLE"
+		%meta{ :content => "MY DESCRIPTION", :name => "description" }
+		%meta{ :content => "MY AUTHOR", :name => "author" }
+		%meta{ :charset => "UTF-8" }
+		%link{ :href => "./css/main.css", :media => "screen", :rel => "stylesheet" }
+		%script{:type => 'text/javascript', :data => {:main => 'js/main'}, :src => 'js/require.js'}
+	%body
+		#container
+			%nav#mobile
+				#touchToggle
+				.menuLink
+				.menuLink
+				.menuLink
+				.menuLink
+
+			%nav#desktop
+				.hotspotContainer
+					.hotspot
+						.circle
+					.hotspot
+						.circle
+					.hotspot
+						.circle
+					.hotspot
+						.circle
+					.hotspot
+						.circle	
+
+			#background.panelTwo
+			
+			.panel#intro
+				#logo
+				.lasso.eighty.centered
+					%h1 The Mainframe Group is a brain trust of experts in music, immersive design and biometrics
+			
+			.panel#believe
+				.lasso.eighty.centered
+					%h1 They believe
+					%h2 The live performance experience can be redefined by bringing their worlds together.
+			
+			.panel#theyare
+				.backing
+				.backing.right
+				.panelSplit
+					.lasso.eighty.centered
+						%h1 They are
+				.panelSplit.right
+					.lasso.eighty
+						%h3 Cantora
+						%h4 Tech Label
+						%h3 Cantora
+						%h4 Tech Label
+						%h3 Cantora
+						%h4 Tech Label		
+			
+			.panel#building
+				.topLine
+					.lasso.eighty.centered
+						%h1 They are building
+
+				.buttonContainer
+					.button
+						.content.backing15
+						.content.blurb
+							.lasso.eighty.centered
+								%h1 Blurb
+						.content.password
+							.lasso.eighty.centered
+								%h1 Password
+					.button
+						.content.backing25
+						.content.blurb
+							.lasso.eighty.centered
+								%h1 Blurb
+						.content.password
+							.lasso.eighty.centered
+								%h1 Password
+					.button
+						.content.backing35
+						.content.blurb
+							.lasso.eighty.centered
+								%h1 Blurb
+						.content.password
+							.lasso.eighty.centered
+								%h1 Password
+					.button
+						.content.backing40
+						.content.blurb
+							.lasso.eighty.centered
+								%h1 Blurb
+						.content.password
+							.lasso.eighty.centered
+								%h1 Password
+
+			.panel#outro
+				#logoWhite
+				.lasso.eighty.centered.pointer
+					%form
+						%input#email{ :name => 'emailForm', :placeholder => 'EMAIL'}
+					#submitButton.active
+
+			:javascript
+				var _gaq = _gaq || [];
+				_gaq.push(['_setAccount', YOUR_CODE']);
+				_gaq.push(['_trackPageview']);
+				(function() {
+				var ga = document.createElement('script');
+				ga.type = 'text/javascript'; ga.async = true;
+				ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+				var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+				})();

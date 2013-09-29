@@ -1,0 +1,241 @@
+@import "normalize";
+@import "compass";
+@import "variables";
+@import "customMixins";
+
+
+
+body {
+	&.scrollLocked{
+		position: fixed;
+		overflow: hidden;
+		height: 100%;
+		width: 100%;
+	}
+}
+
+input{
+	&:focus{
+		outline: none;
+	}
+}
+
+#container {
+	width:100%;
+	height:100%;
+	display:block;
+	position:absolute;
+	min-height:500px;
+
+	@import "navDesktop";
+
+	#background {
+		width:100%;
+		height:100%;
+		position:fixed;
+		z-index:1;
+
+		&.panelTwo{
+			background: url('../img/background.jpg') left 25%;
+		}
+
+		&.panelFour{
+			background: url("../img/backgroundBuilding.jpg") left 50%;
+			background-size: 200%;
+		}
+	}
+
+	.panel{
+		height:100%;
+		width:100%;
+		display:block;
+		position:relative;
+		float:left;
+		z-index:2;
+
+		.backing{
+			width:50%;
+			height:100%;
+			position:absolute;
+			background-color:$navy;
+			@include opacity(0.8);
+			float:left;
+
+			@include breakpoint(phone) { 
+				width:100%;
+				height:30%;
+			};
+
+			&.right{
+				@include opacity(0.95);
+				right:0%;
+				@include breakpoint(phone) { 
+					width:100%;
+					height:70%;
+					top:30%;
+				}
+			}
+		}
+
+		.panelSplit{
+			height:inherit;
+			width:50%;
+			float:left;
+			display:inline-block;
+
+			@include breakpoint(phone) { 
+				width:100%;
+				height:30%;
+			}
+
+
+			&.right{
+				@include breakpoint(phone) { 
+					width:100%;
+					height:70%;
+				}
+			}
+		}
+
+		.lasso{
+			display:inline-block;
+			position:relative;
+			top: 50%;
+			@include transform(translateY(-50%));
+			pointer-events: none;
+
+			&.eighty{
+				width:80%;
+				margin:0 10%;
+			}
+
+			&.centered{
+				text-align: center;
+			}
+
+			&.pointer{
+				pointer-events:auto;
+			}
+		}
+
+		&#intro{
+			background-color: $teal;
+			@include breakpoint(phone) { background-color:pink; };
+
+
+			#logo{
+				background: url('../img/logo.png') no-repeat center center;
+				width:10%;
+				height:50px;
+				background-size:contain;
+				display: inline-block;
+				position: absolute;
+				top: 10%;
+				left:45%;
+				@include breakpoint(phone) { display:none; };
+
+				&.loading{
+					top:50%;
+					@include transform(translateY(-50%));
+				}
+			}
+
+		}
+
+		&#believe{
+			background-color: transparent;
+			
+			@include breakpoint(phone) { 
+				background:white;
+				height:80%;
+			};
+		}
+
+		&#theyare{
+			background: url('../img/backgroundTheyAre.jpg') left center;
+			background-size:cover;
+
+			@include breakpoint(phone) { 
+				background:white;
+				height:120%;
+			};
+
+		}
+
+		&#building{
+			background-color: transparent;
+
+			@include breakpoint(phone) { 
+				height:200%;
+			};
+
+			.topLine{
+				width:100%;
+				height:35%;
+				display:block;
+				float:left;
+				@include breakpoint(phone) { 
+					height:20%; 
+				};
+			}
+
+			@import "buildingButtons";
+		}
+
+		&#outro{
+			background-color: pink;
+			background: url('../img/backgroundOutro.jpg') 25% center;
+			background-size: cover;
+			
+			@include breakpoint(phone) { 
+				height:80%; 
+			};
+
+			form{
+				width:300px;
+				display:inline-block;
+			}
+
+			#logoWhite{
+				background: url('../img/logoWhite.png') no-repeat center center;
+				width:10%;
+				height:50px;
+				background-size:contain;
+				display: inline-block;
+				position: absolute;
+				top: 10%;
+				left:45%;
+			}
+
+			#email{
+				border:none;
+				border-bottom: 1px solid white;
+				background-color: transparent;
+				padding-bottom: 20px;
+				padding-left: 10px;
+				width:100%;
+			}
+
+			#submitButton{
+				// height:30px;
+				// width:30px;
+				display:inline-block;
+				@include circle(35px);
+				background-color:white;
+				position: absolute;
+				margin-left: -30px;
+				margin-top: -9px;
+				@include opacity(0);
+
+				&.active{
+					@include opacity(0.3);
+					cursor: pointer;
+
+					&:hover{
+						@include opacity(0.8);
+					}
+				}
+			}
+		}
+	}
+}
