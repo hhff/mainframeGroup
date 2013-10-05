@@ -33,14 +33,15 @@
 			#background.panelFour.js-background
 			
 			.panel#intro.js-panel
-				.panel.introParallax.one.hidden.js-parallax
-				.panel.introParallax.two.hidden.js-parallax
-				#logo.loading.js-logo
+				.panel.introParallax.one.hidden.js-parallax.introTrans
+				.panel.introParallax.two.hidden.js-parallax.introTrans
+				#logo.loading.pulsing.js-logo
 				.lasso.fifty.centered.hidden.introTrans.js-intro
 					%h1 The Mainframe Group is a brain trust of experts in music, immersive design and biometrics
 			
 			.panel#believe.js-panel
-				.lasso.forty.centered.js-lasso.hidden.introTrans
+				/add .hidden.introTrans for dropin
+				.lasso.forty.centered.js-lasso.js-mover{ :data => { :speed => '0.25', :margin => 'top'}}
 					%h2 They believe
 					%h3 The live performance experience can be redefined by bringing their worlds together.
 			
@@ -48,6 +49,7 @@
 				.backing
 				.backing.right
 				.panelSplit
+					/add for mover .js-mover{ :data => { :speed => '0.2', :margin => 'top'}}
 					.lasso.eighty.centered.js-lasso.hidden.introTrans
 						%h2 They are
 				.panelSplit.right
@@ -119,7 +121,7 @@
 								%input#password{ :name => 'passwordForm', :type => 'password', :placeholder => 'PASSWORD'}
 
 			.panel#outro.js-panel
-				#logoWhite
+				#logoWhite.js-mover{ :data => { :speed => '0.1', :margin => 'top'}}
 				.lasso.eighty.centered.pointer.js-lasso.hidden.introTrans
 					%form
 						%input#email{ :name => 'emailForm', :type => 'email', :placeholder => '  GET UPDATES', :spellcheck => 'false'}

@@ -39,15 +39,16 @@
       <div class='panelTwo active js-background' id='background'></div>
       <div class='panelFour js-background' id='background'></div>
       <div class='panel js-panel' id='intro'>
-        <div class='panel introParallax one hidden js-parallax'></div>
-        <div class='panel introParallax two hidden js-parallax'></div>
-        <div class='loading js-logo' id='logo'></div>
+        <div class='panel introParallax one hidden js-parallax introTrans'></div>
+        <div class='panel introParallax two hidden js-parallax introTrans'></div>
+        <div class='loading pulsing js-logo' id='logo'></div>
         <div class='lasso fifty centered hidden introTrans js-intro'>
           <h1>The Mainframe Group is a brain trust of experts in music, immersive design and biometrics</h1>
         </div>
       </div>
       <div class='panel js-panel' id='believe'>
-        <div class='lasso forty centered js-lasso hidden introTrans'>
+        <!-- add .hidden.introTrans for dropin -->
+        <div class='lasso forty centered js-lasso js-mover' data-margin='top' data-speed='0.25'>
           <h2>They believe</h2>
           <h3>The live performance experience can be redefined by bringing their worlds together.</h3>
         </div>
@@ -56,6 +57,7 @@
         <div class='backing'></div>
         <div class='backing right'></div>
         <div class='panelSplit'>
+          <!-- add for mover .js-mover{ :data => { :speed => '0.2', :margin => 'top'}} -->
           <div class='lasso eighty centered js-lasso hidden introTrans'>
             <h2>They are</h2>
           </div>
@@ -159,7 +161,7 @@
         </div>
       </div>
       <div class='panel js-panel' id='outro'>
-        <div id='logoWhite'></div>
+        <div class='js-mover' data-margin='top' data-speed='0.1' id='logoWhite'></div>
         <div class='lasso eighty centered pointer js-lasso hidden introTrans'>
           <form>
             <input id='email' name='emailForm' placeholder='  GET UPDATES' spellcheck='false' type='email'>

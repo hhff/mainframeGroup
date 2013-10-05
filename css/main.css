@@ -492,7 +492,55 @@ h6 {
   color: white;
 }
 
-/* line 101, ../scss/main.scss */
+@-webkit-keyframes pulsing {
+  /* line 102, ../scss/main.scss */
+  0% {
+    opacity: 0.2;
+  }
+
+  /* line 103, ../scss/main.scss */
+  100% {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes pulsing {
+  /* line 106, ../scss/main.scss */
+  0% {
+    opacity: 0.2;
+  }
+
+  /* line 107, ../scss/main.scss */
+  100% {
+    opacity: 1;
+  }
+}
+
+@-o-keyframes pulsing {
+  /* line 110, ../scss/main.scss */
+  0% {
+    opacity: 0.2;
+  }
+
+  /* line 111, ../scss/main.scss */
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes pulsing {
+  /* line 114, ../scss/main.scss */
+  0% {
+    opacity: 0.2;
+  }
+
+  /* line 115, ../scss/main.scss */
+  100% {
+    opacity: 1;
+  }
+}
+
+/* line 118, ../scss/main.scss */
 #container {
   width: 100%;
   height: 100%;
@@ -652,27 +700,27 @@ h6 {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   opacity: 0;
 }
-/* line 110, ../scss/main.scss */
+/* line 127, ../scss/main.scss */
 #container #background {
   width: 100%;
   height: 100%;
   position: fixed;
   z-index: 0;
 }
-/* line 116, ../scss/main.scss */
+/* line 133, ../scss/main.scss */
 #container #background.panelTwo {
   background: url("../img/background.jpg") left 25%;
 }
-/* line 120, ../scss/main.scss */
+/* line 137, ../scss/main.scss */
 #container #background.panelFour {
   background: url("../img/backgroundBuilding.jpg") left 50%;
   background-size: 200%;
 }
-/* line 125, ../scss/main.scss */
+/* line 142, ../scss/main.scss */
 #container #background.active {
   z-index: 1;
 }
-/* line 130, ../scss/main.scss */
+/* line 147, ../scss/main.scss */
 #container .panel {
   height: 100%;
   width: 100%;
@@ -682,9 +730,12 @@ h6 {
   z-index: 2;
   overflow: hidden;
 }
-/* line 139, ../scss/main.scss */
+/* line 156, ../scss/main.scss */
 #container .panel .introParallax {
   position: absolute;
+}
+/* line 159, ../scss/main.scss */
+#container .panel .introParallax.introTrans {
   -webkit-transition-property: all;
   -moz-transition-property: all;
   -o-transition-property: all;
@@ -697,29 +748,33 @@ h6 {
   -moz-transition-timing-function: ease-in-out;
   -o-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
-  height: 110%;
 }
-/* line 144, ../scss/main.scss */
+/* line 163, ../scss/main.scss */
 #container .panel .introParallax.one {
-  background: url("../img/background.jpg");
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=20);
-  opacity: 0.2;
-  top: -10%;
+  background: url("../img/backgroundIntro1.jpg");
+  background-size: cover;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=90);
+  opacity: 0.9;
+  height: 120%;
+  top: -20%;
 }
-/* line 150, ../scss/main.scss */
+/* line 171, ../scss/main.scss */
 #container .panel .introParallax.two {
-  background: url("../img/backgroundBuilding.jpg");
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=20);
-  opacity: 0.2;
+  background: url("../img/backgroundIntro2.jpg");
+  background-size: cover;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);
+  opacity: 0.7;
+  height: 110%;
   top: -10%;
+  box-shadow: rgba(0, 0, 0, 0.8) 0px -100px 100px -90px inset;
 }
-/* line 156, ../scss/main.scss */
+/* line 180, ../scss/main.scss */
 #container .panel .introParallax.hidden {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   opacity: 0;
   top: 0%;
 }
-/* line 162, ../scss/main.scss */
+/* line 186, ../scss/main.scss */
 #container .panel .backing {
   width: 50%;
   height: 100%;
@@ -730,27 +785,27 @@ h6 {
   float: left;
 }
 @media (max-width: 650px) {
-  /* line 162, ../scss/main.scss */
+  /* line 186, ../scss/main.scss */
   #container .panel .backing {
     width: 100%;
     height: 30%;
   }
 }
-/* line 175, ../scss/main.scss */
+/* line 199, ../scss/main.scss */
 #container .panel .backing.right {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=95);
   opacity: 0.95;
   right: 0%;
 }
 @media (max-width: 650px) {
-  /* line 175, ../scss/main.scss */
+  /* line 199, ../scss/main.scss */
   #container .panel .backing.right {
     width: 100%;
     height: 70%;
     top: 30%;
   }
 }
-/* line 186, ../scss/main.scss */
+/* line 210, ../scss/main.scss */
 #container .panel .panelSplit {
   height: inherit;
   width: 50%;
@@ -758,20 +813,20 @@ h6 {
   display: inline-block;
 }
 @media (max-width: 650px) {
-  /* line 186, ../scss/main.scss */
+  /* line 210, ../scss/main.scss */
   #container .panel .panelSplit {
     width: 100%;
     height: 30%;
   }
 }
 @media (max-width: 650px) {
-  /* line 198, ../scss/main.scss */
+  /* line 222, ../scss/main.scss */
   #container .panel .panelSplit.right {
     width: 100%;
     height: 70%;
   }
 }
-/* line 206, ../scss/main.scss */
+/* line 230, ../scss/main.scss */
 #container .panel .lasso {
   display: inline-block;
   position: relative;
@@ -786,7 +841,7 @@ h6 {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
 }
-/* line 215, ../scss/main.scss */
+/* line 239, ../scss/main.scss */
 #container .panel .lasso.introTrans {
   -webkit-transition-property: all;
   -moz-transition-property: all;
@@ -801,47 +856,47 @@ h6 {
   -o-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
 }
-/* line 219, ../scss/main.scss */
+/* line 243, ../scss/main.scss */
 #container .panel .lasso.hidden {
   top: 48%;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   opacity: 0;
 }
-/* line 224, ../scss/main.scss */
+/* line 248, ../scss/main.scss */
 #container .panel .lasso.eighty {
   width: 80%;
   margin: 0 10%;
 }
-/* line 229, ../scss/main.scss */
+/* line 253, ../scss/main.scss */
 #container .panel .lasso.fifty {
   width: 50%;
   margin: 0 25%;
 }
-/* line 234, ../scss/main.scss */
+/* line 258, ../scss/main.scss */
 #container .panel .lasso.forty {
   width: 40%;
   margin: 0 30%;
 }
-/* line 239, ../scss/main.scss */
+/* line 263, ../scss/main.scss */
 #container .panel .lasso.centered {
   text-align: center;
 }
-/* line 243, ../scss/main.scss */
+/* line 267, ../scss/main.scss */
 #container .panel .lasso.pointer {
   pointer-events: auto;
 }
-/* line 248, ../scss/main.scss */
+/* line 272, ../scss/main.scss */
 #container .panel#intro {
   background-color: #9af6eb;
   color: #323454;
 }
 @media (max-width: 650px) {
-  /* line 248, ../scss/main.scss */
+  /* line 272, ../scss/main.scss */
   #container .panel#intro {
     background-color: pink;
   }
 }
-/* line 254, ../scss/main.scss */
+/* line 277, ../scss/main.scss */
 #container .panel#intro #logo {
   background: url("../img/logo.png") no-repeat center center;
   width: 10%;
@@ -866,12 +921,12 @@ h6 {
   transition-timing-function: ease-in-out;
 }
 @media (max-width: 650px) {
-  /* line 254, ../scss/main.scss */
+  /* line 277, ../scss/main.scss */
   #container .panel#intro #logo {
     display: none;
   }
 }
-/* line 269, ../scss/main.scss */
+/* line 291, ../scss/main.scss */
 #container .panel#intro #logo.loading {
   top: 50%;
   -webkit-transform: translateY(-50%);
@@ -880,32 +935,46 @@ h6 {
   -o-transform: translateY(-50%);
   transform: translateY(-50%);
 }
-/* line 277, ../scss/main.scss */
+/* line 296, ../scss/main.scss */
+#container .panel#intro #logo.pulsing {
+  -webkit-animation: pulsing 1.6s infinite alternate;
+  /* Safari 4+ */
+  -moz-animation: pulsing 1.6s infinite alternate;
+  /* Fx 5+ */
+  -o-animation: pulsing 1.6s infinite alternate;
+  /* Opera 12+ */
+  animation: pulsing 1.6s infinite alternate;
+  /* IE 10+ */
+}
+/* line 306, ../scss/main.scss */
 #container .panel#believe {
   background-color: transparent;
   color: #323454;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.8) 0px -100px 100px -90px inset;
+  -moz-box-shadow: rgba(0, 0, 0, 0.8) 0px -100px 100px -90px inset;
+  box-shadow: rgba(0, 0, 0, 0.8) 0px -100px 100px -90px inset;
 }
 @media (max-width: 650px) {
-  /* line 277, ../scss/main.scss */
+  /* line 306, ../scss/main.scss */
   #container .panel#believe {
     background: white;
     height: 80%;
   }
 }
-/* line 287, ../scss/main.scss */
+/* line 317, ../scss/main.scss */
 #container .panel#theyare {
   background: url("../img/backgroundTheyAre.jpg") left center;
   background-size: cover;
   color: white;
 }
 @media (max-width: 650px) {
-  /* line 287, ../scss/main.scss */
+  /* line 317, ../scss/main.scss */
   #container .panel#theyare {
     background: white;
     height: 120%;
   }
 }
-/* line 297, ../scss/main.scss */
+/* line 327, ../scss/main.scss */
 #container .panel#theyare a {
   color: white;
   -webkit-transition-property: all;
@@ -923,32 +992,35 @@ h6 {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
 }
-/* line 302, ../scss/main.scss */
+/* line 332, ../scss/main.scss */
 #container .panel#theyare a:hover {
   left: -30px;
 }
-/* line 306, ../scss/main.scss */
+/* line 336, ../scss/main.scss */
 #container .panel#theyare a.hidden {
   left: -30px;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   opacity: 0;
 }
-/* line 312, ../scss/main.scss */
+/* line 342, ../scss/main.scss */
 #container .panel#theyare h5 {
   color: #ababab;
 }
-/* line 317, ../scss/main.scss */
+/* line 347, ../scss/main.scss */
 #container .panel#building {
   background-color: transparent;
   color: white;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.7) 0px 0px 50px 10px inset;
+  -moz-box-shadow: rgba(0, 0, 0, 0.7) 0px 0px 50px 10px inset;
+  box-shadow: rgba(0, 0, 0, 0.7) 0px 0px 50px 10px inset;
 }
 @media (max-width: 650px) {
-  /* line 317, ../scss/main.scss */
+  /* line 347, ../scss/main.scss */
   #container .panel#building {
     height: 200%;
   }
 }
-/* line 325, ../scss/main.scss */
+/* line 356, ../scss/main.scss */
 #container .panel#building .topLine {
   width: 100%;
   height: 35.1%;
@@ -956,17 +1028,17 @@ h6 {
   float: left;
 }
 @media (max-width: 650px) {
-  /* line 325, ../scss/main.scss */
+  /* line 356, ../scss/main.scss */
   #container .panel#building .topLine {
     height: 20%;
   }
 }
-/* line 335, ../scss/main.scss */
+/* line 366, ../scss/main.scss */
 #container .panel#building h5 {
   margin-bottom: 24px;
   font-size: 22px;
 }
-/* line 340, ../scss/main.scss */
+/* line 371, ../scss/main.scss */
 #container .panel#building #password {
   border: 1px solid white;
   background-color: transparent;
@@ -1107,24 +1179,24 @@ h6 {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
 }
-/* line 355, ../scss/main.scss */
+/* line 386, ../scss/main.scss */
 #container .panel#outro {
   background-color: pink;
   background: url("../img/backgroundOutro.jpg") 25% center;
   background-size: cover;
 }
 @media (max-width: 650px) {
-  /* line 355, ../scss/main.scss */
+  /* line 386, ../scss/main.scss */
   #container .panel#outro {
     height: 80%;
   }
 }
-/* line 364, ../scss/main.scss */
+/* line 395, ../scss/main.scss */
 #container .panel#outro form {
   width: 300px;
   display: inline-block;
 }
-/* line 369, ../scss/main.scss */
+/* line 400, ../scss/main.scss */
 #container .panel#outro #logoWhite {
   background: url("../img/logoWhite.png") no-repeat center center;
   width: 10%;
@@ -1135,7 +1207,7 @@ h6 {
   top: 10%;
   left: 45%;
 }
-/* line 380, ../scss/main.scss */
+/* line 411, ../scss/main.scss */
 #container .panel#outro #email {
   border: none;
   border-bottom: 1px solid white;
@@ -1148,7 +1220,7 @@ h6 {
   font-weight: lighter;
   text-transform: uppercase;
 }
-/* line 393, ../scss/main.scss */
+/* line 424, ../scss/main.scss */
 #container .panel#outro #submitButton {
   display: inline-block;
   width: 35px;
@@ -1165,13 +1237,13 @@ h6 {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   opacity: 0;
 }
-/* line 404, ../scss/main.scss */
+/* line 435, ../scss/main.scss */
 #container .panel#outro #submitButton.active {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=30);
   opacity: 0.3;
   cursor: pointer;
 }
-/* line 408, ../scss/main.scss */
+/* line 439, ../scss/main.scss */
 #container .panel#outro #submitButton.active:hover {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
   opacity: 0.8;

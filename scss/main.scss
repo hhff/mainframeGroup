@@ -98,6 +98,23 @@ h6{
    color: white;  
 }
 
+@-webkit-keyframes pulsing {
+  0%   { opacity: 0.2; }
+  100% { opacity: 1; }
+}
+@-moz-keyframes pulsing {
+  0%   { opacity: 0.2; }
+  100% { opacity: 1; }
+}
+@-o-keyframes pulsing {
+  0%   { opacity: 0.2; }
+  100% { opacity: 1; }
+}
+@keyframes pulsing {
+  0%   { opacity: 0.2; }
+  100% { opacity: 1; }
+}
+
 #container {
 	width:100%;
 	height:100%;
@@ -138,19 +155,26 @@ h6{
 
 		.introParallax{
 			position:absolute;
-			@include trans(all, 800ms, ease-in-out);
-			height:110%;
+
+			&.introTrans{
+				@include trans(all, 800ms, ease-in-out);
+			}
 
 			&.one{
-				background: url("../img/background.jpg");
-				@include opacity(0.2);
-				top:-10%;
+				background: url("../img/backgroundIntro1.jpg");
+				background-size:cover;
+				@include opacity(0.9);
+				height:120%;
+				top:-20%;
 			}
 
 			&.two{
-				background: url("../img/backgroundBuilding.jpg");
-				@include opacity(0.2);
+				background: url("../img/backgroundIntro2.jpg");
+				background-size:cover;
+				@include opacity(0.7);
+				height:110%;
 				top:-10%;
+				box-shadow: rgba(0, 0, 0, 0.8) 0px -100px 100px -90px inset;
 			}
 
 			&.hidden{
@@ -250,7 +274,6 @@ h6{
 			color: $navy;
 			@include breakpoint(phone) { background-color:pink; };
 
-
 			#logo{
 				background: url('../img/logo.png') no-repeat center center;
 				width:10%;
@@ -265,10 +288,16 @@ h6{
 
 				@include trans(all, 1000ms, ease-in-out);
 
-
 				&.loading{
 					top:50%;
 					@include transform(translateY(-50%));
+				}
+
+				&.pulsing{
+					-webkit-animation: pulsing 1.6s infinite alternate; /* Safari 4+ */
+					-moz-animation:    pulsing 1.6s infinite alternate; /* Fx 5+ */
+					-o-animation:      pulsing 1.6s infinite alternate; /* Opera 12+ */
+					animation:         pulsing 1.6s infinite alternate; /* IE 10+ */
 				}
 			}
 
@@ -277,6 +306,7 @@ h6{
 		&#believe{
 			background-color: transparent;
 			color: $navy;
+			@include box-shadow(rgba(black, 0.8) 0px -100px 100px -90px inset);
 			
 			@include breakpoint(phone) { 
 				background:white;
@@ -317,6 +347,7 @@ h6{
 		&#building{
 			background-color: transparent;
 			color:white;
+			@include box-shadow(rgba(black, 0.7) 0px 0px 50px 10px inset);
 
 			@include breakpoint(phone) { 
 				height:200%;

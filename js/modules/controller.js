@@ -21,7 +21,7 @@ define(['jquery'], function($){
 
 		//DOM is ready at this point
 		//Load in elements here
-		$logo.removeClass('loading');
+		$logo.removeClass('loading pulsing');
 		window.setTimeout(function(){
 			$parallax.removeClass('hidden');
 		}, 1000);
@@ -34,6 +34,7 @@ define(['jquery'], function($){
 
 		window.setTimeout(function(){
 			$introText.removeClass('introTrans');
+			$parallax.removeClass('introTrans');
 		}, 2600);
 
 
@@ -44,7 +45,9 @@ define(['jquery'], function($){
 
 		$(window).on('keydown', function(e){
 			if (e.keyCode == 13){
-				controller._scrollTo();
+				
+
+
 			};
 		});
 
@@ -63,8 +66,6 @@ define(['jquery'], function($){
 			//Update nav here
 			controller._updateNav(tap, ptap);
 
-			//Find and set active Lassos here
-			controller._lassoSetActive(tap);
 		});
 
 	};
@@ -83,17 +84,27 @@ define(['jquery'], function($){
 			activePercentage = Math.min(1, 1-((scrollTop/windowHeight) - topActivePanel +1)),
 			inverseActivePercentage = Math.abs((scrollTop/windowHeight) - topActivePanel +1);
 
-			//console.log('AP :'+activePercentage+' IAP :'+inverseActivePercentage);
+			console.log('AP :'+activePercentage+' IAP :'+inverseActivePercentage);
 
 			//Intro Text Parallax Effect
 			$introText.css({
-				opacity:activePercentage,
+				//opacity:activePercentage,
 				'padding-top':800*inverseActivePercentage+'px'
 			});
 
+			//Parallax Background
+			$('.one').css({
+				top:activePercentage*-20+'%'
+			})
+
 			//Trigger Dropins
 			if (activePercentage < 0.4){
-				$($panels[topActivePanel]).find($('.js-lasso')).addClass('js-activeLasso').removeClass('hidden');
+				var $me = $($panels[topActivePanel]).find($('.js-lasso'));
+
+					$me.removeClass('hidden');
+					window.setTimeout(function(){
+						$me.removeClass('introTrans')
+					}, 800);
 				
 				//Drop In Dudes
 				if(topActivePanel == 2 && $($theyAreLinks[0]).hasClass('hidden')){
@@ -137,6 +148,9 @@ define(['jquery'], function($){
 
 			//Update Top Active Panel
 			previousTopActivePanel = topActivePanel;
+
+			//Move Movers
+			controller._movers();
 	};
 
 	controller._backgroundSwitch = function(){
@@ -160,14 +174,39 @@ define(['jquery'], function($){
 		}, 800);
 	};
 
-	controller._lassoSetActive = function(tap){
-		// $.each($panels, function(){
-		// 	$(this).find('.js-lasso').removeClass('js-activeLasso');
-		// })
+	controller._createMovers = function(){
 
-		//$($panels[tap-1]).find($('.js-lasso')).addClass('js-activeLasso').removeClass('hidden');
 	}
 
+	controller._movers = function(){
+		//EXPERIMENTAL MOVER STUFF
+		function map_range(value, low1, high1, low2, high2) {
+		    return low2 + (high2 - low2) * (value - low1) / (high1 - low1);
+		}
+
+		var $movers = $('.js-mover');
+
+		$.each($movers, function(){
+			var $me = $(this),
+				myMargin = $me.data('margin'),
+				mySpeed = $me.data('speed'),
+				$myParent = $me.parents('.js-panel'),
+				$myParentIndex = $panels.index($myParent),
+				$myParentOffset = $myParent.offset().top,
+				$windowHeight = $(window).height(),
+				$windowScrollTop = $(window).scrollTop(),
+				$windowScrollTopNormalised = $windowScrollTop - ($windowHeight*($myParentIndex-2)),
+				movementCoefficient = map_range($windowScrollTopNormalised/$windowHeight, 1, 3, 1, -1);
+
+			alert('hi');
+
+			$me.css({
+				'margin-top': mySpeed*2*$windowHeight*movementCoefficient+'px'
+			});
+
+		});
+
+	};
 
 	return controller;
 });
