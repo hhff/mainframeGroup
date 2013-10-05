@@ -79,10 +79,11 @@ define(['jquery'], function($){
 	controller._scroll = function(){
 		var docHeight = $(document).height(),
 			windowHeight = $(window).height(),
+			panelHeight = Math.max(500, windowHeight),
 			scrollTop = $(document).scrollTop(),
-			topActivePanel = Math.floor(Math.abs(scrollTop/windowHeight))+1,
-			activePercentage = Math.min(1, 1-((scrollTop/windowHeight) - topActivePanel +1)),
-			inverseActivePercentage = Math.abs((scrollTop/windowHeight) - topActivePanel +1);
+			topActivePanel = Math.floor(Math.abs(scrollTop/panelHeight))+1,
+			activePercentage = Math.min(1, 1-((scrollTop/panelHeight) - topActivePanel +1)),
+			inverseActivePercentage = Math.abs((scrollTop/panelHeight) - topActivePanel +1);
 
 			console.log('AP :'+activePercentage+' IAP :'+inverseActivePercentage);
 
@@ -113,7 +114,6 @@ define(['jquery'], function($){
 					var dudeInterval = window.setInterval(function(){
 						$($theyAreLinks[dudeCounter]).removeClass('hidden');
 						dudeCounter++;
-						console.log('stil here');
 
 						if (dudeCounter == 6){
 							clearInterval(dudeInterval);
@@ -129,7 +129,6 @@ define(['jquery'], function($){
 					var buttonInterval = window.setInterval(function(){
 						$($buttons[buttonCounter]).removeClass('hidden');
 						buttonCounter++;
-						console.log('stil here');
 
 						if (buttonCounter == 4){
 							clearInterval(buttonInterval);
@@ -197,8 +196,6 @@ define(['jquery'], function($){
 				$windowScrollTop = $(window).scrollTop(),
 				$windowScrollTopNormalised = $windowScrollTop - ($windowHeight*($myParentIndex-2)),
 				movementCoefficient = map_range($windowScrollTopNormalised/$windowHeight, 1, 3, 1, -1);
-
-			alert('hi');
 
 			$me.css({
 				'margin-top': mySpeed*2*$windowHeight*movementCoefficient+'px'

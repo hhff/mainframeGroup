@@ -41,6 +41,11 @@ h1{
 	font-size: 49px;
 	line-height: 70px;
 	font-weight:lighter;
+
+	@include breakpoint(phone) { 
+		font-size: 34px;
+		line-height: 55px;
+	};
 }
 
 h2{
@@ -129,6 +134,9 @@ h6{
 		height:100%;
 		position:fixed;
 		z-index:0;
+		@include breakpoint(phone) { 
+			display:none;
+		};
 
 		&.panelTwo{
 			background: url('../img/background.jpg') left 25%;
@@ -155,6 +163,10 @@ h6{
 
 		.introParallax{
 			position:absolute;
+			
+			@include breakpoint(phone) { 
+				display:none;
+			};
 
 			&.introTrans{
 				@include trans(all, 800ms, ease-in-out);
@@ -253,6 +265,11 @@ h6{
 			&.fifty{
 				width:50%;
 				margin:0 25%;
+			}
+
+			&.seventyFive{
+				width:75%;
+				margin:0 0 0 25%;
 			}
 
 			&.forty{
