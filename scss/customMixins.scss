@@ -10,9 +10,14 @@
   }
 }
 
-
 @mixin circle($width) {
   width: $width;
   height: $width;
   @include border-radius($width/2)
+}
+
+@mixin trans($property, $duration, $timingFunc) {
+  @include transition-property($property);
+  @include transition-duration($duration);
+  @include transition-timing-function($timingFunc);
 }

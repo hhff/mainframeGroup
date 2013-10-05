@@ -8,8 +8,8 @@
     <link href='./css/main.css' media='screen' rel='stylesheet'>
     <script data-main='js/main' src='js/require.js' type='text/javascript'></script>
   </head>
-  <body>
-    <div id='container'>
+  <body class='scrollLocked js-body'>
+    <div class='js-container' id='container'>
       <nav id='mobile'>
         <div id='touchToggle'></div>
         <div class='menuLink'></div>
@@ -17,123 +17,152 @@
         <div class='menuLink'></div>
         <div class='menuLink'></div>
       </nav>
-      <nav id='desktop'>
+      <nav class='hidden js-desktopNav' id='desktop'>
         <div class='hotspotContainer'>
-          <div class='hotspot'>
-            <div class='circle'></div>
+          <div class='hotspot js-hotspot'>
+            <div class='circle js-circle active'></div>
           </div>
-          <div class='hotspot'>
-            <div class='circle'></div>
+          <div class='hotspot js-hotspot'>
+            <div class='circle js-circle'></div>
           </div>
-          <div class='hotspot'>
-            <div class='circle'></div>
+          <div class='hotspot js-hotspot'>
+            <div class='circle js-circle'></div>
           </div>
-          <div class='hotspot'>
-            <div class='circle'></div>
+          <div class='hotspot js-hotspot'>
+            <div class='circle js-circle'></div>
           </div>
-          <div class='hotspot'>
-            <div class='circle'></div>
+          <div class='hotspot js-hotspot'>
+            <div class='circle js-circle'></div>
           </div>
         </div>
       </nav>
-      <div class='panelTwo' id='background'></div>
-      <div class='panel' id='intro'>
-        <div id='logo'></div>
-        <div class='lasso eighty centered'>
+      <div class='panelTwo active js-background' id='background'></div>
+      <div class='panelFour js-background' id='background'></div>
+      <div class='panel js-panel' id='intro'>
+        <div class='panel introParallax one hidden js-parallax'></div>
+        <div class='panel introParallax two hidden js-parallax'></div>
+        <div class='loading js-logo' id='logo'></div>
+        <div class='lasso fifty centered hidden introTrans js-intro'>
           <h1>The Mainframe Group is a brain trust of experts in music, immersive design and biometrics</h1>
         </div>
       </div>
-      <div class='panel' id='believe'>
-        <div class='lasso eighty centered'>
-          <h1>They believe</h1>
-          <h2>The live performance experience can be redefined by bringing their worlds together.</h2>
+      <div class='panel js-panel' id='believe'>
+        <div class='lasso forty centered js-lasso hidden introTrans'>
+          <h2>They believe</h2>
+          <h3>The live performance experience can be redefined by bringing their worlds together.</h3>
         </div>
       </div>
-      <div class='panel' id='theyare'>
+      <div class='panel js-panel' id='theyare'>
         <div class='backing'></div>
         <div class='backing right'></div>
         <div class='panelSplit'>
-          <div class='lasso eighty centered'>
-            <h1>They are</h1>
+          <div class='lasso eighty centered js-lasso hidden introTrans'>
+            <h2>They are</h2>
           </div>
         </div>
         <div class='panelSplit right'>
-          <div class='lasso eighty'>
-            <h3>Cantora</h3>
-            <h4>Tech Label</h4>
-            <h3>Cantora</h3>
-            <h4>Tech Label</h4>
-            <h3>Cantora</h3>
-            <h4>Tech Label</h4>
+          <div class='lasso fifty'>
+            <a class='hidden js-theyAre theyAreLink' href='www.google.com'>
+              <h4>Cantora</h4>
+              <h5>Tech Label</h5>
+            </a>
+            <a class='hidden js-theyAre theyAreLink' href='www.google.com'>
+              <h4>Hertz, Lichtenstein & Young LLC</h4>
+              <h5>Entertainment Transactions</h5>
+            </a>
+            <a class='hidden js-theyAre theyAreLink' href='www.google.com'>
+              <h4>[namethemachine]</h4>
+              <h5>Interactive design</h5>
+            </a>
+            <a class='hidden js-theyAre theyAreLink' href='www.google.com'>
+              <h4>Marco Della Torre</h4>
+              <h5>Biomedical scientist</h5>
+            </a>
+            <a class='hidden js-theyAre theyAreLink' href='www.google.com'>
+              <h4>Nadeem Kassam</h4>
+              <h5>Biotech entrepreneur</h5>
+            </a>
+            <a class='hidden js-theyAre' href='www.google.com'>
+              <h4>memBrain</h4>
+              <h5>Integrated Marketing</h5>
+            </a>
           </div>
         </div>
       </div>
-      <div class='panel' id='building'>
+      <div class='panel js-panel' id='building'>
         <div class='topLine'>
-          <div class='lasso eighty centered'>
+          <div class='lasso eighty centered js-lasso hidden introTrans'>
             <h1>They are building</h1>
           </div>
         </div>
         <div class='buttonContainer'>
-          <div class='button'>
+          <div class='button hidden js-button'>
             <div class='content backing15'></div>
             <div class='content blurb'>
-              <div class='lasso eighty centered'>
-                <h1>Blurb</h1>
+              <div class='lasso fifty centered'>
+                <h5>Nada Band</h5>
+                <h6>A wearable ticket that makes sense of concert attendee’s emotional state and movement</h6>
               </div>
             </div>
             <div class='content password'>
               <div class='lasso eighty centered'>
-                <h1>Password</h1>
+                <h5>more info</h5>
+                <input id='password' name='passwordForm' placeholder='PASSWORD' type='password'>
               </div>
             </div>
           </div>
-          <div class='button'>
+          <div class='button hidden js-button'>
             <div class='content backing25'></div>
             <div class='content blurb'>
-              <div class='lasso eighty centered'>
-                <h1>Blurb</h1>
+              <div class='lasso fifty centered'>
+                <h5>Mainframe Festival</h5>
+                <h6>A music festival where technology is built into the DNA of the entire live environment</h6>
               </div>
             </div>
             <div class='content password'>
               <div class='lasso eighty centered'>
-                <h1>Password</h1>
+                <h5>more info</h5>
+                <input id='password' name='passwordForm' placeholder='PASSWORD' type='password'>
               </div>
             </div>
           </div>
-          <div class='button'>
+          <div class='button hidden js-button'>
             <div class='content backing35'></div>
             <div class='content blurb'>
-              <div class='lasso eighty centered'>
-                <h1>Blurb</h1>
+              <div class='lasso fifty centered'>
+                <h5>M In Motion</h5>
+                <h6>A music series pairing top musicians with advanced technologies within New York’s most acclaimed museum</h6>
               </div>
             </div>
             <div class='content password'>
               <div class='lasso eighty centered'>
-                <h1>Password</h1>
+                <h5>more info</h5>
+                <input id='password' name='passwordForm' placeholder='PASSWORD' type='password'>
               </div>
             </div>
           </div>
-          <div class='button'>
+          <div class='button hidden js-button'>
             <div class='content backing40'></div>
             <div class='content blurb'>
-              <div class='lasso eighty centered'>
-                <h1>Blurb</h1>
+              <div class='lasso fifty centered'>
+                <h5>Las Vegas 100</h5>
+                <h6>An interactive recreation of the 1950s featuring a performance  by one of history’s most influential singers</h6>
               </div>
             </div>
             <div class='content password'>
               <div class='lasso eighty centered'>
-                <h1>Password</h1>
+                <h5>more info</h5>
+                <input id='password' name='passwordForm' placeholder='PASSWORD' type='password'>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div class='panel' id='outro'>
+      <div class='panel js-panel' id='outro'>
         <div id='logoWhite'></div>
-        <div class='lasso eighty centered pointer'>
+        <div class='lasso eighty centered pointer js-lasso hidden introTrans'>
           <form>
-            <input id='email' name='emailForm' placeholder='EMAIL'>
+            <input id='email' name='emailForm' placeholder='  GET UPDATES' spellcheck='false' type='email'>
           </form>
           <div class='active' id='submitButton'></div>
         </div>

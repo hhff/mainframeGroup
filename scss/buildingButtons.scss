@@ -14,15 +14,24 @@
 		display:inline-block;
 		float:left;
 		cursor: pointer;
+		-webkit-backface-visibility: hidden;
 		@include breakpoint(phone) { 
 			height:25%;
 			width:100%;
 		};
+		@include opacity(1);
+		@include trans(opacity, 400ms, ease-in-out);
+
+		&.hidden{
+			@include opacity(0);
+		}
 
 		.content{
 			width: 50%;
 			height: 32.5%;
 			position: absolute;
+
+			@include trans(opacity, 200ms, ease-in);
 
 			@include breakpoint(phone) { 
 				height:20%;
@@ -80,38 +89,5 @@
 			}
 
 		}
-
-
-			// &.opacityFifteen{
-			// 	@include opacity(0.15);
-
-			// 	&:hover{
-			// 		@include opacity($hoverOpacity);
-			// 	}
-			// }
-
-			// &.opacityTwentyFive{
-			// 	@include opacity(0.25);
-				
-			// 	&:hover{
-			// 		@include opacity($hoverOpacity);
-			// 	}
-			// }
-
-			// &.opacityThirtyFive{
-			// 	@include opacity(0.35);
-
-			// 	&:hover{
-			// 		@include opacity($hoverOpacity);
-			// 	}
-			// }
-
-			// &.opacityForty{
-			// 	@include opacity(0.4);
-				
-			// 	&:hover{
-			// 		@include opacity($hoverOpacity);
-			// 	}
-			// }
 	}
 }

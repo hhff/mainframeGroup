@@ -2,10 +2,15 @@
 @import "compass";
 @import "variables";
 @import "customMixins";
-
-
+@import "compass/css3";
+@import "fonts";
 
 body {
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+    -o-font-smoothing: antialiased;
+    @include trans(all, 800ms, ease-in-out);
+
 	&.scrollLocked{
 		position: fixed;
 		overflow: hidden;
@@ -14,10 +19,83 @@ body {
 	}
 }
 
+a {
+	display:block;
+	position:relative;
+	text-decoration:none;
+	pointer-events:auto;
+
+	&.theyAreLink{
+		height: 80px;
+	}
+}
+
 input{
 	&:focus{
 		outline: none;
 	}
+}
+
+h1{
+	font-family:"Neuzeit Grotesk T Light";
+	font-size: 49px;
+	line-height: 70px;
+	font-weight:lighter;
+}
+
+h2{
+	font-family:"Neuzeit Grotesk T Light";
+	font-size: 54px;
+	line-height: 34px;
+	font-weight:lighter;
+}
+
+h3{
+	font-family:"Neuzeit Grotesk T Regular";
+	font-size: 20px;
+	line-height: 34px;
+}
+
+h4{
+	font-family:"Neuzeit Grotesk T Black";
+	font-size: 16px;
+	font-weight:lighter;
+	text-transform:uppercase;
+	letter-spacing:2px;
+	margin:0 0 10px 0;
+}
+
+h5{
+	font-family:"Neuzeit Grotesk T Light";
+	font-size: 20px;
+	font-weight:lighter;
+	margin:0;
+	letter-spacing:1px;
+}
+
+h6{
+	font-family:"Georgia";
+	font-size: 16px;
+	font-weight:lighter;
+	margin:0;
+	letter-spacing:1px;
+	line-height: 24px;
+}
+
+::-webkit-input-placeholder {
+   color: white;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: white;  
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: white;  
+}
+
+:-ms-input-placeholder {  
+   color: white;  
 }
 
 #container {
@@ -33,7 +111,7 @@ input{
 		width:100%;
 		height:100%;
 		position:fixed;
-		z-index:1;
+		z-index:0;
 
 		&.panelTwo{
 			background: url('../img/background.jpg') left 25%;
@@ -42,6 +120,10 @@ input{
 		&.panelFour{
 			background: url("../img/backgroundBuilding.jpg") left 50%;
 			background-size: 200%;
+		}
+
+		&.active{
+			z-index:1;
 		}
 	}
 
@@ -52,6 +134,30 @@ input{
 		position:relative;
 		float:left;
 		z-index:2;
+		overflow: hidden;
+
+		.introParallax{
+			position:absolute;
+			@include trans(all, 800ms, ease-in-out);
+			height:110%;
+
+			&.one{
+				background: url("../img/background.jpg");
+				@include opacity(0.2);
+				top:-10%;
+			}
+
+			&.two{
+				background: url("../img/backgroundBuilding.jpg");
+				@include opacity(0.2);
+				top:-10%;
+			}
+
+			&.hidden{
+				@include opacity(0);
+				top:0%;
+			}
+		}
 
 		.backing{
 			width:50%;
@@ -103,10 +209,31 @@ input{
 			top: 50%;
 			@include transform(translateY(-50%));
 			pointer-events: none;
+			z-index: 3;
+			@include opacity(1);
+
+			&.introTrans{
+				@include trans(all, 800ms, ease-in-out);
+			}
+
+			&.hidden{
+				top:48%;
+				@include opacity(0);
+			}
 
 			&.eighty{
 				width:80%;
 				margin:0 10%;
+			}
+
+			&.fifty{
+				width:50%;
+				margin:0 25%;
+			}
+
+			&.forty{
+				width:40%;
+				margin:0 30%;
 			}
 
 			&.centered{
@@ -120,6 +247,7 @@ input{
 
 		&#intro{
 			background-color: $teal;
+			color: $navy;
 			@include breakpoint(phone) { background-color:pink; };
 
 
@@ -133,6 +261,10 @@ input{
 				top: 10%;
 				left:45%;
 				@include breakpoint(phone) { display:none; };
+				z-index:3;
+
+				@include trans(all, 1000ms, ease-in-out);
+
 
 				&.loading{
 					top:50%;
@@ -144,6 +276,7 @@ input{
 
 		&#believe{
 			background-color: transparent;
+			color: $navy;
 			
 			@include breakpoint(phone) { 
 				background:white;
@@ -154,16 +287,36 @@ input{
 		&#theyare{
 			background: url('../img/backgroundTheyAre.jpg') left center;
 			background-size:cover;
+			color: white;
 
 			@include breakpoint(phone) { 
 				background:white;
 				height:120%;
 			};
 
+			a {
+				color:white;
+				@include trans(all, 400ms, ease-in-out);
+				@include opacity(1);
+
+				&:hover{
+					left:-30px;
+				}
+
+				&.hidden{
+					left:-30px;
+					@include opacity(0);
+				}
+			}
+
+			h5 {
+				color:$gray;
+			}
 		}
 
 		&#building{
 			background-color: transparent;
+			color:white;
 
 			@include breakpoint(phone) { 
 				height:200%;
@@ -171,12 +324,29 @@ input{
 
 			.topLine{
 				width:100%;
-				height:35%;
+				height:35.1%;
 				display:block;
 				float:left;
 				@include breakpoint(phone) { 
 					height:20%; 
 				};
+			}
+
+			h5 {
+				margin-bottom: 24px;
+				font-size:22px;
+			}
+
+			#password{
+				border: 1px solid white;
+				background-color: transparent;
+				padding: 20px 0;
+				width: 250px;
+				pointer-events: auto;
+				text-align: center;
+				font-family:"Neuzeit Grotesk T Regular";
+				letter-spacing: 2px;
+				color:white;
 			}
 
 			@import "buildingButtons";
@@ -212,8 +382,12 @@ input{
 				border-bottom: 1px solid white;
 				background-color: transparent;
 				padding-bottom: 20px;
-				padding-left: 10px;
 				width:100%;
+				font-family:"Neuzeit Grotesk T Light";
+				letter-spacing: 2px;
+				color:white;
+				font-weight: lighter;
+				text-transform: uppercase;
 			}
 
 			#submitButton{

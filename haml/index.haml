@@ -7,8 +7,8 @@
 		%meta{ :charset => "UTF-8" }
 		%link{ :href => "./css/main.css", :media => "screen", :rel => "stylesheet" }
 		%script{:type => 'text/javascript', :data => {:main => 'js/main'}, :src => 'js/require.js'}
-	%body
-		#container
+	%body.scrollLocked.js-body
+		#container.js-container
 			%nav#mobile
 				#touchToggle
 				.menuLink
@@ -16,90 +16,113 @@
 				.menuLink
 				.menuLink
 
-			%nav#desktop
+			%nav#desktop.hidden.js-desktopNav
 				.hotspotContainer
-					.hotspot
-						.circle
-					.hotspot
-						.circle
-					.hotspot
-						.circle
-					.hotspot
-						.circle
-					.hotspot
-						.circle	
+					.hotspot.js-hotspot
+						.circle.js-circle.active
+					.hotspot.js-hotspot
+						.circle.js-circle
+					.hotspot.js-hotspot
+						.circle.js-circle
+					.hotspot.js-hotspot
+						.circle.js-circle
+					.hotspot.js-hotspot
+						.circle.js-circle
 
-			#background.panelTwo
+			#background.panelTwo.active.js-background
+			#background.panelFour.js-background
 			
-			.panel#intro
-				#logo
-				.lasso.eighty.centered
+			.panel#intro.js-panel
+				.panel.introParallax.one.hidden.js-parallax
+				.panel.introParallax.two.hidden.js-parallax
+				#logo.loading.js-logo
+				.lasso.fifty.centered.hidden.introTrans.js-intro
 					%h1 The Mainframe Group is a brain trust of experts in music, immersive design and biometrics
 			
-			.panel#believe
-				.lasso.eighty.centered
-					%h1 They believe
-					%h2 The live performance experience can be redefined by bringing their worlds together.
+			.panel#believe.js-panel
+				.lasso.forty.centered.js-lasso.hidden.introTrans
+					%h2 They believe
+					%h3 The live performance experience can be redefined by bringing their worlds together.
 			
-			.panel#theyare
+			.panel#theyare.js-panel
 				.backing
 				.backing.right
 				.panelSplit
-					.lasso.eighty.centered
-						%h1 They are
+					.lasso.eighty.centered.js-lasso.hidden.introTrans
+						%h2 They are
 				.panelSplit.right
-					.lasso.eighty
-						%h3 Cantora
-						%h4 Tech Label
-						%h3 Cantora
-						%h4 Tech Label
-						%h3 Cantora
-						%h4 Tech Label		
+					.lasso.fifty
+						%a.hidden.js-theyAre.theyAreLink{:href => 'www.google.com'}
+							%h4 Cantora
+							%h5 Tech Label
+						%a.hidden.js-theyAre.theyAreLink{:href => 'www.google.com'}
+							%h4 Hertz, Lichtenstein & Young LLC
+							%h5 Entertainment Transactions
+						%a.hidden.js-theyAre.theyAreLink{:href => 'www.google.com'}
+							%h4 [namethemachine]
+							%h5 Interactive design
+						%a.hidden.js-theyAre.theyAreLink{:href => 'www.google.com'}
+							%h4 Marco Della Torre
+							%h5 Biomedical scientist	
+						%a.hidden.js-theyAre.theyAreLink{:href => 'www.google.com'}
+							%h4 Nadeem Kassam
+							%h5 Biotech entrepreneur	
+						%a.hidden.js-theyAre{:href => 'www.google.com'}
+							%h4 memBrain
+							%h5 Integrated Marketing	
 			
-			.panel#building
+			.panel#building.js-panel
 				.topLine
-					.lasso.eighty.centered
+					.lasso.eighty.centered.js-lasso.hidden.introTrans
 						%h1 They are building
 
 				.buttonContainer
-					.button
+					.button.hidden.js-button
 						.content.backing15
 						.content.blurb
-							.lasso.eighty.centered
-								%h1 Blurb
+							.lasso.fifty.centered
+								%h5 Nada Band
+								%h6 A wearable ticket that makes sense of concert attendee’s emotional state and movement
 						.content.password
 							.lasso.eighty.centered
-								%h1 Password
-					.button
+								%h5 more info
+								%input#password{ :name => 'passwordForm', :type => 'password', :placeholder => 'PASSWORD'}
+					.button.hidden.js-button
 						.content.backing25
 						.content.blurb
-							.lasso.eighty.centered
-								%h1 Blurb
+							.lasso.fifty.centered
+								%h5 Mainframe Festival
+								%h6 A music festival where technology is built into the DNA of the entire live environment
 						.content.password
 							.lasso.eighty.centered
-								%h1 Password
-					.button
+								%h5 more info
+								%input#password{ :name => 'passwordForm', :type => 'password', :placeholder => 'PASSWORD'}
+					.button.hidden.js-button
 						.content.backing35
 						.content.blurb
-							.lasso.eighty.centered
-								%h1 Blurb
+							.lasso.fifty.centered
+								%h5 M In Motion
+								%h6 A music series pairing top musicians with advanced technologies within New York’s most acclaimed museum
 						.content.password
 							.lasso.eighty.centered
-								%h1 Password
-					.button
+								%h5 more info
+								%input#password{ :name => 'passwordForm', :type => 'password', :placeholder => 'PASSWORD'}
+					.button.hidden.js-button
 						.content.backing40
 						.content.blurb
-							.lasso.eighty.centered
-								%h1 Blurb
+							.lasso.fifty.centered
+								%h5 Las Vegas 100
+								%h6 An interactive recreation of the 1950s featuring a performance  by one of history’s most influential singers
 						.content.password
 							.lasso.eighty.centered
-								%h1 Password
+								%h5 more info
+								%input#password{ :name => 'passwordForm', :type => 'password', :placeholder => 'PASSWORD'}
 
-			.panel#outro
+			.panel#outro.js-panel
 				#logoWhite
-				.lasso.eighty.centered.pointer
+				.lasso.eighty.centered.pointer.js-lasso.hidden.introTrans
 					%form
-						%input#email{ :name => 'emailForm', :placeholder => 'EMAIL'}
+						%input#email{ :name => 'emailForm', :type => 'email', :placeholder => '  GET UPDATES', :spellcheck => 'false'}
 					#submitButton.active
 
 			:javascript

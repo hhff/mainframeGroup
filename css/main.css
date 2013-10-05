@@ -355,7 +355,45 @@ table {
   border-spacing: 0;
 }
 
-/* line 9, ../scss/main.scss */
+@font-face {
+  font-family: "Neuzeit Grotesk T Black";
+  src: url('../fonts/NeuzeGroTBla.woff') format('woff'), url('../fonts/NeuzeGroTBla.otf') format('opentype'), url('../fonts/NeuzeGroTBla.svg') format('svg');
+}
+
+@font-face {
+  font-family: "Neuzeit Grotesk T Bold";
+  src: url('../fonts/NeuzeGroTBol.woff') format('woff'), url('../fonts/NeuzeGroTBol.otf') format('opentype'), url('../fonts/NeuzeGroTBol.svg') format('svg');
+}
+
+@font-face {
+  font-family: "Neuzeit Grotesk T Regular";
+  src: url('../fonts/NeuzeGroTReg.woff') format('woff'), url('../fonts/NeuzeGroTReg.otf') format('opentype'), url('../fonts/NeuzeGroTReg.svg') format('svg');
+}
+
+@font-face {
+  font-family: "Neuzeit Grotesk T Light";
+  src: url('../fonts/NeuzeGroTLig.woff') format('woff'), url('../fonts/NeuzeGroTLig.otf') format('opentype'), url('../fonts/NeuzeGroTLig.svg') format('svg');
+}
+
+/* line 8, ../scss/main.scss */
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  -o-font-smoothing: antialiased;
+  -webkit-transition-property: all;
+  -moz-transition-property: all;
+  -o-transition-property: all;
+  transition-property: all;
+  -webkit-transition-duration: 800ms;
+  -moz-transition-duration: 800ms;
+  -o-transition-duration: 800ms;
+  transition-duration: 800ms;
+  -webkit-transition-timing-function: ease-in-out;
+  -moz-transition-timing-function: ease-in-out;
+  -o-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+/* line 14, ../scss/main.scss */
 body.scrollLocked {
   position: fixed;
   overflow: hidden;
@@ -363,12 +401,98 @@ body.scrollLocked {
   width: 100%;
 }
 
-/* line 18, ../scss/main.scss */
+/* line 22, ../scss/main.scss */
+a {
+  display: block;
+  position: relative;
+  text-decoration: none;
+  pointer-events: auto;
+}
+/* line 28, ../scss/main.scss */
+a.theyAreLink {
+  height: 80px;
+}
+
+/* line 34, ../scss/main.scss */
 input:focus {
   outline: none;
 }
 
-/* line 23, ../scss/main.scss */
+/* line 39, ../scss/main.scss */
+h1 {
+  font-family: "Neuzeit Grotesk T Light";
+  font-size: 49px;
+  line-height: 70px;
+  font-weight: lighter;
+}
+
+/* line 46, ../scss/main.scss */
+h2 {
+  font-family: "Neuzeit Grotesk T Light";
+  font-size: 54px;
+  line-height: 34px;
+  font-weight: lighter;
+}
+
+/* line 53, ../scss/main.scss */
+h3 {
+  font-family: "Neuzeit Grotesk T Regular";
+  font-size: 20px;
+  line-height: 34px;
+}
+
+/* line 59, ../scss/main.scss */
+h4 {
+  font-family: "Neuzeit Grotesk T Black";
+  font-size: 16px;
+  font-weight: lighter;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 0 0 10px 0;
+}
+
+/* line 68, ../scss/main.scss */
+h5 {
+  font-family: "Neuzeit Grotesk T Light";
+  font-size: 20px;
+  font-weight: lighter;
+  margin: 0;
+  letter-spacing: 1px;
+}
+
+/* line 76, ../scss/main.scss */
+h6 {
+  font-family: "Georgia";
+  font-size: 16px;
+  font-weight: lighter;
+  margin: 0;
+  letter-spacing: 1px;
+  line-height: 24px;
+}
+
+/* line 85, ../scss/main.scss */
+::-webkit-input-placeholder {
+  color: white;
+}
+
+/* line 89, ../scss/main.scss */
+:-moz-placeholder {
+  /* Firefox 18- */
+  color: white;
+}
+
+/* line 93, ../scss/main.scss */
+::-moz-placeholder {
+  /* Firefox 19+ */
+  color: white;
+}
+
+/* line 97, ../scss/main.scss */
+:-ms-input-placeholder {
+  color: white;
+}
+
+/* line 101, ../scss/main.scss */
 #container {
   width: 100%;
   height: 100%;
@@ -392,6 +516,20 @@ input:focus {
   transform: translateY(-50%);
   z-index: 10;
   box-sizing: border-box;
+  -webkit-transition-property: all;
+  -moz-transition-property: all;
+  -o-transition-property: all;
+  transition-property: all;
+  -webkit-transition-duration: 800ms;
+  -moz-transition-duration: 800ms;
+  -o-transition-duration: 800ms;
+  transition-duration: 800ms;
+  -webkit-transition-timing-function: ease-in-out;
+  -moz-transition-timing-function: ease-in-out;
+  -o-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
 }
 @media (max-width: 650px) {
   /* line 2, ../scss/navDesktop.scss */
@@ -399,27 +537,29 @@ input:focus {
     display: none;
   }
 }
-/* line 15, ../scss/navDesktop.scss */
+/* line 17, ../scss/navDesktop.scss */
 #container nav#desktop.hidden {
-  right: -100px;
+  right: -60px;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
 }
-/* line 19, ../scss/navDesktop.scss */
+/* line 22, ../scss/navDesktop.scss */
 #container nav#desktop .hotspotContainer {
   width: 100%;
   height: 120px;
   margin-top: 20px;
 }
-/* line 24, ../scss/navDesktop.scss */
+/* line 27, ../scss/navDesktop.scss */
 #container nav#desktop .hotspotContainer .hotspot {
   width: 100%;
   height: 24px;
   cursor: pointer;
 }
-/* line 30, ../scss/navDesktop.scss */
+/* line 33, ../scss/navDesktop.scss */
 #container nav#desktop .hotspotContainer .hotspot:hover .circle {
   background-color: white;
 }
-/* line 35, ../scss/navDesktop.scss */
+/* line 38, ../scss/navDesktop.scss */
 #container nav#desktop .hotspotContainer .hotspot .circle {
   width: 10px;
   height: 10px;
@@ -437,12 +577,24 @@ input:focus {
   -ms-transform: translateY(-50%);
   -o-transform: translateY(-50%);
   transform: translateY(-50%);
+  -webkit-transition-property: all;
+  -moz-transition-property: all;
+  -o-transition-property: all;
+  transition-property: all;
+  -webkit-transition-duration: 200ms;
+  -moz-transition-duration: 200ms;
+  -o-transition-duration: 200ms;
+  transition-duration: 200ms;
+  -webkit-transition-timing-function: ease-in-out;
+  -moz-transition-timing-function: ease-in-out;
+  -o-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
 }
-/* line 43, ../scss/navDesktop.scss */
+/* line 47, ../scss/navDesktop.scss */
 #container nav#desktop .hotspotContainer .hotspot .circle.active {
   background-color: white;
 }
-/* line 51, ../scss/navDesktop.scss */
+/* line 55, ../scss/navDesktop.scss */
 #container nav#mobile {
   height: 20%;
   width: 100%;
@@ -454,25 +606,25 @@ input:focus {
   display: none;
 }
 @media (max-width: 650px) {
-  /* line 51, ../scss/navDesktop.scss */
+  /* line 55, ../scss/navDesktop.scss */
   #container nav#mobile {
     display: block;
   }
 }
-/* line 63, ../scss/navDesktop.scss */
+/* line 67, ../scss/navDesktop.scss */
 #container nav#mobile.active .menuLink {
   top: 100%;
   position: relative;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
 }
-/* line 69, ../scss/navDesktop.scss */
+/* line 73, ../scss/navDesktop.scss */
 #container nav#mobile.active #touchToggle {
   background-color: white;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=40);
   opacity: 0.4;
 }
-/* line 75, ../scss/navDesktop.scss */
+/* line 79, ../scss/navDesktop.scss */
 #container nav#mobile #touchToggle {
   width: 20%;
   height: 100%;
@@ -482,13 +634,13 @@ input:focus {
   cursor: pointer;
   z-index: 11;
 }
-/* line 84, ../scss/navDesktop.scss */
+/* line 88, ../scss/navDesktop.scss */
 #container nav#mobile #touchToggle:hover {
   background-color: white;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
   opacity: 0.6;
 }
-/* line 90, ../scss/navDesktop.scss */
+/* line 94, ../scss/navDesktop.scss */
 #container nav#mobile .menuLink {
   height: 100%;
   width: 100%;
@@ -500,23 +652,27 @@ input:focus {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   opacity: 0;
 }
-/* line 32, ../scss/main.scss */
+/* line 110, ../scss/main.scss */
 #container #background {
   width: 100%;
   height: 100%;
   position: fixed;
-  z-index: 1;
+  z-index: 0;
 }
-/* line 38, ../scss/main.scss */
+/* line 116, ../scss/main.scss */
 #container #background.panelTwo {
   background: url("../img/background.jpg") left 25%;
 }
-/* line 42, ../scss/main.scss */
+/* line 120, ../scss/main.scss */
 #container #background.panelFour {
   background: url("../img/backgroundBuilding.jpg") left 50%;
   background-size: 200%;
 }
-/* line 48, ../scss/main.scss */
+/* line 125, ../scss/main.scss */
+#container #background.active {
+  z-index: 1;
+}
+/* line 130, ../scss/main.scss */
 #container .panel {
   height: 100%;
   width: 100%;
@@ -524,8 +680,46 @@ input:focus {
   position: relative;
   float: left;
   z-index: 2;
+  overflow: hidden;
 }
-/* line 56, ../scss/main.scss */
+/* line 139, ../scss/main.scss */
+#container .panel .introParallax {
+  position: absolute;
+  -webkit-transition-property: all;
+  -moz-transition-property: all;
+  -o-transition-property: all;
+  transition-property: all;
+  -webkit-transition-duration: 800ms;
+  -moz-transition-duration: 800ms;
+  -o-transition-duration: 800ms;
+  transition-duration: 800ms;
+  -webkit-transition-timing-function: ease-in-out;
+  -moz-transition-timing-function: ease-in-out;
+  -o-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  height: 110%;
+}
+/* line 144, ../scss/main.scss */
+#container .panel .introParallax.one {
+  background: url("../img/background.jpg");
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=20);
+  opacity: 0.2;
+  top: -10%;
+}
+/* line 150, ../scss/main.scss */
+#container .panel .introParallax.two {
+  background: url("../img/backgroundBuilding.jpg");
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=20);
+  opacity: 0.2;
+  top: -10%;
+}
+/* line 156, ../scss/main.scss */
+#container .panel .introParallax.hidden {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+  top: 0%;
+}
+/* line 162, ../scss/main.scss */
 #container .panel .backing {
   width: 50%;
   height: 100%;
@@ -536,27 +730,27 @@ input:focus {
   float: left;
 }
 @media (max-width: 650px) {
-  /* line 56, ../scss/main.scss */
+  /* line 162, ../scss/main.scss */
   #container .panel .backing {
     width: 100%;
     height: 30%;
   }
 }
-/* line 69, ../scss/main.scss */
+/* line 175, ../scss/main.scss */
 #container .panel .backing.right {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=95);
   opacity: 0.95;
   right: 0%;
 }
 @media (max-width: 650px) {
-  /* line 69, ../scss/main.scss */
+  /* line 175, ../scss/main.scss */
   #container .panel .backing.right {
     width: 100%;
     height: 70%;
     top: 30%;
   }
 }
-/* line 80, ../scss/main.scss */
+/* line 186, ../scss/main.scss */
 #container .panel .panelSplit {
   height: inherit;
   width: 50%;
@@ -564,20 +758,20 @@ input:focus {
   display: inline-block;
 }
 @media (max-width: 650px) {
-  /* line 80, ../scss/main.scss */
+  /* line 186, ../scss/main.scss */
   #container .panel .panelSplit {
     width: 100%;
     height: 30%;
   }
 }
 @media (max-width: 650px) {
-  /* line 92, ../scss/main.scss */
+  /* line 198, ../scss/main.scss */
   #container .panel .panelSplit.right {
     width: 100%;
     height: 70%;
   }
 }
-/* line 100, ../scss/main.scss */
+/* line 206, ../scss/main.scss */
 #container .panel .lasso {
   display: inline-block;
   position: relative;
@@ -588,31 +782,66 @@ input:focus {
   -o-transform: translateY(-50%);
   transform: translateY(-50%);
   pointer-events: none;
+  z-index: 3;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
 }
-/* line 107, ../scss/main.scss */
+/* line 215, ../scss/main.scss */
+#container .panel .lasso.introTrans {
+  -webkit-transition-property: all;
+  -moz-transition-property: all;
+  -o-transition-property: all;
+  transition-property: all;
+  -webkit-transition-duration: 800ms;
+  -moz-transition-duration: 800ms;
+  -o-transition-duration: 800ms;
+  transition-duration: 800ms;
+  -webkit-transition-timing-function: ease-in-out;
+  -moz-transition-timing-function: ease-in-out;
+  -o-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+/* line 219, ../scss/main.scss */
+#container .panel .lasso.hidden {
+  top: 48%;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+}
+/* line 224, ../scss/main.scss */
 #container .panel .lasso.eighty {
   width: 80%;
   margin: 0 10%;
 }
-/* line 112, ../scss/main.scss */
+/* line 229, ../scss/main.scss */
+#container .panel .lasso.fifty {
+  width: 50%;
+  margin: 0 25%;
+}
+/* line 234, ../scss/main.scss */
+#container .panel .lasso.forty {
+  width: 40%;
+  margin: 0 30%;
+}
+/* line 239, ../scss/main.scss */
 #container .panel .lasso.centered {
   text-align: center;
 }
-/* line 116, ../scss/main.scss */
+/* line 243, ../scss/main.scss */
 #container .panel .lasso.pointer {
   pointer-events: auto;
 }
-/* line 121, ../scss/main.scss */
+/* line 248, ../scss/main.scss */
 #container .panel#intro {
   background-color: #9af6eb;
+  color: #323454;
 }
 @media (max-width: 650px) {
-  /* line 121, ../scss/main.scss */
+  /* line 248, ../scss/main.scss */
   #container .panel#intro {
     background-color: pink;
   }
 }
-/* line 126, ../scss/main.scss */
+/* line 254, ../scss/main.scss */
 #container .panel#intro #logo {
   background: url("../img/logo.png") no-repeat center center;
   width: 10%;
@@ -622,14 +851,27 @@ input:focus {
   position: absolute;
   top: 10%;
   left: 45%;
+  z-index: 3;
+  -webkit-transition-property: all;
+  -moz-transition-property: all;
+  -o-transition-property: all;
+  transition-property: all;
+  -webkit-transition-duration: 1000ms;
+  -moz-transition-duration: 1000ms;
+  -o-transition-duration: 1000ms;
+  transition-duration: 1000ms;
+  -webkit-transition-timing-function: ease-in-out;
+  -moz-transition-timing-function: ease-in-out;
+  -o-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
 }
 @media (max-width: 650px) {
-  /* line 126, ../scss/main.scss */
+  /* line 254, ../scss/main.scss */
   #container .panel#intro #logo {
     display: none;
   }
 }
-/* line 137, ../scss/main.scss */
+/* line 269, ../scss/main.scss */
 #container .panel#intro #logo.loading {
   top: 50%;
   -webkit-transform: translateY(-50%);
@@ -638,51 +880,103 @@ input:focus {
   -o-transform: translateY(-50%);
   transform: translateY(-50%);
 }
-/* line 145, ../scss/main.scss */
+/* line 277, ../scss/main.scss */
 #container .panel#believe {
   background-color: transparent;
+  color: #323454;
 }
 @media (max-width: 650px) {
-  /* line 145, ../scss/main.scss */
+  /* line 277, ../scss/main.scss */
   #container .panel#believe {
     background: white;
     height: 80%;
   }
 }
-/* line 154, ../scss/main.scss */
+/* line 287, ../scss/main.scss */
 #container .panel#theyare {
   background: url("../img/backgroundTheyAre.jpg") left center;
   background-size: cover;
+  color: white;
 }
 @media (max-width: 650px) {
-  /* line 154, ../scss/main.scss */
+  /* line 287, ../scss/main.scss */
   #container .panel#theyare {
     background: white;
     height: 120%;
   }
 }
-/* line 165, ../scss/main.scss */
+/* line 297, ../scss/main.scss */
+#container .panel#theyare a {
+  color: white;
+  -webkit-transition-property: all;
+  -moz-transition-property: all;
+  -o-transition-property: all;
+  transition-property: all;
+  -webkit-transition-duration: 400ms;
+  -moz-transition-duration: 400ms;
+  -o-transition-duration: 400ms;
+  transition-duration: 400ms;
+  -webkit-transition-timing-function: ease-in-out;
+  -moz-transition-timing-function: ease-in-out;
+  -o-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+}
+/* line 302, ../scss/main.scss */
+#container .panel#theyare a:hover {
+  left: -30px;
+}
+/* line 306, ../scss/main.scss */
+#container .panel#theyare a.hidden {
+  left: -30px;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+}
+/* line 312, ../scss/main.scss */
+#container .panel#theyare h5 {
+  color: #ababab;
+}
+/* line 317, ../scss/main.scss */
 #container .panel#building {
   background-color: transparent;
+  color: white;
 }
 @media (max-width: 650px) {
-  /* line 165, ../scss/main.scss */
+  /* line 317, ../scss/main.scss */
   #container .panel#building {
     height: 200%;
   }
 }
-/* line 172, ../scss/main.scss */
+/* line 325, ../scss/main.scss */
 #container .panel#building .topLine {
   width: 100%;
-  height: 35%;
+  height: 35.1%;
   display: block;
   float: left;
 }
 @media (max-width: 650px) {
-  /* line 172, ../scss/main.scss */
+  /* line 325, ../scss/main.scss */
   #container .panel#building .topLine {
     height: 20%;
   }
+}
+/* line 335, ../scss/main.scss */
+#container .panel#building h5 {
+  margin-bottom: 24px;
+  font-size: 22px;
+}
+/* line 340, ../scss/main.scss */
+#container .panel#building #password {
+  border: 1px solid white;
+  background-color: transparent;
+  padding: 20px 0;
+  width: 250px;
+  pointer-events: auto;
+  text-align: center;
+  font-family: "Neuzeit Grotesk T Regular";
+  letter-spacing: 2px;
+  color: white;
 }
 /* line 1, ../scss/buildingButtons.scss */
 #container .panel#building .buttonContainer {
@@ -704,6 +998,21 @@ input:focus {
   display: inline-block;
   float: left;
   cursor: pointer;
+  -webkit-backface-visibility: hidden;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+  -webkit-transition-property: opacity;
+  -moz-transition-property: opacity;
+  -o-transition-property: opacity;
+  transition-property: opacity;
+  -webkit-transition-duration: 400ms;
+  -moz-transition-duration: 400ms;
+  -o-transition-duration: 400ms;
+  transition-duration: 400ms;
+  -webkit-transition-timing-function: ease-in-out;
+  -moz-transition-timing-function: ease-in-out;
+  -o-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
 }
 @media (max-width: 650px) {
   /* line 11, ../scss/buildingButtons.scss */
@@ -712,93 +1021,110 @@ input:focus {
     width: 100%;
   }
 }
-/* line 22, ../scss/buildingButtons.scss */
+/* line 25, ../scss/buildingButtons.scss */
+#container .panel#building .buttonContainer .button.hidden {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+}
+/* line 29, ../scss/buildingButtons.scss */
 #container .panel#building .buttonContainer .button .content {
   width: 50%;
   height: 32.5%;
   position: absolute;
+  -webkit-transition-property: opacity;
+  -moz-transition-property: opacity;
+  -o-transition-property: opacity;
+  transition-property: opacity;
+  -webkit-transition-duration: 200ms;
+  -moz-transition-duration: 200ms;
+  -o-transition-duration: 200ms;
+  transition-duration: 200ms;
+  -webkit-transition-timing-function: ease-in;
+  -moz-transition-timing-function: ease-in;
+  -o-transition-timing-function: ease-in;
+  transition-timing-function: ease-in;
 }
 @media (max-width: 650px) {
-  /* line 22, ../scss/buildingButtons.scss */
+  /* line 29, ../scss/buildingButtons.scss */
   #container .panel#building .buttonContainer .button .content {
     height: 20%;
     width: 100%;
   }
 }
-/* line 32, ../scss/buildingButtons.scss */
+/* line 41, ../scss/buildingButtons.scss */
 #container .panel#building .buttonContainer .button .content.backing15 {
   background-color: black;
   pointer-events: none;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=15);
   opacity: 0.15;
 }
-/* line 38, ../scss/buildingButtons.scss */
+/* line 47, ../scss/buildingButtons.scss */
 #container .panel#building .buttonContainer .button .content.backing25 {
   background-color: black;
   pointer-events: none;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=25);
   opacity: 0.25;
 }
-/* line 44, ../scss/buildingButtons.scss */
+/* line 53, ../scss/buildingButtons.scss */
 #container .panel#building .buttonContainer .button .content.backing35 {
   background-color: black;
   pointer-events: none;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=35);
   opacity: 0.35;
 }
-/* line 50, ../scss/buildingButtons.scss */
+/* line 59, ../scss/buildingButtons.scss */
 #container .panel#building .buttonContainer .button .content.backing40 {
   background-color: black;
   pointer-events: none;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=40);
   opacity: 0.4;
 }
-/* line 56, ../scss/buildingButtons.scss */
+/* line 65, ../scss/buildingButtons.scss */
 #container .panel#building .buttonContainer .button .content.blurb {
   pointer-events: none;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
 }
-/* line 61, ../scss/buildingButtons.scss */
+/* line 70, ../scss/buildingButtons.scss */
 #container .panel#building .buttonContainer .button .content.password {
   pointer-events: none;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   opacity: 0;
 }
-/* line 69, ../scss/buildingButtons.scss */
+/* line 78, ../scss/buildingButtons.scss */
 #container .panel#building .buttonContainer .button:hover .backing15, #container .panel#building .buttonContainer .button:hover .backing25, #container .panel#building .buttonContainer .button:hover .backing35, #container .panel#building .buttonContainer .button:hover .backing40 {
   background-color: #323454;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
   opacity: 0.8;
 }
-/* line 74, ../scss/buildingButtons.scss */
+/* line 83, ../scss/buildingButtons.scss */
 #container .panel#building .buttonContainer .button:hover .blurb {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   opacity: 0;
 }
-/* line 78, ../scss/buildingButtons.scss */
+/* line 87, ../scss/buildingButtons.scss */
 #container .panel#building .buttonContainer .button:hover .password {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
 }
-/* line 185, ../scss/main.scss */
+/* line 355, ../scss/main.scss */
 #container .panel#outro {
   background-color: pink;
   background: url("../img/backgroundOutro.jpg") 25% center;
   background-size: cover;
 }
 @media (max-width: 650px) {
-  /* line 185, ../scss/main.scss */
+  /* line 355, ../scss/main.scss */
   #container .panel#outro {
     height: 80%;
   }
 }
-/* line 194, ../scss/main.scss */
+/* line 364, ../scss/main.scss */
 #container .panel#outro form {
   width: 300px;
   display: inline-block;
 }
-/* line 199, ../scss/main.scss */
+/* line 369, ../scss/main.scss */
 #container .panel#outro #logoWhite {
   background: url("../img/logoWhite.png") no-repeat center center;
   width: 10%;
@@ -809,16 +1135,20 @@ input:focus {
   top: 10%;
   left: 45%;
 }
-/* line 210, ../scss/main.scss */
+/* line 380, ../scss/main.scss */
 #container .panel#outro #email {
   border: none;
   border-bottom: 1px solid white;
   background-color: transparent;
   padding-bottom: 20px;
-  padding-left: 10px;
   width: 100%;
+  font-family: "Neuzeit Grotesk T Light";
+  letter-spacing: 2px;
+  color: white;
+  font-weight: lighter;
+  text-transform: uppercase;
 }
-/* line 219, ../scss/main.scss */
+/* line 393, ../scss/main.scss */
 #container .panel#outro #submitButton {
   display: inline-block;
   width: 35px;
@@ -835,13 +1165,13 @@ input:focus {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   opacity: 0;
 }
-/* line 230, ../scss/main.scss */
+/* line 404, ../scss/main.scss */
 #container .panel#outro #submitButton.active {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=30);
   opacity: 0.3;
   cursor: pointer;
 }
-/* line 234, ../scss/main.scss */
+/* line 408, ../scss/main.scss */
 #container .panel#outro #submitButton.active:hover {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
   opacity: 0.8;
