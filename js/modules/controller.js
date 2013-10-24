@@ -15,7 +15,9 @@ define(['jquery'], function($){
 		$introText = $('.js-intro'),
 		$panels = $('.js-panel'),
 		$theyAreLinks = $('.js-theyAre'),
-		$buttons = $('.js-button');
+		$buttons = $('.js-button'),
+		$touchToggle = $('#touchToggle'),
+		$mobileNav = $('nav, #mobile');
 
 	controller.init = function(){
 
@@ -45,14 +47,16 @@ define(['jquery'], function($){
 
 		$(window).on('keydown', function(e){
 			if (e.keyCode == 13){
-				
-
 
 			};
 		});
 
 		$navHotspots.on('click', function(e){
 			controller._scrollTo($navHotspots.index(this));
+		})
+
+		$touchToggle.on('click', function(){
+			$mobileNav.toggleClass('active');
 		})
 
 		//tap = topActivePanel; ptap = previousTopActivePanel
@@ -149,7 +153,7 @@ define(['jquery'], function($){
 			previousTopActivePanel = topActivePanel;
 
 			//Move Movers
-			controller._movers();
+			//controller._movers();
 	};
 
 	controller._backgroundSwitch = function(){

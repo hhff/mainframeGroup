@@ -24,6 +24,10 @@
 
 		&.hidden{
 			@include opacity(0);
+
+			@include breakpoint(phone) { 
+				@include opacity(1);
+			}
 		}
 
 		.content{
