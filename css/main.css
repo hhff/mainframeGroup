@@ -413,12 +413,20 @@ a.theyAreLink {
   height: 80px;
 }
 
-/* line 34, ../scss/main.scss */
+/* line 33, ../scss/main.scss */
+input {
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  -ms-border-radius: 0px;
+  -o-border-radius: 0px;
+  border-radius: 0px;
+}
+/* line 36, ../scss/main.scss */
 input:focus {
   outline: none;
 }
 
-/* line 39, ../scss/main.scss */
+/* line 41, ../scss/main.scss */
 h1 {
   font-family: "Neuzeit Grotesk T Light";
   font-size: 49px;
@@ -426,14 +434,14 @@ h1 {
   font-weight: lighter;
 }
 @media (max-width: 650px) {
-  /* line 39, ../scss/main.scss */
+  /* line 41, ../scss/main.scss */
   h1 {
     font-size: 34px;
     line-height: 55px;
   }
 }
 
-/* line 51, ../scss/main.scss */
+/* line 53, ../scss/main.scss */
 h2 {
   font-family: "Neuzeit Grotesk T Light";
   font-size: 54px;
@@ -443,14 +451,14 @@ h2 {
   margin: 0px;
 }
 
-/* line 60, ../scss/main.scss */
+/* line 62, ../scss/main.scss */
 h3 {
   font-family: "Neuzeit Grotesk T Regular";
   font-size: 20px;
-  line-height: 34px;
+  line-height: 44px;
 }
 
-/* line 66, ../scss/main.scss */
+/* line 68, ../scss/main.scss */
 h4 {
   font-family: "Neuzeit Grotesk T Black";
   font-size: 16px;
@@ -459,8 +467,14 @@ h4 {
   letter-spacing: 2px;
   margin: 0 0 10px 0;
 }
+@media (max-width: 650px) {
+  /* line 68, ../scss/main.scss */
+  h4 {
+    font-size: 13px;
+  }
+}
 
-/* line 75, ../scss/main.scss */
+/* line 81, ../scss/main.scss */
 h5 {
   font-family: "Neuzeit Grotesk T Light";
   font-size: 20px;
@@ -468,8 +482,14 @@ h5 {
   margin: 0;
   letter-spacing: 1px;
 }
+@media (max-width: 650px) {
+  /* line 81, ../scss/main.scss */
+  h5 {
+    font-size: 17px;
+  }
+}
 
-/* line 83, ../scss/main.scss */
+/* line 93, ../scss/main.scss */
 h6 {
   font-family: "Georgia";
   font-size: 16px;
@@ -479,77 +499,77 @@ h6 {
   line-height: 24px;
 }
 
-/* line 92, ../scss/main.scss */
+/* line 102, ../scss/main.scss */
 ::-webkit-input-placeholder {
   color: white;
 }
 
-/* line 96, ../scss/main.scss */
+/* line 106, ../scss/main.scss */
 :-moz-placeholder {
   /* Firefox 18- */
   color: white;
 }
 
-/* line 100, ../scss/main.scss */
+/* line 110, ../scss/main.scss */
 ::-moz-placeholder {
   /* Firefox 19+ */
   color: white;
 }
 
-/* line 104, ../scss/main.scss */
+/* line 114, ../scss/main.scss */
 :-ms-input-placeholder {
   color: white;
 }
 
 @-webkit-keyframes pulsing {
-  /* line 109, ../scss/main.scss */
+  /* line 119, ../scss/main.scss */
   0% {
     opacity: 0.2;
   }
 
-  /* line 110, ../scss/main.scss */
+  /* line 120, ../scss/main.scss */
   100% {
     opacity: 1;
   }
 }
 
 @-moz-keyframes pulsing {
-  /* line 113, ../scss/main.scss */
+  /* line 123, ../scss/main.scss */
   0% {
     opacity: 0.2;
   }
 
-  /* line 114, ../scss/main.scss */
+  /* line 124, ../scss/main.scss */
   100% {
     opacity: 1;
   }
 }
 
 @-o-keyframes pulsing {
-  /* line 117, ../scss/main.scss */
+  /* line 127, ../scss/main.scss */
   0% {
     opacity: 0.2;
   }
 
-  /* line 118, ../scss/main.scss */
+  /* line 128, ../scss/main.scss */
   100% {
     opacity: 1;
   }
 }
 
 @keyframes pulsing {
-  /* line 121, ../scss/main.scss */
+  /* line 131, ../scss/main.scss */
   0% {
     opacity: 0.2;
   }
 
-  /* line 122, ../scss/main.scss */
+  /* line 132, ../scss/main.scss */
   100% {
     opacity: 1;
   }
 }
 
-/* line 125, ../scss/main.scss */
+/* line 135, ../scss/main.scss */
 #container {
   width: 100%;
   height: 100%;
@@ -563,8 +583,7 @@ h6 {
   height: 160px;
   position: fixed;
   background-color: transparent;
-  border: 1px solid white;
-  right: 30px;
+  right: 10px;
   top: 50%;
   -webkit-transform: translateY(-50%);
   -moz-transform: translateY(-50%);
@@ -653,6 +672,18 @@ h6 {
 }
 /* line 55, ../scss/navDesktop.scss */
 #container nav#mobile {
+  -webkit-transition-property: all;
+  -moz-transition-property: all;
+  -o-transition-property: all;
+  transition-property: all;
+  -webkit-transition-duration: 1500ms;
+  -moz-transition-duration: 1500ms;
+  -o-transition-duration: 1500ms;
+  transition-duration: 1500ms;
+  -webkit-transition-timing-function: ease-in-out;
+  -moz-transition-timing-function: ease-in-out;
+  -o-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
   height: 20%;
   width: 100%;
   background: url("../img/logo.png") no-repeat center center #9af6eb;
@@ -662,6 +693,7 @@ h6 {
   z-index: 10;
   display: none;
   text-align: center;
+  min-height: 80px;
 }
 @media (max-width: 650px) {
   /* line 55, ../scss/navDesktop.scss */
@@ -669,21 +701,34 @@ h6 {
     display: block;
   }
 }
-/* line 68, ../scss/navDesktop.scss */
+/* line 69, ../scss/navDesktop.scss */
+#container nav#mobile.loading {
+  height: 100%;
+}
+/* line 74, ../scss/navDesktop.scss */
 #container nav#mobile.active .menuLink {
   top: 100%;
   left: 0%;
   position: relative;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
+  pointer-events: auto;
 }
-/* line 75, ../scss/navDesktop.scss */
+/* line 83, ../scss/navDesktop.scss */
 #container nav#mobile.active #touchToggle {
   background-color: white;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=40);
   opacity: 0.4;
 }
-/* line 81, ../scss/navDesktop.scss */
+/* line 88, ../scss/navDesktop.scss */
+#container nav#mobile.active #touchToggle .lasso .triangle {
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+/* line 97, ../scss/navDesktop.scss */
 #container nav#mobile #touchToggle {
   width: 20%;
   height: 100%;
@@ -693,13 +738,52 @@ h6 {
   cursor: pointer;
   z-index: 11;
 }
-/* line 90, ../scss/navDesktop.scss */
-#container nav#mobile #touchToggle:hover {
-  background-color: white;
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
-  opacity: 0.6;
+/* line 106, ../scss/navDesktop.scss */
+#container nav#mobile #touchToggle .lasso {
+  display: inline-block;
+  position: relative;
+  top: 48%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
 }
-/* line 96, ../scss/navDesktop.scss */
+/* line 113, ../scss/navDesktop.scss */
+#container nav#mobile #touchToggle .triangle {
+  -webkit-transition-property: all;
+  -moz-transition-property: all;
+  -o-transition-property: all;
+  transition-property: all;
+  -webkit-transition-duration: 400ms;
+  -moz-transition-duration: 400ms;
+  -o-transition-duration: 400ms;
+  transition-duration: 400ms;
+  -webkit-transition-timing-function: ease-in-out;
+  -moz-transition-timing-function: ease-in-out;
+  -o-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid #323454;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=40);
+  opacity: 0.4;
+  margin: auto;
+}
+/* line 119, ../scss/navDesktop.scss */
+#container nav#mobile #touchToggle .triangle.loading {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+}
+/* line 130, ../scss/navDesktop.scss */
+#container nav#mobile #menuLinks {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+/* line 136, ../scss/navDesktop.scss */
 #container nav#mobile .menuLink {
   -webkit-transition-property: all;
   -moz-transition-property: all;
@@ -715,40 +799,42 @@ h6 {
   transition-timing-function: ease-in-out;
   height: 100%;
   width: 100%;
-  left: 100%;
   position: relative;
+  display: inline-block;
   background-color: white;
   box-sizing: border-box;
   border-bottom: 1px solid #ababab;
-  top: 0%;
+  pointer-events: none;
+  top: 100%;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   opacity: 0;
+  -webkit-backface-visibility: hidden;
 }
-/* line 109, ../scss/navDesktop.scss */
+/* line 152, ../scss/navDesktop.scss */
 #container nav#mobile .menuLink:hover {
   background-color: #BEF5F0;
   cursor: pointer;
 }
-/* line 114, ../scss/navDesktop.scss */
+/* line 157, ../scss/navDesktop.scss */
 #container nav#mobile .menuLink h1 {
   font-family: "Neuzeit Grotesk T Light";
-  font-size: 34px;
+  font-size: 28px;
   font-weight: lighter;
   margin: 0px;
   color: #323454;
-  line-height: 62px;
+  line-height: 40px;
   letter-spacing: 2px;
 }
-/* line 124, ../scss/navDesktop.scss */
+/* line 167, ../scss/navDesktop.scss */
 #container nav#mobile .menuLink h2 {
   font-family: "Neuzeit Grotesk T Bold";
-  font-size: 24px;
+  font-size: 20px;
   font-weight: lighter;
   margin: 0px;
   color: #323454;
-  line-height: 30px;
+  line-height: 20px;
 }
-/* line 133, ../scss/navDesktop.scss */
+/* line 176, ../scss/navDesktop.scss */
 #container nav#mobile .menuLink .lasso {
   display: inline-block;
   position: relative;
@@ -759,7 +845,7 @@ h6 {
   -o-transform: translateY(-50%);
   transform: translateY(-50%);
 }
-/* line 134, ../scss/main.scss */
+/* line 144, ../scss/main.scss */
 #container #background {
   width: 100%;
   height: 100%;
@@ -767,25 +853,37 @@ h6 {
   z-index: 0;
 }
 @media (max-width: 650px) {
-  /* line 134, ../scss/main.scss */
+  /* line 144, ../scss/main.scss */
   #container #background {
     display: none;
   }
 }
-/* line 143, ../scss/main.scss */
+/* line 153, ../scss/main.scss */
 #container #background.panelTwo {
   background: url("../img/background.jpg") left 25%;
 }
-/* line 147, ../scss/main.scss */
+@media (max-width: 650px) {
+  /* line 153, ../scss/main.scss */
+  #container #background.panelTwo {
+    background: none;
+  }
+}
+/* line 161, ../scss/main.scss */
 #container #background.panelFour {
   background: url("../img/backgroundBuilding.jpg") left 50%;
   background-size: 200%;
 }
-/* line 152, ../scss/main.scss */
+@media (max-width: 650px) {
+  /* line 161, ../scss/main.scss */
+  #container #background.panelFour {
+    background: none;
+  }
+}
+/* line 170, ../scss/main.scss */
 #container #background.active {
   z-index: 1;
 }
-/* line 157, ../scss/main.scss */
+/* line 175, ../scss/main.scss */
 #container .panel {
   height: 100%;
   width: 100%;
@@ -795,17 +893,17 @@ h6 {
   z-index: 2;
   overflow: hidden;
 }
-/* line 166, ../scss/main.scss */
+/* line 184, ../scss/main.scss */
 #container .panel .introParallax {
   position: absolute;
 }
 @media (max-width: 650px) {
-  /* line 166, ../scss/main.scss */
+  /* line 184, ../scss/main.scss */
   #container .panel .introParallax {
     display: none;
   }
 }
-/* line 173, ../scss/main.scss */
+/* line 191, ../scss/main.scss */
 #container .panel .introParallax.introTrans {
   -webkit-transition-property: all;
   -moz-transition-property: all;
@@ -820,7 +918,7 @@ h6 {
   -o-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
 }
-/* line 177, ../scss/main.scss */
+/* line 195, ../scss/main.scss */
 #container .panel .introParallax.one {
   background: url("../img/backgroundIntro1.jpg");
   background-size: cover;
@@ -829,7 +927,13 @@ h6 {
   height: 120%;
   top: -20%;
 }
-/* line 185, ../scss/main.scss */
+@media (max-width: 650px) {
+  /* line 195, ../scss/main.scss */
+  #container .panel .introParallax.one {
+    background: none;
+  }
+}
+/* line 207, ../scss/main.scss */
 #container .panel .introParallax.two {
   background: url("../img/backgroundIntro2.jpg");
   background-size: cover;
@@ -837,22 +941,27 @@ h6 {
   opacity: 0.7;
   height: 110%;
   top: -10%;
-  box-shadow: rgba(0, 0, 0, 0.8) 0px -100px 100px -90px inset;
 }
-/* line 194, ../scss/main.scss */
+@media (max-width: 650px) {
+  /* line 207, ../scss/main.scss */
+  #container .panel .introParallax.two {
+    background: none;
+  }
+}
+/* line 220, ../scss/main.scss */
 #container .panel .introParallax.hidden {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   opacity: 0;
   top: 0%;
 }
 @media (max-width: 650px) {
-  /* line 194, ../scss/main.scss */
+  /* line 220, ../scss/main.scss */
   #container .panel .introParallax.hidden {
     filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
   }
 }
-/* line 204, ../scss/main.scss */
+/* line 230, ../scss/main.scss */
 #container .panel .backing {
   width: 50%;
   height: 100%;
@@ -863,27 +972,27 @@ h6 {
   float: left;
 }
 @media (max-width: 650px) {
-  /* line 204, ../scss/main.scss */
+  /* line 230, ../scss/main.scss */
   #container .panel .backing {
     width: 100%;
     height: 30%;
   }
 }
-/* line 217, ../scss/main.scss */
+/* line 243, ../scss/main.scss */
 #container .panel .backing.right {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=95);
   opacity: 0.95;
   right: 0%;
 }
 @media (max-width: 650px) {
-  /* line 217, ../scss/main.scss */
+  /* line 243, ../scss/main.scss */
   #container .panel .backing.right {
     width: 100%;
     height: 70%;
     top: 30%;
   }
 }
-/* line 228, ../scss/main.scss */
+/* line 254, ../scss/main.scss */
 #container .panel .panelSplit {
   height: inherit;
   width: 50%;
@@ -891,20 +1000,20 @@ h6 {
   display: inline-block;
 }
 @media (max-width: 650px) {
-  /* line 228, ../scss/main.scss */
+  /* line 254, ../scss/main.scss */
   #container .panel .panelSplit {
     width: 100%;
     height: 30%;
   }
 }
 @media (max-width: 650px) {
-  /* line 240, ../scss/main.scss */
+  /* line 266, ../scss/main.scss */
   #container .panel .panelSplit.right {
     width: 100%;
     height: 70%;
   }
 }
-/* line 248, ../scss/main.scss */
+/* line 274, ../scss/main.scss */
 #container .panel .lasso {
   display: inline-block;
   position: relative;
@@ -918,8 +1027,9 @@ h6 {
   z-index: 3;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
+  -webkit-backface-visibility: hidden;
 }
-/* line 257, ../scss/main.scss */
+/* line 284, ../scss/main.scss */
 #container .panel .lasso.introTrans {
   -webkit-transition-property: all;
   -moz-transition-property: all;
@@ -934,61 +1044,81 @@ h6 {
   -o-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
 }
-/* line 261, ../scss/main.scss */
+/* line 288, ../scss/main.scss */
 #container .panel .lasso.hidden {
   top: 48%;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   opacity: 0;
 }
 @media (max-width: 650px) {
-  /* line 261, ../scss/main.scss */
+  /* line 288, ../scss/main.scss */
   #container .panel .lasso.hidden {
     filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
     top: 50%;
   }
 }
-/* line 271, ../scss/main.scss */
+/* line 298, ../scss/main.scss */
 #container .panel .lasso.eighty {
   width: 80%;
   margin: 0 10%;
 }
-/* line 276, ../scss/main.scss */
+/* line 303, ../scss/main.scss */
 #container .panel .lasso.fifty {
   width: 50%;
   margin: 0 25%;
 }
 @media (max-width: 650px) {
-  /* line 276, ../scss/main.scss */
+  /* line 303, ../scss/main.scss */
   #container .panel .lasso.fifty {
-    width: 70%;
-    margin: 0 15%;
+    width: 80%;
+    margin: 0 10%;
   }
 }
-/* line 286, ../scss/main.scss */
-#container .panel .lasso.seventyFive {
-  width: 75%;
-  margin: 0 0 0 25%;
+@media (max-width: 650px) {
+  /* line 312, ../scss/main.scss */
+  #container .panel .lasso.fifty.intro {
+    margin-top: 5%;
+  }
 }
-/* line 291, ../scss/main.scss */
+/* line 319, ../scss/main.scss */
+#container .panel .lasso.seventyFive {
+  width: 80%;
+  margin: 0 0 0 20%;
+}
+@media (max-width: 650px) {
+  /* line 319, ../scss/main.scss */
+  #container .panel .lasso.seventyFive {
+    width: 90%;
+    margin: 0 5% 0 5%;
+  }
+}
+/* line 329, ../scss/main.scss */
 #container .panel .lasso.forty {
   width: 40%;
   margin: 0 30%;
 }
-/* line 296, ../scss/main.scss */
+@media (max-width: 650px) {
+  /* line 329, ../scss/main.scss */
+  #container .panel .lasso.forty {
+    width: 70%;
+    margin: 0 15%;
+  }
+}
+/* line 339, ../scss/main.scss */
 #container .panel .lasso.centered {
   text-align: center;
 }
-/* line 300, ../scss/main.scss */
+/* line 343, ../scss/main.scss */
 #container .panel .lasso.pointer {
   pointer-events: auto;
 }
-/* line 305, ../scss/main.scss */
+/* line 348, ../scss/main.scss */
 #container .panel#intro {
   background-color: #9af6eb;
   color: #323454;
 }
-/* line 310, ../scss/main.scss */
+/* line 353, ../scss/main.scss */
 #container .panel#intro #logo {
   background: url("../img/logo.png") no-repeat center center;
   width: 10%;
@@ -999,26 +1129,27 @@ h6 {
   top: 10%;
   left: 45%;
   z-index: 3;
+  -webkit-backface-visibility: hidden;
   -webkit-transition-property: all;
   -moz-transition-property: all;
   -o-transition-property: all;
   transition-property: all;
-  -webkit-transition-duration: 1000ms;
-  -moz-transition-duration: 1000ms;
-  -o-transition-duration: 1000ms;
-  transition-duration: 1000ms;
+  -webkit-transition-duration: 1500ms;
+  -moz-transition-duration: 1500ms;
+  -o-transition-duration: 1500ms;
+  transition-duration: 1500ms;
   -webkit-transition-timing-function: ease-in-out;
   -moz-transition-timing-function: ease-in-out;
   -o-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
 }
 @media (max-width: 650px) {
-  /* line 310, ../scss/main.scss */
+  /* line 353, ../scss/main.scss */
   #container .panel#intro #logo {
     display: none;
   }
 }
-/* line 324, ../scss/main.scss */
+/* line 368, ../scss/main.scss */
 #container .panel#intro #logo.loading {
   top: 50%;
   -webkit-transform: translateY(-50%);
@@ -1027,7 +1158,7 @@ h6 {
   -o-transform: translateY(-50%);
   transform: translateY(-50%);
 }
-/* line 329, ../scss/main.scss */
+/* line 373, ../scss/main.scss */
 #container .panel#intro #logo.pulsing {
   -webkit-animation: pulsing 1.6s infinite alternate;
   /* Safari 4+ */
@@ -1038,16 +1169,14 @@ h6 {
   animation: pulsing 1.6s infinite alternate;
   /* IE 10+ */
 }
-/* line 339, ../scss/main.scss */
+/* line 383, ../scss/main.scss */
 #container .panel#believe {
   background-color: transparent;
   color: #323454;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.8) 0px -100px 100px -90px inset;
-  -moz-box-shadow: rgba(0, 0, 0, 0.8) 0px -100px 100px -90px inset;
-  box-shadow: rgba(0, 0, 0, 0.8) 0px -100px 100px -90px inset;
+  min-height: 450px;
 }
 @media (max-width: 650px) {
-  /* line 339, ../scss/main.scss */
+  /* line 383, ../scss/main.scss */
   #container .panel#believe {
     background: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, #ffffff), color-stop(100%, #ffcccc));
     background: -webkit-linear-gradient(center left, #ffffff, #ffcccc);
@@ -1057,20 +1186,20 @@ h6 {
     height: 80%;
   }
 }
-/* line 350, ../scss/main.scss */
+/* line 395, ../scss/main.scss */
 #container .panel#theyare {
   background: url("../img/backgroundTheyAre.jpg") left center;
   background-size: cover;
   color: white;
 }
 @media (max-width: 650px) {
-  /* line 350, ../scss/main.scss */
+  /* line 395, ../scss/main.scss */
   #container .panel#theyare {
     background: white;
     height: 800px;
   }
 }
-/* line 360, ../scss/main.scss */
+/* line 405, ../scss/main.scss */
 #container .panel#theyare a {
   color: white;
   -webkit-transition-property: all;
@@ -1088,37 +1217,86 @@ h6 {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
 }
-/* line 365, ../scss/main.scss */
-#container .panel#theyare a:hover {
-  left: -30px;
+/* line 410, ../scss/main.scss */
+#container .panel#theyare a .selector {
+  -webkit-transition-property: all;
+  -moz-transition-property: all;
+  -o-transition-property: all;
+  transition-property: all;
+  -webkit-transition-duration: 200ms;
+  -moz-transition-duration: 200ms;
+  -o-transition-duration: 200ms;
+  transition-duration: 200ms;
+  -webkit-transition-timing-function: ease-in-out;
+  -moz-transition-timing-function: ease-in-out;
+  -o-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  float: left;
+  margin-top: 5px;
+  margin-right: 20px;
+  width: 0;
+  height: 0;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 8px solid white;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+  -webkit-transform: translateX(-3px);
+  -moz-transform: translateX(-3px);
+  -ms-transform: translateX(-3px);
+  -o-transform: translateX(-3px);
+  transform: translateX(-3px);
+  -webkit-backface-visibility: hidden;
 }
-/* line 369, ../scss/main.scss */
+@media (max-width: 650px) {
+  /* line 410, ../scss/main.scss */
+  #container .panel#theyare a .selector {
+    display: none;
+  }
+}
+/* line 425, ../scss/main.scss */
+#container .panel#theyare a .name {
+  float: left;
+}
+/* line 431, ../scss/main.scss */
+#container .panel#theyare a:hover .selector {
+  -webkit-transform: translateX(0px);
+  -moz-transform: translateX(0px);
+  -ms-transform: translateX(0px);
+  -o-transform: translateX(0px);
+  transform: translateX(0px);
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+}
+@media (max-width: 650px) {
+  /* line 429, ../scss/main.scss */
+  #container .panel#theyare a:hover {
+    left: 0px;
+  }
+}
+/* line 441, ../scss/main.scss */
 #container .panel#theyare a.hidden {
-  left: -30px;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   opacity: 0;
 }
 @media (max-width: 650px) {
-  /* line 369, ../scss/main.scss */
+  /* line 441, ../scss/main.scss */
   #container .panel#theyare a.hidden {
     filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
     left: 0;
   }
 }
-/* line 380, ../scss/main.scss */
+/* line 452, ../scss/main.scss */
 #container .panel#theyare h5 {
   color: #ababab;
 }
-/* line 385, ../scss/main.scss */
+/* line 457, ../scss/main.scss */
 #container .panel#building {
   background-color: transparent;
   color: white;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.7) 0px 0px 50px 10px inset;
-  -moz-box-shadow: rgba(0, 0, 0, 0.7) 0px 0px 50px 10px inset;
-  box-shadow: rgba(0, 0, 0, 0.7) 0px 0px 50px 10px inset;
 }
-/* line 390, ../scss/main.scss */
+/* line 462, ../scss/main.scss */
 #container .panel#building .topLine {
   width: 100%;
   height: 35.1%;
@@ -1126,17 +1304,17 @@ h6 {
   float: left;
 }
 @media (max-width: 650px) {
-  /* line 390, ../scss/main.scss */
+  /* line 462, ../scss/main.scss */
   #container .panel#building .topLine {
     height: 20%;
   }
 }
-/* line 400, ../scss/main.scss */
+/* line 472, ../scss/main.scss */
 #container .panel#building h5 {
   margin-bottom: 24px;
   font-size: 22px;
 }
-/* line 405, ../scss/main.scss */
+/* line 477, ../scss/main.scss */
 #container .panel#building #password {
   border: 1px solid white;
   background-color: transparent;
@@ -1203,7 +1381,13 @@ h6 {
     opacity: 1;
   }
 }
-/* line 33, ../scss/buildingButtons.scss */
+@media (max-width: 650px) {
+  /* line 11, ../scss/buildingButtons.scss */
+  #container .panel#building .buttonContainer .button {
+    pointer-events: none;
+  }
+}
+/* line 37, ../scss/buildingButtons.scss */
 #container .panel#building .buttonContainer .button .content {
   width: 50%;
   height: 32.5%;
@@ -1222,70 +1406,72 @@ h6 {
   transition-timing-function: ease-in;
 }
 @media (max-width: 650px) {
-  /* line 33, ../scss/buildingButtons.scss */
+  /* line 37, ../scss/buildingButtons.scss */
   #container .panel#building .buttonContainer .button .content {
     height: 20%;
     width: 100%;
   }
 }
-/* line 45, ../scss/buildingButtons.scss */
+/* line 49, ../scss/buildingButtons.scss */
 #container .panel#building .buttonContainer .button .content.backing15 {
   background-color: black;
   pointer-events: none;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=15);
   opacity: 0.15;
 }
-/* line 51, ../scss/buildingButtons.scss */
+/* line 55, ../scss/buildingButtons.scss */
 #container .panel#building .buttonContainer .button .content.backing25 {
   background-color: black;
   pointer-events: none;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=25);
   opacity: 0.25;
 }
-/* line 57, ../scss/buildingButtons.scss */
+/* line 61, ../scss/buildingButtons.scss */
 #container .panel#building .buttonContainer .button .content.backing35 {
   background-color: black;
   pointer-events: none;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=35);
   opacity: 0.35;
 }
-/* line 63, ../scss/buildingButtons.scss */
+/* line 67, ../scss/buildingButtons.scss */
 #container .panel#building .buttonContainer .button .content.backing40 {
   background-color: black;
   pointer-events: none;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=40);
   opacity: 0.4;
 }
-/* line 69, ../scss/buildingButtons.scss */
+/* line 73, ../scss/buildingButtons.scss */
 #container .panel#building .buttonContainer .button .content.blurb {
   pointer-events: none;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
+  -webkit-transform-style: preserve-3d;
 }
-/* line 74, ../scss/buildingButtons.scss */
+/* line 79, ../scss/buildingButtons.scss */
 #container .panel#building .buttonContainer .button .content.password {
-  pointer-events: none;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   opacity: 0;
+  display: none;
 }
-/* line 82, ../scss/buildingButtons.scss */
+/* line 88, ../scss/buildingButtons.scss */
 #container .panel#building .buttonContainer .button:hover .backing15, #container .panel#building .buttonContainer .button:hover .backing25, #container .panel#building .buttonContainer .button:hover .backing35, #container .panel#building .buttonContainer .button:hover .backing40 {
   background-color: #323454;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
   opacity: 0.8;
 }
-/* line 87, ../scss/buildingButtons.scss */
+/* line 93, ../scss/buildingButtons.scss */
 #container .panel#building .buttonContainer .button:hover .blurb {
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
-  opacity: 0;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=1);
+  opacity: 0.01;
 }
-/* line 91, ../scss/buildingButtons.scss */
+/* line 97, ../scss/buildingButtons.scss */
 #container .panel#building .buttonContainer .button:hover .password {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
+  display: block;
 }
 @media (max-width: 650px) {
-  /* line 385, ../scss/main.scss */
+  /* line 457, ../scss/main.scss */
   #container .panel#building {
     background: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, #99cccc), color-stop(100%, #03e9cc));
     background: -webkit-linear-gradient(center left, #99cccc, #03e9cc);
@@ -1295,24 +1481,30 @@ h6 {
     height: 1400px;
   }
 }
-/* line 425, ../scss/main.scss */
+/* line 497, ../scss/main.scss */
 #container .panel#outro {
   background-color: pink;
   background: url("../img/backgroundOutro.jpg") 25% center;
   background-size: cover;
 }
 @media (max-width: 650px) {
-  /* line 425, ../scss/main.scss */
+  /* line 497, ../scss/main.scss */
   #container .panel#outro {
     height: 80%;
   }
 }
-/* line 434, ../scss/main.scss */
+/* line 506, ../scss/main.scss */
 #container .panel#outro form {
-  width: 300px;
+  width: 90%;
+  max-width: 300px;
   display: inline-block;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  -ms-border-radius: 0px;
+  -o-border-radius: 0px;
+  border-radius: 0px;
 }
-/* line 439, ../scss/main.scss */
+/* line 513, ../scss/main.scss */
 #container .panel#outro #logoWhite {
   background: url("../img/logoWhite.png") no-repeat center center;
   width: 10%;
@@ -1323,7 +1515,13 @@ h6 {
   top: 10%;
   left: 45%;
 }
-/* line 450, ../scss/main.scss */
+@media (max-width: 650px) {
+  /* line 513, ../scss/main.scss */
+  #container .panel#outro #logoWhite {
+    display: none;
+  }
+}
+/* line 528, ../scss/main.scss */
 #container .panel#outro #email {
   border: none;
   border-bottom: 1px solid white;
@@ -1336,7 +1534,7 @@ h6 {
   font-weight: lighter;
   text-transform: uppercase;
 }
-/* line 463, ../scss/main.scss */
+/* line 541, ../scss/main.scss */
 #container .panel#outro #submitButton {
   display: inline-block;
   width: 35px;
@@ -1353,13 +1551,13 @@ h6 {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   opacity: 0;
 }
-/* line 474, ../scss/main.scss */
+/* line 552, ../scss/main.scss */
 #container .panel#outro #submitButton.active {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=30);
   opacity: 0.3;
   cursor: pointer;
 }
-/* line 478, ../scss/main.scss */
+/* line 556, ../scss/main.scss */
 #container .panel#outro #submitButton.active:hover {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
   opacity: 0.8;

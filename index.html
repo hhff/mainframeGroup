@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>MY TITLE</title>
+    <title>Mainframe Group</title>
     <meta content='MY DESCRIPTION' name='description'>
     <meta content='MY AUTHOR' name='author'>
     <meta charset='UTF-8'>
@@ -11,30 +11,36 @@
   </head>
   <body class='scrollLocked js-body'>
     <div class='js-container' id='container'>
-      <nav id='mobile'>
-        <div id='touchToggle'></div>
-        <div class='menuLink'>
+      <nav class='loading' id='mobile'>
+        <div id='touchToggle'>
           <div class='lasso'>
-            <h1>They Believe</h1>
-            <h2>Thesis</h2>
+            <div class='triangle loading'></div>
           </div>
         </div>
-        <div class='menuLink'>
-          <div class='lasso'>
-            <h1>They Are</h1>
-            <h2>Team</h2>
+        <div id='menuLinks'>
+          <div class='menuLink'>
+            <div class='lasso'>
+              <h1>They Believe</h1>
+              <h2>Thesis</h2>
+            </div>
           </div>
-        </div>
-        <div class='menuLink'>
-          <div class='lasso'>
-            <h1>They Are Building</h1>
-            <h2>Projects</h2>
+          <div class='menuLink'>
+            <div class='lasso'>
+              <h1>They Are</h1>
+              <h2>Team</h2>
+            </div>
           </div>
-        </div>
-        <div class='menuLink'>
-          <div class='lasso'>
-            <h1>Learn More</h1>
-            <h2>Subscribe</h2>
+          <div class='menuLink'>
+            <div class='lasso'>
+              <h1>They Are Building</h1>
+              <h2>Projects</h2>
+            </div>
+          </div>
+          <div class='menuLink'>
+            <div class='lasso'>
+              <h1>Learn More</h1>
+              <h2>Subscribe</h2>
+            </div>
           </div>
         </div>
       </nav>
@@ -63,13 +69,13 @@
         <div class='panel introParallax one hidden js-parallax introTrans'></div>
         <div class='panel introParallax two hidden js-parallax introTrans'></div>
         <div class='loading pulsing js-logo' id='logo'></div>
-        <div class='lasso fifty centered hidden introTrans js-intro'>
+        <div class='lasso fifty centered hidden introTrans js-intro intro'>
           <h1>The Mainframe Group is a brain trust of experts in music, immersive design and biometrics</h1>
         </div>
       </div>
       <div class='panel js-panel' id='believe'>
         <!-- add .hidden.introTrans for dropin -->
-        <div class='lasso forty centered js-lasso js-mover' data-margin='top' data-speed='0.25'>
+        <div class='lasso forty centered hidden introTrans js-lasso js-mover' data-margin='top' data-speed='0.25'>
           <h2>They believe</h2>
           <h3>The live performance experience can be redefined by bringing their worlds together.</h3>
         </div>
@@ -85,29 +91,47 @@
         </div>
         <div class='panelSplit right'>
           <div class='lasso seventyFive'>
-            <a class='hidden js-theyAre theyAreLink' href='www.google.com'>
-              <h4>Cantora</h4>
-              <h5>Tech Label</h5>
+            <a class='hidden js-theyAre theyAreLink' href='http://www.cantora.com' target='_blank'>
+              <div class='selector'></div>
+              <div class='name'>
+                <h4>Cantora</h4>
+                <h5>Tech Label</h5>
+              </div>
             </a>
-            <a class='hidden js-theyAre theyAreLink' href='www.google.com'>
-              <h4>Hertz, Lichtenstein & Young LLC</h4>
-              <h5>Entertainment Transactions</h5>
+            <a class='hidden js-theyAre theyAreLink' href='http://www.hlmedialaw.com' target='_blank'>
+              <div class='selector'></div>
+              <div class='name'>
+                <h4>Hertz, Lichtenstein & Young LLC</h4>
+                <h5>Entertainment Transactions</h5>
+              </div>
             </a>
-            <a class='hidden js-theyAre theyAreLink' href='www.google.com'>
-              <h4>[namethemachine]</h4>
-              <h5>Interactive design</h5>
+            <a class='hidden js-theyAre theyAreLink' href='http://www.namethemachine.com' target='_blank'>
+              <div class='selector'></div>
+              <div class='name'>
+                <h4>[namethemachine]</h4>
+                <h5>Interactive design</h5>
+              </div>
             </a>
-            <a class='hidden js-theyAre theyAreLink' href='www.google.com'>
-              <h4>Marco Della Torre</h4>
-              <h5>Biomedical scientist</h5>
+            <a class='hidden js-theyAre theyAreLink' href='http://www.linkedin.com/in/marcodellatorre' target='_blank'>
+              <div class='selector'></div>
+              <div class='name'>
+                <h4>Marco Della Torre</h4>
+                <h5>Biomedical scientist</h5>
+              </div>
             </a>
-            <a class='hidden js-theyAre theyAreLink' href='www.google.com'>
-              <h4>Nadeem Kassam</h4>
-              <h5>Biotech entrepreneur</h5>
+            <a class='hidden js-theyAre theyAreLink' href='http://www.nadeemkassam.com' target='_blank'>
+              <div class='selector'></div>
+              <div class='name'>
+                <h4>Nadeem Kassam</h4>
+                <h5>Biotech entrepreneur</h5>
+              </div>
             </a>
-            <a class='hidden js-theyAre' href='www.google.com'>
-              <h4>memBrain</h4>
-              <h5>Integrated Marketing</h5>
+            <a class='hidden js-theyAre' href='http://www.membrainllc.com' target='_blank'>
+              <div class='selector'></div>
+              <div class='name'>
+                <h4>memBrain</h4>
+                <h5>Integrated Marketing</h5>
+              </div>
             </a>
           </div>
         </div>
@@ -130,37 +154,7 @@
             <div class='content password'>
               <div class='lasso eighty centered'>
                 <h5>more info</h5>
-                <input id='password' name='passwordForm' placeholder='PASSWORD' type='password'>
-              </div>
-            </div>
-          </div>
-          <div class='button hidden js-button'>
-            <div class='content backing25'></div>
-            <div class='content blurb'>
-              <div class='lasso fifty centered'>
-                <h5>Mainframe Festival</h5>
-                <h6>A music festival where technology is built into the DNA of the entire live environment</h6>
-              </div>
-            </div>
-            <div class='content password'>
-              <div class='lasso eighty centered'>
-                <h5>more info</h5>
-                <input id='password' name='passwordForm' placeholder='PASSWORD' type='password'>
-              </div>
-            </div>
-          </div>
-          <div class='button hidden js-button'>
-            <div class='content backing35'></div>
-            <div class='content blurb'>
-              <div class='lasso fifty centered'>
-                <h5>M In Motion</h5>
-                <h6>A music series pairing top musicians with advanced technologies within New York’s most acclaimed museum</h6>
-              </div>
-            </div>
-            <div class='content password'>
-              <div class='lasso eighty centered'>
-                <h5>more info</h5>
-                <input id='password' name='passwordForm' placeholder='PASSWORD' type='password'>
+                <input class='js-password' id='password' name='nada' placeholder='PASSWORD' type='password'>
               </div>
             </div>
           </div>
@@ -175,7 +169,37 @@
             <div class='content password'>
               <div class='lasso eighty centered'>
                 <h5>more info</h5>
-                <input id='password' name='passwordForm' placeholder='PASSWORD' type='password'>
+                <input class='js-password' id='password' name='vegas' placeholder='PASSWORD' type='password'>
+              </div>
+            </div>
+          </div>
+          <div class='button hidden js-button'>
+            <div class='content backing35'></div>
+            <div class='content blurb'>
+              <div class='lasso fifty centered'>
+                <h5>M In Motion</h5>
+                <h6>A music series pairing top musicians with advanced technologies within New York’s most acclaimed museum</h6>
+              </div>
+            </div>
+            <div class='content password'>
+              <div class='lasso eighty centered'>
+                <h5>more info</h5>
+                <input class='js-password' id='password' name='motion' placeholder='PASSWORD' type='password'>
+              </div>
+            </div>
+          </div>
+          <div class='button hidden js-button'>
+            <div class='content backing25'></div>
+            <div class='content blurb'>
+              <div class='lasso fifty centered'>
+                <h5>Mainframe Festival</h5>
+                <h6>A music festival where technology is built into the DNA of the entire live environment</h6>
+              </div>
+            </div>
+            <div class='content password'>
+              <div class='lasso eighty centered'>
+                <h5>more info</h5>
+                <input class='js-password' id='password' name='mainframe' placeholder='PASSWORD' type='password'>
               </div>
             </div>
           </div>
@@ -184,23 +208,12 @@
       <div class='panel js-panel' id='outro'>
         <div class='js-mover' data-margin='top' data-speed='0.1' id='logoWhite'></div>
         <div class='lasso eighty centered pointer js-lasso hidden introTrans'>
-          <form>
-            <input id='email' name='emailForm' placeholder='  GET UPDATES' spellcheck='false' type='email'>
+          <form action='http://cantorarecords.us1.list-manage1.com/subscribe/post?u=87246aa073fcc6ed49229c80e&amp;amp;id=6ff3a3df7d' id='js-emailForm' method='post' novalidate='' target='_blank'>
+            <input id='email' name='EMAIL' placeholder='  GET UPDATES' spellcheck='false' type='email'>
           </form>
           <div class='active' id='submitButton'></div>
         </div>
       </div>
-      <script>
-        var _gaq = _gaq || [];
-        _gaq.push(['_setAccount', YOUR_CODE']);
-        _gaq.push(['_trackPageview']);
-        (function() {
-        var ga = document.createElement('script');
-        ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-        })();
-      </script>
     </div>
   </body>
 </html>

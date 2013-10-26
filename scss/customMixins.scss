@@ -16,6 +16,22 @@
   @include border-radius($width/2)
 }
 
+@mixin triangle($width, $color) {
+  width: 0; 
+  height: 0; 
+  border-left: $width solid transparent;
+  border-right: $width solid transparent;
+  border-top: $width solid $color;
+}
+
+@mixin triangleRight {
+  width: 0; 
+  height: 0; 
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 8px solid white;
+}
+
 @mixin trans($property, $duration, $timingFunc) {
   @include transition-property($property);
   @include transition-duration($duration);

@@ -1,0 +1,13 @@
+DESKTOP
+
+- Lighten Site up
+- Re-do Parrallax
+- Add copyright stuff
+- ensure background is correct (& do precision changer / ensure pages change
+
+
+MOBILE
+
+- scroll to top button
+- JJ notes
+- final slide

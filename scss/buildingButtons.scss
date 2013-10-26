@@ -30,6 +30,10 @@
 			}
 		}
 
+		@include breakpoint(phone) { 
+			pointer-events:none;
+		}
+
 		.content{
 			width: 50%;
 			height: 32.5%;
@@ -69,11 +73,13 @@
 			&.blurb{
 				pointer-events:none;
 				@include opacity(1);
+				-webkit-transform-style: preserve-3d;
 			}
 
 			&.password{
-				pointer-events:none;
+				//pointer-events:none;
 				@include opacity(0);
+				display: none;
 			}
 		}
 
@@ -85,11 +91,12 @@
 			}
 
 			.blurb{
-				@include opacity(0);
+				@include opacity(0.01);
 			}
 
 			.password{
 				@include opacity(1);
+				display:block;
 			}
 
 		}

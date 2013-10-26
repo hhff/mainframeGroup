@@ -1,4 +1,4 @@
-define(['controller'], function(controller){
+define(['controller', 'ga'], function(controller, ga){
 
 	app = new Object();
 

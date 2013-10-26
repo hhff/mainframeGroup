@@ -1,7 +1,7 @@
 !!! 5
 %html
 	%head
-		%title= "MY TITLE"
+		%title= "Mainframe Group"
 		%meta{ :content => "MY DESCRIPTION", :name => "description" }
 		%meta{ :content => "MY AUTHOR", :name => "author" }
 		%meta{ :charset => "UTF-8" }
@@ -10,24 +10,27 @@
 		%script{:type => 'text/javascript', :data => {:main => 'js/main'}, :src => 'js/require.js'}
 	%body.scrollLocked.js-body
 		#container.js-container
-			%nav#mobile
+			%nav#mobile.loading
 				#touchToggle
-				.menuLink
 					.lasso
-						%h1 They Believe
-						%h2 Thesis
-				.menuLink
-					.lasso
-						%h1 They Are
-						%h2 Team
-				.menuLink
-					.lasso
-						%h1 They Are Building
-						%h2 Projects
-				.menuLink
-					.lasso
-						%h1 Learn More
-						%h2 Subscribe
+						.triangle.loading
+				#menuLinks
+					.menuLink
+						.lasso
+							%h1 They Believe
+							%h2 Thesis
+					.menuLink
+						.lasso
+							%h1 They Are
+							%h2 Team
+					.menuLink
+						.lasso
+							%h1 They Are Building
+							%h2 Projects
+					.menuLink
+						.lasso
+							%h1 Learn More
+							%h2 Subscribe
 
 			%nav#desktop.hidden.js-desktopNav
 				.hotspotContainer
@@ -49,12 +52,12 @@
 				.panel.introParallax.one.hidden.js-parallax.introTrans
 				.panel.introParallax.two.hidden.js-parallax.introTrans
 				#logo.loading.pulsing.js-logo
-				.lasso.fifty.centered.hidden.introTrans.js-intro
+				.lasso.fifty.centered.hidden.introTrans.js-intro.intro
 					%h1 The Mainframe Group is a brain trust of experts in music, immersive design and biometrics
 			
 			.panel#believe.js-panel
 				/add .hidden.introTrans for dropin
-				.lasso.forty.centered.js-lasso.js-mover{ :data => { :speed => '0.25', :margin => 'top'}}
+				.lasso.forty.centered.hidden.introTrans.js-lasso.js-mover{ :data => { :speed => '0.25', :margin => 'top'}}
 					%h2 They believe
 					%h3 The live performance experience can be redefined by bringing their worlds together.
 			
@@ -67,24 +70,36 @@
 						%h2 They are
 				.panelSplit.right
 					.lasso.seventyFive
-						%a.hidden.js-theyAre.theyAreLink{:href => 'www.google.com'}
-							%h4 Cantora
-							%h5 Tech Label
-						%a.hidden.js-theyAre.theyAreLink{:href => 'www.google.com'}
-							%h4 Hertz, Lichtenstein & Young LLC
-							%h5 Entertainment Transactions
-						%a.hidden.js-theyAre.theyAreLink{:href => 'www.google.com'}
-							%h4 [namethemachine]
-							%h5 Interactive design
-						%a.hidden.js-theyAre.theyAreLink{:href => 'www.google.com'}
-							%h4 Marco Della Torre
-							%h5 Biomedical scientist	
-						%a.hidden.js-theyAre.theyAreLink{:href => 'www.google.com'}
-							%h4 Nadeem Kassam
-							%h5 Biotech entrepreneur	
-						%a.hidden.js-theyAre{:href => 'www.google.com'}
-							%h4 memBrain
-							%h5 Integrated Marketing	
+						%a.hidden.js-theyAre.theyAreLink{:href => 'http://www.cantora.com', :target => '_blank'}
+							.selector
+							.name
+								%h4 Cantora
+								%h5 Tech Label
+						%a.hidden.js-theyAre.theyAreLink{:href => 'http://www.hlmedialaw.com', :target => '_blank'}
+							.selector
+							.name	
+								%h4 Hertz, Lichtenstein & Young LLC
+								%h5 Entertainment Transactions
+						%a.hidden.js-theyAre.theyAreLink{:href => 'http://www.namethemachine.com', :target => '_blank'}
+							.selector
+							.name
+								%h4 [namethemachine]
+								%h5 Interactive design
+						%a.hidden.js-theyAre.theyAreLink{:href => 'http://www.linkedin.com/in/marcodellatorre', :target => '_blank'}
+							.selector
+							.name
+								%h4 Marco Della Torre
+								%h5 Biomedical scientist	
+						%a.hidden.js-theyAre.theyAreLink{:href => 'http://www.nadeemkassam.com', :target => '_blank'}
+							.selector
+							.name
+								%h4 Nadeem Kassam
+								%h5 Biotech entrepreneur	
+						%a.hidden.js-theyAre{:href => 'http://www.membrainllc.com', :target => '_blank'}
+							.selector
+							.name
+								%h4 memBrain
+								%h5 Integrated Marketing	
 			
 			.panel#building.js-panel
 				.topLine
@@ -101,27 +116,7 @@
 						.content.password
 							.lasso.eighty.centered
 								%h5 more info
-								%input#password{ :name => 'passwordForm', :type => 'password', :placeholder => 'PASSWORD'}
-					.button.hidden.js-button
-						.content.backing25
-						.content.blurb
-							.lasso.fifty.centered
-								%h5 Mainframe Festival
-								%h6 A music festival where technology is built into the DNA of the entire live environment
-						.content.password
-							.lasso.eighty.centered
-								%h5 more info
-								%input#password{ :name => 'passwordForm', :type => 'password', :placeholder => 'PASSWORD'}
-					.button.hidden.js-button
-						.content.backing35
-						.content.blurb
-							.lasso.fifty.centered
-								%h5 M In Motion
-								%h6 A music series pairing top musicians with advanced technologies within New York’s most acclaimed museum
-						.content.password
-							.lasso.eighty.centered
-								%h5 more info
-								%input#password{ :name => 'passwordForm', :type => 'password', :placeholder => 'PASSWORD'}
+								%input#password.js-password{ :name => 'nada', :type => 'password', :placeholder => 'PASSWORD'}
 					.button.hidden.js-button
 						.content.backing40
 						.content.blurb
@@ -131,22 +126,33 @@
 						.content.password
 							.lasso.eighty.centered
 								%h5 more info
-								%input#password{ :name => 'passwordForm', :type => 'password', :placeholder => 'PASSWORD'}
+								%input#password.js-password{ :name => 'vegas', :type => 'password', :placeholder => 'PASSWORD'}
+					.button.hidden.js-button
+						.content.backing35
+						.content.blurb
+							.lasso.fifty.centered
+								%h5 M In Motion
+								%h6 A music series pairing top musicians with advanced technologies within New York’s most acclaimed museum
+						.content.password
+							.lasso.eighty.centered
+								%h5 more info
+								%input#password.js-password{ :name => 'motion', :type => 'password', :placeholder => 'PASSWORD'}
+					.button.hidden.js-button
+						.content.backing25
+						.content.blurb
+							.lasso.fifty.centered
+								%h5 Mainframe Festival
+								%h6 A music festival where technology is built into the DNA of the entire live environment
+						.content.password
+							.lasso.eighty.centered
+								%h5 more info
+								%input#password.js-password{ :name => 'mainframe', :type => 'password', :placeholder => 'PASSWORD'}
+
 
 			.panel#outro.js-panel
 				#logoWhite.js-mover{ :data => { :speed => '0.1', :margin => 'top'}}
 				.lasso.eighty.centered.pointer.js-lasso.hidden.introTrans
-					%form
-						%input#email{ :name => 'emailForm', :type => 'email', :placeholder => '  GET UPDATES', :spellcheck => 'false'}
+					%form#js-emailForm{ :action => 'http://cantorarecords.us1.list-manage1.com/subscribe/post?u=87246aa073fcc6ed49229c80e&amp;id=6ff3a3df7d', :method => 'post', :target => '_blank', :novalidate => ''}
+						%input#email{ :name => 'EMAIL', :type => 'email', :placeholder => '  GET UPDATES', :spellcheck => 'false' }
 					#submitButton.active
 
-			:javascript
-				var _gaq = _gaq || [];
-				_gaq.push(['_setAccount', YOUR_CODE']);
-				_gaq.push(['_trackPageview']);
-				(function() {
-				var ga = document.createElement('script');
-				ga.type = 'text/javascript'; ga.async = true;
-				ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-				var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-				})();
