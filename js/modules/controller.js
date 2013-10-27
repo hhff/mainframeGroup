@@ -20,9 +20,45 @@ define(['jquery'], function($){
 		$mobileNav = $('nav, #mobile'),
 		$menuLinks = $('.menuLink'),
 		mobileNavAnimating = false,
-		initialScroll = true;
+		initialScroll = true,
+		validEmail = false,
+		formVal = null,
+		$videoLoop = $('#outroVid'),
+		$window = $(window),
+		videoFactor = 720 / 1280;
 
 	controller.init = function(){
+
+		controller._setupSizeCover();
+
+		//Email Validation
+		$('#email').on('keyup', function(){
+			formVal = $(this).val();
+			if (controller._validateEmail(formVal) == true){
+				validEmail = true;
+				$('#submitButton, #arrow').removeClass('invalid');
+			}else{
+				validEmail = false;
+				$('#submitButton, #arrow').addClass('invalid');
+			}
+
+			if (!formVal){
+				$('#submitButton, #arrow').addClass('invalid');
+			}
+		});
+
+		$('#js-emailForm').submit(function(e){
+			if (validEmail == true){
+				//submit
+			}else{
+				e.preventDefault();
+				//no submit
+			}
+		})
+
+		$window.on('resize', function(){
+			controller._setupSizeCover();
+		});
 
 		//DOM is ready at this point
 		//Load in elements here
@@ -31,18 +67,18 @@ define(['jquery'], function($){
 		window.setTimeout(function(){
 			$parallax.removeClass('hidden');
 			$('.triangle').removeClass('loading');
-		}, 1000);
+		}, 1500);
 		
 		window.setTimeout(function(){
 			$desktopNav.removeClass('hidden');
 			$introText.removeClass('hidden');
 			$body.removeClass('scrollLocked');
-		}, 1600);
+		}, 2500);
 
 		window.setTimeout(function(){
 			$introText.removeClass('introTrans');
 			$parallax.removeClass('introTrans');
-		}, 2600);
+		}, 3300);
 
 
 		//Bindings
@@ -53,6 +89,11 @@ define(['jquery'], function($){
 		//Passwords
 		$('.js-password').on('keyup', function(e){
 			controller._passwordHandler(this, e);
+		})
+
+		$('#scrollToTop').on('click touchstart',function(){
+			$mobileNav.removeClass('active');
+			controller._phoneScrollTop();
 		})
 
 		//Desktop Scroll
@@ -83,17 +124,13 @@ define(['jquery'], function($){
 		$jsContainer.on('panelChange', function(e, tap, ptap){
 			//This is how we know it's a 2 to 3 transition!
 			if (tap + ptap == 5){
-				controller._backgroundSwitch();
+				controller._backgroundSwitch(tap, ptap);
 			};
-			//Update nav here
-			controller._updateNav(tap, ptap);
 		});
 
 		$('#submitButton').on('click', function(){
 			$('#js-emailForm').submit();
 		})
-
-
 
 	};
 
@@ -133,14 +170,16 @@ define(['jquery'], function($){
 	}
 
 	//Would love to wrap the below in a IIFE somehow...?
-	var previousTopActivePanel = 1;
+	var previousTopActivePanel = 1,
+		previousNavPanel = 1;
 
 	controller._scroll = function(){
 		var docHeight = $(document).height(),
 			windowHeight = $(window).height(),
 			panelHeight = Math.max(500, windowHeight),
 			scrollTop = $(document).scrollTop(),
-			topActivePanel = Math.floor(Math.abs((scrollTop+(panelHeight*0.25))/panelHeight))+1,
+			navPanel = Math.floor(Math.abs((scrollTop+(panelHeight*0.25))/panelHeight))+1,
+			topActivePanel = Math.floor(Math.abs((scrollTop)/panelHeight))+1,
 			activePercentage = Math.min(1, 1-((scrollTop/panelHeight) - topActivePanel +1)),
 			inverseActivePercentage = Math.abs((scrollTop/panelHeight) - topActivePanel +1);
 
@@ -162,9 +201,29 @@ define(['jquery'], function($){
 			// });
 
 			//Parallax Background
-			// $('.one').css({
-			// 	top:activePercentage*-20+'%'
-			// })
+			$('.one').css({
+				'-webkit-transform': 'translate(0%,'+((inverseActivePercentage*90)-15)+'%)',
+				'-moz-transform': 'translate(0%,'+((inverseActivePercentage*90)-15)+'%)',
+				'-ms-transform': 'translate(0%,'+((inverseActivePercentage*90)-15)+'%)',
+				'-o-transform': 'translate(0%,'+((inverseActivePercentage*90)-15)+'%)',
+				'transform': 'translate(0%,'+((inverseActivePercentage*90)-15)+'%)',
+			})
+
+			$('.two').css({
+				'-webkit-transform': 'translate(0%,'+((inverseActivePercentage*80)-5)+'%)',
+				'-moz-transform': 'translate(0%,'+((inverseActivePercentage*80)-5)+'%)',
+				'-ms-transform': 'translate(0%,'+((inverseActivePercentage*80)-5)+'%)',
+				'-o-transform': 'translate(0%,'+((inverseActivePercentage*80)-5)+'%)',
+				'transform': 'translate(0%,'+((inverseActivePercentage*80)-5)+'%)',
+			})
+
+			$introText.css({
+				'-webkit-transform': 'translate(0%,'+((inverseActivePercentage*40)-50)+'%)',
+				'-moz-transform': 'translate(0%,'+((inverseActivePercentage*40)-50)+'%)',
+				'-ms-transform': 'translate(0%,'+((inverseActivePercentage*40)-50)+'%)',
+				'-o-transform': 'translate(0%,'+((inverseActivePercentage*40)-50)+'%)',
+				'transform': 'translate(0%,'+((inverseActivePercentage*40)-50)+'%)',
+			})
 
 			//Trigger Dropins
 			if (activePercentage < 0.4){
@@ -202,7 +261,7 @@ define(['jquery'], function($){
 							clearInterval(buttonInterval);
 						};
 
-					}, 300);
+					}, 200);
 
 				};
 			};
@@ -213,14 +272,19 @@ define(['jquery'], function($){
 				$jsContainer.trigger('panelChange', [topActivePanel, previousTopActivePanel]);
 			};
 
+			if (previousNavPanel != navPanel){
+				controller._updateNav(navPanel, previousNavPanel);
+			}
+
 			//Update Top Active Panel
 			previousTopActivePanel = topActivePanel;
+			previousNavPanel = navPanel;
 
 			//Move Movers
 			//controller._movers();
 	};
 
-	controller._backgroundSwitch = function(){
+	controller._backgroundSwitch = function(tap, ptap){
 		var $jsBackground = $('.js-background');
 
 		$.each($jsBackground, function(){
@@ -234,6 +298,7 @@ define(['jquery'], function($){
 	};
 
 	controller._scrollTo = function(index){
+		initialScroll = false;
 		var windowHeight = $(window).height();
 
 		$('html, body').animate({
@@ -242,12 +307,14 @@ define(['jquery'], function($){
 	};
 
 	controller._phoneScrollTop = function(){
+		initialScroll = false;
 		$('html, body').animate({
 			scrollTop: 0
 		}, 1);
 	};
 
 	controller._phoneScrollTo = function(index){
+		initialScroll = false;
 		var phoneScroll = 0,
 			windowHeight = $(window).height();
 
@@ -270,6 +337,40 @@ define(['jquery'], function($){
 			scrollTop: (phoneScroll - (windowHeight*0.2))
 		}, 1);
 	};
+
+	controller._validateEmail = function(email){
+		var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+		return re.test(email);
+	}
+
+
+	controller._setupSizeCover = function() {
+		windowHeight = $window.height();
+		windowWidth = $window.width();
+		windowFactor = windowHeight/windowWidth;
+		coverWidth = windowHeight/videoFactor;
+		coverHeight = windowWidth*videoFactor;
+		coverTranslateX = (coverWidth - windowWidth) / 2;
+		coverTranslateY = (coverHeight - windowHeight) / 2;
+
+		if (windowFactor >= videoFactor){
+			$videoLoop.css({
+				height: windowHeight,
+				width: windowHeight/videoFactor,
+				'transform': 'translate('+(-coverTranslateX)+'px,0px)',
+				'-ms-transform': 'translate('+(-coverTranslateX)+'px,0px)',
+				'-webkit-transform': 'translate('+(-coverTranslateX)+'px,0px)',
+			})
+		}else if (windowFactor < videoFactor){
+			$videoLoop.css({
+				width: windowWidth,
+				height: windowWidth*videoFactor,
+				'transform': 'translate(0px,'+(-coverTranslateY)+'px)',
+				'-ms-transform': 'translate(0px,'+(-coverTranslateY)+'px)',
+				'-webkit-transform': 'translate(0px,'+(-coverTranslateY)+'px)',
+			})
+		}
+	}
 
 	// controller._movers = function(){
 	// 	//EXPERIMENTAL MOVER STUFF

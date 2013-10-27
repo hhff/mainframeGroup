@@ -94,6 +94,16 @@ nav{
 
 		}
 
+		#scrollToTop{
+			width:80%;
+			height:100%;
+			position:absolute;
+			left:0;
+			background-color:transparent;
+			cursor:pointer;
+			z-index:11;			
+		}
+
 		#touchToggle{
 			width:20%;
 			height:100%;

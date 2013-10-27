@@ -11,6 +11,7 @@
 	%body.scrollLocked.js-body
 		#container.js-container
 			%nav#mobile.loading
+				#scrollToTop
 				#touchToggle
 					.lasso
 						.triangle.loading
@@ -18,19 +19,15 @@
 					.menuLink
 						.lasso
 							%h1 They Believe
-							%h2 Thesis
 					.menuLink
 						.lasso
 							%h1 They Are
-							%h2 Team
 					.menuLink
 						.lasso
 							%h1 They Are Building
-							%h2 Projects
 					.menuLink
 						.lasso
-							%h1 Learn More
-							%h2 Subscribe
+							%h1 Subscribe
 
 			%nav#desktop.hidden.js-desktopNav
 				.hotspotContainer
@@ -118,7 +115,7 @@
 								%h5 more info
 								%input#password.js-password{ :name => 'nada', :type => 'password', :placeholder => 'PASSWORD'}
 					.button.hidden.js-button
-						.content.backing40
+						.content.backing25
 						.content.blurb
 							.lasso.fifty.centered
 								%h5 Las Vegas 100
@@ -138,7 +135,7 @@
 								%h5 more info
 								%input#password.js-password{ :name => 'motion', :type => 'password', :placeholder => 'PASSWORD'}
 					.button.hidden.js-button
-						.content.backing25
+						.content.backing40
 						.content.blurb
 							.lasso.fifty.centered
 								%h5 Mainframe Festival
@@ -150,9 +147,15 @@
 
 
 			.panel#outro.js-panel
+				%video#outroVid{ :autoplay => '', :loop => ''}
+					%source{ :src => "./vid/outro.mp4", :type => "video/mp4" }
+					%source{ :src => "./vid/outro.ogg", :type => "video/mp4" }
 				#logoWhite.js-mover{ :data => { :speed => '0.1', :margin => 'top'}}
 				.lasso.eighty.centered.pointer.js-lasso.hidden.introTrans
 					%form#js-emailForm{ :action => 'http://cantorarecords.us1.list-manage1.com/subscribe/post?u=87246aa073fcc6ed49229c80e&amp;id=6ff3a3df7d', :method => 'post', :target => '_blank', :novalidate => ''}
-						%input#email{ :name => 'EMAIL', :type => 'email', :placeholder => '  GET UPDATES', :spellcheck => 'false' }
-					#submitButton.active
+						%input#email{ :name => 'EMAIL', :type => 'email', :placeholder => 'GET UPDATES', :spellcheck => 'false' }
+					#submitButton.invalid
+					#arrow.invalid
+				#copyright 
+					%h5 &copy; 2013 Mainframe Group, LLC
 

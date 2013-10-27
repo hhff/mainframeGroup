@@ -39,7 +39,7 @@
 			height: 32.5%;
 			position: absolute;
 
-			@include trans(opacity, 200ms, ease-in);
+			@include trans(opacity, 500ms, ease-in);
 
 			@include breakpoint(phone) { 
 				height:20%;
@@ -79,7 +79,7 @@
 			&.password{
 				//pointer-events:none;
 				@include opacity(0);
-				display: none;
+				-webkit-transform-style: preserve-3d;
 			}
 		}
 

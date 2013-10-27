@@ -12,6 +12,7 @@
   <body class='scrollLocked js-body'>
     <div class='js-container' id='container'>
       <nav class='loading' id='mobile'>
+        <div id='scrollToTop'></div>
         <div id='touchToggle'>
           <div class='lasso'>
             <div class='triangle loading'></div>
@@ -21,25 +22,21 @@
           <div class='menuLink'>
             <div class='lasso'>
               <h1>They Believe</h1>
-              <h2>Thesis</h2>
             </div>
           </div>
           <div class='menuLink'>
             <div class='lasso'>
               <h1>They Are</h1>
-              <h2>Team</h2>
             </div>
           </div>
           <div class='menuLink'>
             <div class='lasso'>
               <h1>They Are Building</h1>
-              <h2>Projects</h2>
             </div>
           </div>
           <div class='menuLink'>
             <div class='lasso'>
-              <h1>Learn More</h1>
-              <h2>Subscribe</h2>
+              <h1>Subscribe</h1>
             </div>
           </div>
         </div>
@@ -159,7 +156,7 @@
             </div>
           </div>
           <div class='button hidden js-button'>
-            <div class='content backing40'></div>
+            <div class='content backing25'></div>
             <div class='content blurb'>
               <div class='lasso fifty centered'>
                 <h5>Las Vegas 100</h5>
@@ -189,7 +186,7 @@
             </div>
           </div>
           <div class='button hidden js-button'>
-            <div class='content backing25'></div>
+            <div class='content backing40'></div>
             <div class='content blurb'>
               <div class='lasso fifty centered'>
                 <h5>Mainframe Festival</h5>
@@ -206,12 +203,20 @@
         </div>
       </div>
       <div class='panel js-panel' id='outro'>
+        <video autoplay='' id='outroVid' loop=''>
+          <source src='./vid/outro.mp4' type='video/mp4'></source>
+          <source src='./vid/outro.ogg' type='video/mp4'></source>
+        </video>
         <div class='js-mover' data-margin='top' data-speed='0.1' id='logoWhite'></div>
         <div class='lasso eighty centered pointer js-lasso hidden introTrans'>
           <form action='http://cantorarecords.us1.list-manage1.com/subscribe/post?u=87246aa073fcc6ed49229c80e&amp;amp;id=6ff3a3df7d' id='js-emailForm' method='post' novalidate='' target='_blank'>
-            <input id='email' name='EMAIL' placeholder='  GET UPDATES' spellcheck='false' type='email'>
+            <input id='email' name='EMAIL' placeholder='GET UPDATES' spellcheck='false' type='email'>
           </form>
-          <div class='active' id='submitButton'></div>
+          <div class='invalid' id='submitButton'></div>
+          <div class='invalid' id='arrow'></div>
+        </div>
+        <div id='copyright'>
+          <h5>&copy; 2013 Mainframe Group, LLC</h5>
         </div>
       </div>
     </div>
