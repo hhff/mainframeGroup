@@ -1356,7 +1356,7 @@ h6 {
   letter-spacing: 2px;
   color: white;
 }
-/* line 1, ../scss/buildingButtons.scss */
+/* line 3, ../scss/buildingButtons.scss */
 #container .panel#building .buttonContainer {
   width: 100%;
   height: 65%;
@@ -1364,12 +1364,12 @@ h6 {
   float: left;
 }
 @media (max-width: 650px) {
-  /* line 1, ../scss/buildingButtons.scss */
+  /* line 3, ../scss/buildingButtons.scss */
   #container .panel#building .buttonContainer {
     height: 80%;
   }
 }
-/* line 11, ../scss/buildingButtons.scss */
+/* line 13, ../scss/buildingButtons.scss */
 #container .panel#building .buttonContainer .button {
   width: 50%;
   height: 50%;
@@ -1393,31 +1393,31 @@ h6 {
   transition-timing-function: ease-in-out;
 }
 @media (max-width: 650px) {
-  /* line 11, ../scss/buildingButtons.scss */
+  /* line 13, ../scss/buildingButtons.scss */
   #container .panel#building .buttonContainer .button {
     height: 25%;
     width: 100%;
   }
 }
-/* line 25, ../scss/buildingButtons.scss */
+/* line 27, ../scss/buildingButtons.scss */
 #container .panel#building .buttonContainer .button.hidden {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   opacity: 0;
 }
 @media (max-width: 650px) {
-  /* line 25, ../scss/buildingButtons.scss */
+  /* line 27, ../scss/buildingButtons.scss */
   #container .panel#building .buttonContainer .button.hidden {
     filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
   }
 }
 @media (max-width: 650px) {
-  /* line 11, ../scss/buildingButtons.scss */
+  /* line 13, ../scss/buildingButtons.scss */
   #container .panel#building .buttonContainer .button {
     pointer-events: none;
   }
 }
-/* line 37, ../scss/buildingButtons.scss */
+/* line 39, ../scss/buildingButtons.scss */
 #container .panel#building .buttonContainer .button .content {
   width: 50%;
   height: 32.5%;
@@ -1436,65 +1436,65 @@ h6 {
   transition-timing-function: ease-in;
 }
 @media (max-width: 650px) {
-  /* line 37, ../scss/buildingButtons.scss */
+  /* line 39, ../scss/buildingButtons.scss */
   #container .panel#building .buttonContainer .button .content {
     height: 20%;
     width: 100%;
   }
 }
-/* line 49, ../scss/buildingButtons.scss */
+/* line 51, ../scss/buildingButtons.scss */
 #container .panel#building .buttonContainer .button .content.backing15 {
   background-color: black;
   pointer-events: none;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=15);
   opacity: 0.15;
 }
-/* line 55, ../scss/buildingButtons.scss */
+/* line 57, ../scss/buildingButtons.scss */
 #container .panel#building .buttonContainer .button .content.backing25 {
   background-color: black;
   pointer-events: none;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=25);
   opacity: 0.25;
 }
-/* line 61, ../scss/buildingButtons.scss */
+/* line 63, ../scss/buildingButtons.scss */
 #container .panel#building .buttonContainer .button .content.backing35 {
   background-color: black;
   pointer-events: none;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=35);
   opacity: 0.35;
 }
-/* line 67, ../scss/buildingButtons.scss */
+/* line 69, ../scss/buildingButtons.scss */
 #container .panel#building .buttonContainer .button .content.backing40 {
   background-color: black;
   pointer-events: none;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=40);
   opacity: 0.4;
 }
-/* line 73, ../scss/buildingButtons.scss */
+/* line 75, ../scss/buildingButtons.scss */
 #container .panel#building .buttonContainer .button .content.blurb {
   pointer-events: none;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
   -webkit-transform-style: preserve-3d;
 }
-/* line 79, ../scss/buildingButtons.scss */
+/* line 81, ../scss/buildingButtons.scss */
 #container .panel#building .buttonContainer .button .content.password {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   opacity: 0;
   -webkit-transform-style: preserve-3d;
 }
-/* line 88, ../scss/buildingButtons.scss */
+/* line 90, ../scss/buildingButtons.scss */
 #container .panel#building .buttonContainer .button:hover .backing15, #container .panel#building .buttonContainer .button:hover .backing25, #container .panel#building .buttonContainer .button:hover .backing35, #container .panel#building .buttonContainer .button:hover .backing40 {
   background-color: #323454;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
   opacity: 0.8;
 }
-/* line 93, ../scss/buildingButtons.scss */
+/* line 95, ../scss/buildingButtons.scss */
 #container .panel#building .buttonContainer .button:hover .blurb {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=1);
   opacity: 0.01;
 }
-/* line 97, ../scss/buildingButtons.scss */
+/* line 99, ../scss/buildingButtons.scss */
 #container .panel#building .buttonContainer .button:hover .password {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;

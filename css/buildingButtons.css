@@ -1,12 +1,22 @@
 /*
-Syntax error: Undefined mixin 'breakpoint'.
-        on line 7 of /Users/Hugh/dev/mainframe/site/scss/buildingButtons.scss, in `breakpoint'
-        from line 7 of /Users/Hugh/dev/mainframe/site/scss/buildingButtons.scss
+Syntax error: Undefined mixin 'opacity'.
+        on line 24 of /Users/Hugh/dev/mainframe/site/scss/buildingButtons.scss, in `opacity'
+        from line 24 of /Users/Hugh/dev/mainframe/site/scss/buildingButtons.scss
 
 Backtrace:
-/Users/Hugh/dev/mainframe/site/scss/buildingButtons.scss:7:in `breakpoint'
-/Users/Hugh/dev/mainframe/site/scss/buildingButtons.scss:7
+/Users/Hugh/dev/mainframe/site/scss/buildingButtons.scss:24:in `opacity'
+/Users/Hugh/dev/mainframe/site/scss/buildingButtons.scss:24
 /Users/Hugh/.rvm/gems/ruby-2.0.0-p247/gems/sass-3.2.12/lib/sass/tree/visitors/perform.rb:253:in `visit_mixin'
+/Users/Hugh/.rvm/gems/ruby-2.0.0-p247/gems/sass-3.2.12/lib/sass/tree/visitors/base.rb:37:in `visit'
+/Users/Hugh/.rvm/gems/ruby-2.0.0-p247/gems/sass-3.2.12/lib/sass/tree/visitors/perform.rb:100:in `visit'
+/Users/Hugh/.rvm/gems/ruby-2.0.0-p247/gems/sass-3.2.12/lib/sass/tree/visitors/base.rb:53:in `block in visit_children'
+/Users/Hugh/.rvm/gems/ruby-2.0.0-p247/gems/sass-3.2.12/lib/sass/tree/visitors/base.rb:53:in `map'
+/Users/Hugh/.rvm/gems/ruby-2.0.0-p247/gems/sass-3.2.12/lib/sass/tree/visitors/base.rb:53:in `visit_children'
+/Users/Hugh/.rvm/gems/ruby-2.0.0-p247/gems/sass-3.2.12/lib/sass/tree/visitors/perform.rb:109:in `block in visit_children'
+/Users/Hugh/.rvm/gems/ruby-2.0.0-p247/gems/sass-3.2.12/lib/sass/tree/visitors/perform.rb:121:in `with_environment'
+/Users/Hugh/.rvm/gems/ruby-2.0.0-p247/gems/sass-3.2.12/lib/sass/tree/visitors/perform.rb:108:in `visit_children'
+/Users/Hugh/.rvm/gems/ruby-2.0.0-p247/gems/sass-3.2.12/lib/sass/tree/visitors/base.rb:37:in `block in visit'
+/Users/Hugh/.rvm/gems/ruby-2.0.0-p247/gems/sass-3.2.12/lib/sass/tree/visitors/perform.rb:320:in `visit_rule'
 /Users/Hugh/.rvm/gems/ruby-2.0.0-p247/gems/sass-3.2.12/lib/sass/tree/visitors/base.rb:37:in `visit'
 /Users/Hugh/.rvm/gems/ruby-2.0.0-p247/gems/sass-3.2.12/lib/sass/tree/visitors/perform.rb:100:in `visit'
 /Users/Hugh/.rvm/gems/ruby-2.0.0-p247/gems/sass-3.2.12/lib/sass/tree/visitors/base.rb:53:in `block in visit_children'
@@ -78,4 +88,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Syntax error: Undefined mixin 'breakpoint'.\A         on line 7 of /Users/Hugh/dev/mainframe/site/scss/buildingButtons.scss, in `breakpoint'\A         from line 7 of /Users/Hugh/dev/mainframe/site/scss/buildingButtons.scss"; }
+  content: "Syntax error: Undefined mixin 'opacity'.\A         on line 24 of /Users/Hugh/dev/mainframe/site/scss/buildingButtons.scss, in `opacity'\A         from line 24 of /Users/Hugh/dev/mainframe/site/scss/buildingButtons.scss"; }

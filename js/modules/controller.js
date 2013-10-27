@@ -177,7 +177,7 @@ define(['jquery'], function($){
 		var docHeight = $(document).height(),
 			windowHeight = $(window).height(),
 			panelHeight = Math.max(500, windowHeight),
-			scrollTop = $(document).scrollTop(),
+			scrollTop = Math.max(0, $(document).scrollTop()),
 			navPanel = Math.floor(Math.abs((scrollTop+(panelHeight*0.25))/panelHeight))+1,
 			topActivePanel = Math.floor(Math.abs((scrollTop)/panelHeight))+1,
 			activePercentage = Math.min(1, 1-((scrollTop/panelHeight) - topActivePanel +1)),
@@ -192,7 +192,7 @@ define(['jquery'], function($){
 
 			//console.log('AP :'+activePercentage+' IAP :'+inverseActivePercentage);
 
-			console.log(topActivePanel);
+			console.log(scrollTop);
 
 			//Intro Text Parallax Effect
 			// $introText.css({
