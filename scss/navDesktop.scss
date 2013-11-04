@@ -55,22 +55,32 @@ nav{
 	&#mobile{
 	    @include trans(all, 1500ms, ease-in-out);
 		@include breakpoint(phone) { display:block; };
-		height: 20%;
+		height: 12%;
 		width:100%;
 		background: url('../img/logo.png') no-repeat center center $teal;
-		background-size:15%;
+		background-size:10%;
 		position: fixed;
 		top: 0px;
 		z-index: 10;
 		display:none;
 		text-align: center;
 		min-height: 80px;
+		border-bottom: 1px solid $gray;
+		@include opacity(0.9);
 
 		&.loading{
 			height:100%;
+			@include opacity(1);
+		}
+
+		&.menuTrans{
+		    @include trans(all, 400ms, ease-in-out);
 		}
 
 		&.active{
+			height:20%;
+			@include opacity(1);
+
 			.menuLink{
 				top:100%;
 				left:0%;
@@ -160,7 +170,7 @@ nav{
 		    -webkit-backface-visibility: hidden;
 
 			&:hover{
-				background-color: #BEF5F0;
+				background-color: #D8EEF2;
 				cursor:pointer;
 			}
 

@@ -23,7 +23,7 @@
 							%h1 They Are
 					.menuLink
 						.lasso
-							%h1 They Are Building
+							%h1 They Create
 					.menuLink
 						.lasso
 							%h1 Subscribe
@@ -49,58 +49,19 @@
 				.panel.introParallax.two.hidden.js-parallax.introTrans
 				#logo.loading.pulsing.js-logo
 				.lasso.fifty.centered.hidden.introTrans.js-intro.intro
-					%h1 The Mainframe Group is a brain trust of experts in music, immersive design and biometrics
-			
+					%h1 The Mainframe Group is a brain trust of experts in music, immersive design and biomedical science
+
 			.panel#believe.js-panel
 				/add .hidden.introTrans for dropin
 				.lasso.forty.centered.hidden.introTrans.js-lasso.js-mover{ :data => { :speed => '0.25', :margin => 'top'}}
 					%h2 They believe
-					%h3 The live performance experience can be redefined by bringing their worlds together.
-			
-			.panel#theyare.js-panel
-				.backing
-				.backing.right
-				.panelSplit
-					/add for mover .js-mover{ :data => { :speed => '0.2', :margin => 'top'}}
-					.lasso.eighty.centered.js-lasso.hidden.introTrans
-						%h2 They are
-				.panelSplit.right
-					.lasso.seventyFive
-						%a.hidden.js-theyAre.theyAreLink{:href => 'http://www.cantora.com', :target => '_blank'}
-							.selector
-							.name
-								%h4 Cantora
-								%h5 Tech Label
-						%a.hidden.js-theyAre.theyAreLink{:href => 'http://www.hlmedialaw.com', :target => '_blank'}
-							.selector
-							.name	
-								%h4 Hertz, Lichtenstein & Young LLC
-								%h5 Entertainment Transactions
-						%a.hidden.js-theyAre.theyAreLink{:href => 'http://www.namethemachine.com', :target => '_blank'}
-							.selector
-							.name
-								%h4 [namethemachine]
-								%h5 Interactive design
-						%a.hidden.js-theyAre.theyAreLink{:href => 'http://www.linkedin.com/in/marcodellatorre', :target => '_blank'}
-							.selector
-							.name
-								%h4 Marco Della Torre
-								%h5 Biomedical scientist	
-						%a.hidden.js-theyAre.theyAreLink{:href => 'http://www.nadeemkassam.com', :target => '_blank'}
-							.selector
-							.name
-								%h4 Nadeem Kassam
-								%h5 Biotech entrepreneur	
-						%a.hidden.js-theyAre{:href => 'http://www.membrainllc.com', :target => '_blank'}
-							.selector
-							.name
-								%h4 memBrain
-								%h5 Integrated Marketing	
+					%h3 the live performance experience can be redefined by bringing their worlds together	
 			
 			.panel#building.js-panel
 				.topLine
-					.lasso.eighty.centered.js-lasso.hidden.introTrans
-						%h1 They are building
+					.lasso.forty.centered.js-lasso.hidden.introTrans
+						%h2 They Create
+						%h3 proprietary technologies, strategic concepts and innovative partnerships
 
 				.buttonContainer
 					.button.hidden.js-button
@@ -144,8 +105,47 @@
 								%h5 more info
 								%input#password.js-password{ :name => 'mainframe', :type => 'password', :placeholder => 'PASSWORD'}
 
+			.panel#theyare.js-panel
+				.backing
+				.backing.right
+				.panelSplit
+					/add for mover .js-mover{ :data => { :speed => '0.2', :margin => 'top'}}
+					.lasso.eighty.centered.js-lasso.hidden.introTrans
+						%h2 They are
+				.panelSplit.right
+					.lasso.seventyFive
+						%a.hidden.js-theyAre.theyAreLink{:href => 'http://www.cantora.com', :target => '_blank'}
+							.selector
+							.name
+								%h4 Cantora
+								%h5 Tech Label
+						%a.hidden.js-theyAre.theyAreLink{:href => 'http://www.hlmedialaw.com', :target => '_blank'}
+							.selector
+							.name	
+								%h4 Hertz, Lichtenstein & Young LLC
+								%h5 Entertainment Transactions
+						%a.hidden.js-theyAre.theyAreLink{:href => 'http://www.namethemachine.com', :target => '_blank'}
+							.selector
+							.name
+								%h4 [namethemachine]
+								%h5 Interactive design
+						%a.hidden.js-theyAre.theyAreLink{:href => 'http://www.linkedin.com/in/marcodellatorre', :target => '_blank'}
+							.selector
+							.name
+								%h4 Marco Della Torre
+								%h5 Biomedical scientist	
+						%a.hidden.js-theyAre.theyAreLink{:href => 'http://www.nadeemkassam.com', :target => '_blank'}
+							.selector
+							.name
+								%h4 Nadeem Kassam
+								%h5 Biotech entrepreneur	
+						%a.hidden.js-theyAre{:href => 'http://www.membrainllc.com', :target => '_blank'}
+							.selector
+							.name
+								%h4 memBrain
+								%h5 Integrated Marketing
 
-			.panel#outro.js-panel
+			.panel#outro.js-panel.hidden
 				%video#outroVid{ :autoplay => '', :loop => ''}
 					%source{ :src => "./vid/outro.mp4", :type => "video/mp4" }
 					%source{ :src => "./vid/outro.ogg", :type => "video/mp4" }

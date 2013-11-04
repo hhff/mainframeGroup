@@ -1,0 +1,35 @@
+MOBILE AND DESKTOP:
+
+Change color of first slide to a light blue (see design ref)
+
+Swap order of segments "They Are" and "They are Building"
+
+Under They Create, please add this sentence (see design ref - weve included a version for mobile as well as desktop):
+
+proprietary technologies, strategic concepts and innovative partnerships (note: design ref is missing comma by accident, please include comma)
+
+Use different font/sizing for copyright info (see design ref)
+
+Please make the following change on P1:
+
+The Mainframe Group is a brain trust of experts in music, immersive design and biomedical science
+
+For the sentence under "They believe", please lose the capitalization of "The" in "The live performance" and lose the period at end of sentence
+
+MOBILE ONLY
+
+Leave all slide coloration the same except for slide 1 as noted above
+
+For the Nav Bar, please reduce the logo size and height, and a bit of opacity (try like 90-95) . Should barely be able to see the stuff underneath (good ref as jesse said is I0s7 messages)
+- add a thin line at bottom
+- (see design ref)
+
+DESKTOP ONLY
+
+
+Slide one is still glitchy on J's comp and generally just feels off. we made a video of it (https://www.dropbox.com/s/a7bnjttqzb451ql/2013-10-27%2021.27.31.mov), and we're wondering a few things...
+- try adding an extra 200 px to the bottom of the first slide so we can experience the movement for a longer period of time
+- as you scroll have the brush strokes move off the left and right side of the page rather than move up and down, and slowly fade out (if possible) at the same time. 
+- maybe do some of the brush strokes on the same layer to help w limiting the glitchyness?
+
+On the "They Are" slide, please have the background remain static and copy moves over it (like the style of the slides before and after it)

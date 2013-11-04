@@ -25,7 +25,11 @@ define(['jquery'], function($){
 		formVal = null,
 		$videoLoop = $('#outroVid'),
 		$window = $(window),
-		videoFactor = 720 / 1280;
+		videoFactor = 720 / 1280,
+		$parallaxOne = $('.one'),
+		$parallaxTwo = $('.two'),
+		$outro = $('#outro'),
+		$intro = $('#intro');
 
 	controller.init = function(){
 
@@ -67,6 +71,7 @@ define(['jquery'], function($){
 		window.setTimeout(function(){
 			$parallax.removeClass('hidden');
 			$('.triangle').removeClass('loading');
+			$('nav, #mobile').addClass('menuTrans');
 		}, 1500);
 		
 		window.setTimeout(function(){
@@ -126,6 +131,7 @@ define(['jquery'], function($){
 			if (tap + ptap == 5){
 				controller._backgroundSwitch(tap, ptap);
 			};
+
 		});
 
 		$('#submitButton').on('click', function(){
@@ -192,7 +198,7 @@ define(['jquery'], function($){
 
 			//console.log('AP :'+activePercentage+' IAP :'+inverseActivePercentage);
 
-			console.log(scrollTop);
+			//console.log($panels);
 
 			//Intro Text Parallax Effect
 			// $introText.css({
@@ -200,30 +206,50 @@ define(['jquery'], function($){
 			// 	'padding-top':800*inverseActivePercentage+'px'
 			// });
 
+			//Performance tweaks
+			if (topActivePanel >= 3){
+				$outro.removeClass('hidden');
+				$intro.addClass('hidden');
+			}else{
+				$outro.addClass('hidden');
+				$intro.removeClass('hidden');
+			}
+
 			//Parallax Background
-			$('.one').css({
-				'-webkit-transform': 'translate(0%,'+((inverseActivePercentage*90)-15)+'%)',
-				'-moz-transform': 'translate(0%,'+((inverseActivePercentage*90)-15)+'%)',
-				'-ms-transform': 'translate(0%,'+((inverseActivePercentage*90)-15)+'%)',
-				'-o-transform': 'translate(0%,'+((inverseActivePercentage*90)-15)+'%)',
-				'transform': 'translate(0%,'+((inverseActivePercentage*90)-15)+'%)',
+			var parallaxOneTranslate = ((inverseActivePercentage*0.90)-0.15)*windowHeight*1.2;
+
+			$parallaxOne.css({
+				'-webkit-transform': 'translate3d(0px,'+parallaxOneTranslate+'px,0px)',
+				'-moz-transform': 'translate3d(0px,'+parallaxOneTranslate+'px,0px)',
+				'-ms-transform': 'translate3d(0px,'+parallaxOneTranslate+'px,0px)',
+				'-o-transform': 'translate3d(0px,'+parallaxOneTranslate+'px,0px)',
+				'transform': 'translate3d(0px,'+parallaxOneTranslate+'px,0px)',
 			})
 
-			$('.two').css({
-				'-webkit-transform': 'translate(0%,'+((inverseActivePercentage*80)-5)+'%)',
-				'-moz-transform': 'translate(0%,'+((inverseActivePercentage*80)-5)+'%)',
-				'-ms-transform': 'translate(0%,'+((inverseActivePercentage*80)-5)+'%)',
-				'-o-transform': 'translate(0%,'+((inverseActivePercentage*80)-5)+'%)',
-				'transform': 'translate(0%,'+((inverseActivePercentage*80)-5)+'%)',
+			var parallaxTwoTranslate = ((inverseActivePercentage*0.80)-0.05)*windowHeight*1.1;
+
+			$parallaxTwo.css({
+				'-webkit-transform': 'translate3d(0px,'+parallaxTwoTranslate+'px,0px)',
+				'-moz-transform': 'translate3d(0px,'+parallaxTwoTranslate+'px,0px)',
+				'-ms-transform': 'translate3d(0px,'+parallaxTwoTranslate+'px,0px)',
+				'-o-transform': 'translate3d(0px,'+parallaxTwoTranslate+'px,0px)',
+				'transform': 'translate3d(0px,'+parallaxTwoTranslate+'px,0px)',
 			})
 
-			$introText.css({
-				'-webkit-transform': 'translate(0%,'+((inverseActivePercentage*40)-50)+'%)',
-				'-moz-transform': 'translate(0%,'+((inverseActivePercentage*40)-50)+'%)',
-				'-ms-transform': 'translate(0%,'+((inverseActivePercentage*40)-50)+'%)',
-				'-o-transform': 'translate(0%,'+((inverseActivePercentage*40)-50)+'%)',
-				'transform': 'translate(0%,'+((inverseActivePercentage*40)-50)+'%)',
-			})
+			//OTHER IDEA?
+			//Make ParallaxTwo fixed
+			// $parallaxTwo.css({
+			// 	'opacity':activePercentage*0.7
+			// })
+
+
+			// $introText.css({
+			// 	'-webkit-transform': 'translate(0%,'+((inverseActivePercentage*40)-50)+'%)',
+			// 	'-moz-transform': 'translate(0%,'+((inverseActivePercentage*40)-50)+'%)',
+			// 	'-ms-transform': 'translate(0%,'+((inverseActivePercentage*40)-50)+'%)',
+			// 	'-o-transform': 'translate(0%,'+((inverseActivePercentage*40)-50)+'%)',
+			// 	'transform': 'translate(0%,'+((inverseActivePercentage*40)-50)+'%)',
+			// })
 
 			//Trigger Dropins
 			if (activePercentage < 0.4){
@@ -235,7 +261,7 @@ define(['jquery'], function($){
 					}, 800);
 				
 				//Drop In Dudes
-				if(topActivePanel == 2 && $($theyAreLinks[0]).hasClass('hidden')){
+				if(topActivePanel == 3 && $($theyAreLinks[0]).hasClass('hidden')){
 					var dudeCounter = 0;
 
 					var dudeInterval = window.setInterval(function(){
@@ -250,7 +276,7 @@ define(['jquery'], function($){
 				};
 
 				//Drop in Projects
-				if(topActivePanel == 3 && $($buttons[0]).hasClass('hidden')){
+				if(topActivePanel == 2 && $($buttons[0]).hasClass('hidden')){
 					var buttonCounter = 0;
 
 					var buttonInterval = window.setInterval(function(){
@@ -334,7 +360,7 @@ define(['jquery'], function($){
 		}
 
 		$('html, body').animate({
-			scrollTop: (phoneScroll - (windowHeight*0.2))
+			scrollTop: (phoneScroll - (windowHeight*0.12))
 		}, 1);
 	};
 
