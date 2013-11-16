@@ -11,12 +11,12 @@ body {
     -o-font-smoothing: antialiased;
     @include trans(all, 800ms, ease-in-out);
 
-	&.scrollLocked{
-		position: fixed;
-		overflow: hidden;
-		height: 100%;
-		width: 100%;
-	}
+	// &.scrollLocked{
+	// 	position: fixed;
+	// 	overflow: hidden;
+	// 	height: 100%;
+	// 	width: 100%;
+	// }
 }
 
 a {
@@ -45,8 +45,8 @@ h1{
 	font-weight:lighter;
 
 	@include breakpoint(phone) { 
-		font-size: 34px;
-		line-height: 55px;
+		font-size: 28px;
+		line-height: 45px;
 	};
 }
 
@@ -60,7 +60,7 @@ h2{
 }
 
 h3{
-	font-family:"Neuzeit Grotesk T Regular";
+	font-family:"Neuzeit Grotesk T Light";
 	font-size: 20px;
 	line-height: 44px;
 }
@@ -146,13 +146,14 @@ h6{
 		height:100%;
 		position:fixed;
 		z-index:0;
-		background-size: cover;
 		@include breakpoint(phone) { 
 			display:none;
 		};
 
 		&.panelTwo{
-			background: url('../img/background.jpg') left 25%;
+			background: url('../img/background.jpg') left 25% no-repeat;
+
+			background-size: cover;
 
 			@include breakpoint(phone) { 
 				background: none;
@@ -161,9 +162,9 @@ h6{
 
 		&.panelFour{
 			//background: url("../img/backgroundBuilding.jpg") left 50%;
-			background: url('../img/backgroundTheyAre.jpg') left center;
+			background: url('../img/backgroundTheyAre.jpg') left center no-repeat;
 
-			//background-size: 200%;
+			background-size: cover;
 
 			@include breakpoint(phone) { 
 				background: none;
@@ -400,7 +401,7 @@ h6{
 			color: $navy;
 			//@include box-shadow(rgba(black, 0.8) 0px -100px 100px -90px inset);
 			min-height: 450px;
-			@include background(linear-gradient(center left, rgba(255,255,255,0.4), rgba(255,204,204,0.4)));
+			@include background(linear-gradient(center left, rgba(255,255,255,0.7), rgba(255,204,204,0.7)));
 			
 			@include breakpoint(phone) { 
 				@include background(linear-gradient(center left, #FFFFFF, #FFCCCC));
@@ -642,7 +643,7 @@ h6{
 
 				h5{
 					font-family:"Neuzeit Grotesk T Regular";
-					font-size: 18px;
+					font-size: 12px;
 				}
 			}
 		}

@@ -60,7 +60,7 @@
 			.panel#building.js-panel
 				.topLine
 					.lasso.forty.centered.js-lasso.hidden.introTrans
-						%h2 They Create
+						%h2 They create
 						%h3 proprietary technologies, strategic concepts and innovative partnerships
 
 				.buttonContainer
@@ -68,12 +68,11 @@
 						.content.backing15
 						.content.blurb
 							.lasso.fifty.centered
-								%h5 Nada Band
+								%h5 NadaBand
 								%h6 A wearable ticket that makes sense of concert attendee’s emotional state and movement
 						.content.password
 							.lasso.eighty.centered
-								%h5 more info
-								%input#password.js-password{ :name => 'nada', :type => 'password', :placeholder => 'PASSWORD'}
+								%input#password.js-password{ :name => 'nada', :type => 'password', :placeholder => 'ENTER PASSWORD'}
 					.button.hidden.js-button
 						.content.backing25
 						.content.blurb
@@ -82,8 +81,7 @@
 								%h6 An interactive recreation of the 1950s featuring a performance  by one of history’s most influential singers
 						.content.password
 							.lasso.eighty.centered
-								%h5 more info
-								%input#password.js-password{ :name => 'vegas', :type => 'password', :placeholder => 'PASSWORD'}
+								%input#password.js-password{ :name => 'vegas', :type => 'password', :placeholder => 'ENTER PASSWORD'}
 					.button.hidden.js-button
 						.content.backing35
 						.content.blurb
@@ -92,8 +90,7 @@
 								%h6 A music series pairing top musicians with advanced technologies within New York’s most acclaimed museum
 						.content.password
 							.lasso.eighty.centered
-								%h5 more info
-								%input#password.js-password{ :name => 'motion', :type => 'password', :placeholder => 'PASSWORD'}
+								%input#password.js-password{ :name => 'motion', :type => 'password', :placeholder => 'ENTER PASSWORD'}
 					.button.hidden.js-button
 						.content.backing40
 						.content.blurb
@@ -102,8 +99,7 @@
 								%h6 A music festival where technology is built into the DNA of the entire live environment
 						.content.password
 							.lasso.eighty.centered
-								%h5 more info
-								%input#password.js-password{ :name => 'mainframe', :type => 'password', :placeholder => 'PASSWORD'}
+								%input#password.js-password{ :name => 'mainframe', :type => 'password', :placeholder => 'ENTER PASSWORD'}
 
 			.panel#theyare.js-panel
 				.backing
@@ -134,7 +130,7 @@
 							.name
 								%h4 Marco Della Torre
 								%h5 Biomedical scientist	
-						%a.hidden.js-theyAre.theyAreLink{:href => 'http://www.nadeemkassam.com', :target => '_blank'}
+						%a.hidden.js-theyAre.theyAreLink{:href => 'http://www.zynik.com/nadeem-kassam', :target => '_blank'}
 							.selector
 							.name
 								%h4 Nadeem Kassam
@@ -148,11 +144,12 @@
 			.panel#outro.js-panel.hidden
 				%video#outroVid{ :autoplay => '', :loop => ''}
 					%source{ :src => "./vid/outro.mp4", :type => "video/mp4" }
-					%source{ :src => "./vid/outro.ogg", :type => "video/mp4" }
+					%source{ :src => "./vid/outro.ogv", :type => "video/ogg" }
+					%source{ :src => "./vid/outro.webm", :type => "video/webm" }
 				#logoWhite.js-mover{ :data => { :speed => '0.1', :margin => 'top'}}
 				.lasso.eighty.centered.pointer.js-lasso.hidden.introTrans
 					%form#js-emailForm{ :action => 'http://cantorarecords.us1.list-manage1.com/subscribe/post?u=87246aa073fcc6ed49229c80e&amp;id=6ff3a3df7d', :method => 'post', :target => '_blank', :novalidate => ''}
-						%input#email{ :name => 'EMAIL', :type => 'email', :placeholder => 'GET UPDATES', :spellcheck => 'false' }
+						%input#email{ :name => 'EMAIL', :type => 'email', :placeholder => 'GET UPDATES', :spellcheck => 'false', :autocomplete => 'false' }
 					#submitButton.invalid
 					#arrow.invalid
 				#copyright 

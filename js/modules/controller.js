@@ -30,7 +30,7 @@ define(['jquery'], function($){
 		$parallaxTwo = $('.two'),
 		$outro = $('#outro'),
 		$intro = $('#intro');
-
+		
 	controller.init = function(){
 
 		controller._setupSizeCover();
@@ -71,7 +71,7 @@ define(['jquery'], function($){
 		window.setTimeout(function(){
 			$parallax.removeClass('hidden');
 			$('.triangle').removeClass('loading');
-			$('nav, #mobile').addClass('menuTrans');
+			$('nav,	 #mobile').addClass('menuTrans');
 		}, 1500);
 		
 		window.setTimeout(function(){
@@ -86,10 +86,28 @@ define(['jquery'], function($){
 		}, 3300);
 
 
+		var scroll = window.requestAnimationFrame ||
+		             window.webkitRequestAnimationFrame ||
+		             window.mozRequestAnimationFrame ||
+		             window.msRequestAnimationFrame ||
+		             window.oRequestAnimationFrame ||
+		             // IE Fallback, you can even fallback to onscroll
+		             function(callback){ window.setTimeout(callback, 1000/60) };
+
+		function loop(){
+			controller._scroll();			
+			scroll( loop );	
+		}
+		loop();
+
 		//Bindings
-		$(window).on('scroll', function(){
-			controller._scroll();
-		});
+		// $(window).on('scroll', function(){
+		// 	if($(window).scrollTop() > $(window).height()){
+		// 		parallaxOn = false;
+		// 	}else{
+		// 		parallaxOn = true;
+		// 	}
+		// });
 
 		//Passwords
 		$('.js-password').on('keyup', function(e){
@@ -189,6 +207,7 @@ define(['jquery'], function($){
 			activePercentage = Math.min(1, 1-((scrollTop/panelHeight) - topActivePanel +1)),
 			inverseActivePercentage = Math.abs((scrollTop/panelHeight) - topActivePanel +1);
 
+
 			if (initialScroll){
 				$('html, body').animate({
 					scrollTop:0
@@ -224,6 +243,7 @@ define(['jquery'], function($){
 				'-ms-transform': 'translate3d(0px,'+parallaxOneTranslate+'px,0px)',
 				'-o-transform': 'translate3d(0px,'+parallaxOneTranslate+'px,0px)',
 				'transform': 'translate3d(0px,'+parallaxOneTranslate+'px,0px)',
+				opacity: activePercentage*0.9,
 			})
 
 			var parallaxTwoTranslate = ((inverseActivePercentage*0.80)-0.05)*windowHeight*1.1;
@@ -234,6 +254,7 @@ define(['jquery'], function($){
 				'-ms-transform': 'translate3d(0px,'+parallaxTwoTranslate+'px,0px)',
 				'-o-transform': 'translate3d(0px,'+parallaxTwoTranslate+'px,0px)',
 				'transform': 'translate3d(0px,'+parallaxTwoTranslate+'px,0px)',
+				opacity: activePercentage*0.7,
 			})
 
 			//OTHER IDEA?
@@ -308,6 +329,7 @@ define(['jquery'], function($){
 
 			//Move Movers
 			//controller._movers();
+
 	};
 
 	controller._backgroundSwitch = function(tap, ptap){
