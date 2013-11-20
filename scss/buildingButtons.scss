@@ -32,9 +32,9 @@
 			}
 		}
 
-		@include breakpoint(phone) { 
-			pointer-events:none;
-		}
+		// @include breakpoint(phone) { 
+		// 	pointer-events:none;
+		// }
 
 		.content{
 			width: 50%;
@@ -76,6 +76,12 @@
 				pointer-events:none;
 				@include opacity(1);
 				-webkit-transform-style: preserve-3d;
+
+				@include breakpoint(phone){
+					h5{
+						text-decoration: underline;
+					}
+				}
 			}
 
 			&.password{
@@ -91,6 +97,10 @@
 				background-color:$navy;
 				@include opacity(0.8);
 			}
+
+		}
+
+		&.clicked{
 
 			.blurb{
 				@include opacity(0.01);

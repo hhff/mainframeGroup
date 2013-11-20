@@ -38,6 +38,12 @@ input{
 	}
 }
 
+input[type="submit"]{
+	visibility:hidden;
+	position:absolute;
+	pointer-events:none;
+}
+
 h1{
 	font-family:"Neuzeit Grotesk T Light";
 	font-size: 49px;
@@ -45,7 +51,7 @@ h1{
 	font-weight:lighter;
 
 	@include breakpoint(phone) { 
-		font-size: 28px;
+		font-size: 30px;
 		line-height: 45px;
 	};
 }
@@ -541,13 +547,21 @@ h6{
 			}
 
 			#outroVid{
+			    @include trans(opacity, 1000ms, ease-in-out);
+
 				position: absolute;
 				// width: 100%;
 				// height: 100%;
+				@include opacity(1);
 				@include breakpoint(phone) { 
 					display: none;
-				};				
+				};
+
+				&.loading{
+					@include opacity(0);
+				}				
 			}
+
 
 			#logoWhite{
 				background: url('../img/logoWhite.png') no-repeat center center;

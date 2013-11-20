@@ -199,15 +199,16 @@
         </div>
       </div>
       <div class='panel js-panel hidden' id='outro'>
-        <video autoplay='' id='outroVid' loop=''>
-          <source src='./vid/outro.mp4' type='video/mp4'></source>
-          <source src='./vid/outro.ogv' type='video/ogg'></source>
-          <source src='./vid/outro.webm' type='video/webm'></source>
+        <video autoplay='' class='loading' id='outroVid' loop=''>
+          <!-- %source{ :src => "./vid/outro.mp4", :type => "video/mp4" } -->
+          <!-- %source{ :src => "./vid/outro.ogv", :type => "video/ogg" } -->
+          <!-- %source{ :src => "./vid/outro.webm", :type => "video/webm" } -->
         </video>
         <div class='js-mover' data-margin='top' data-speed='0.1' id='logoWhite'></div>
         <div class='lasso eighty centered pointer js-lasso hidden introTrans'>
           <form action='http://cantorarecords.us1.list-manage1.com/subscribe/post?u=87246aa073fcc6ed49229c80e&amp;amp;id=6ff3a3df7d' id='js-emailForm' method='post' novalidate='' target='_blank'>
             <input autocomplete='false' id='email' name='EMAIL' placeholder='GET UPDATES' spellcheck='false' type='email'>
+            <input id='dummySubmit' type='submit'>
           </form>
           <div class='invalid' id='submitButton'></div>
           <div class='invalid' id='arrow'></div>

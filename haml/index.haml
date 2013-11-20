@@ -142,14 +142,15 @@
 								%h5 Integrated Marketing
 
 			.panel#outro.js-panel.hidden
-				%video#outroVid{ :autoplay => '', :loop => ''}
-					%source{ :src => "./vid/outro.mp4", :type => "video/mp4" }
-					%source{ :src => "./vid/outro.ogv", :type => "video/ogg" }
-					%source{ :src => "./vid/outro.webm", :type => "video/webm" }
+				%video#outroVid.loading{ :autoplay => '', :loop => ''}
+					/ %source{ :src => "./vid/outro.mp4", :type => "video/mp4" }
+					/ %source{ :src => "./vid/outro.ogv", :type => "video/ogg" }
+					/ %source{ :src => "./vid/outro.webm", :type => "video/webm" }
 				#logoWhite.js-mover{ :data => { :speed => '0.1', :margin => 'top'}}
 				.lasso.eighty.centered.pointer.js-lasso.hidden.introTrans
 					%form#js-emailForm{ :action => 'http://cantorarecords.us1.list-manage1.com/subscribe/post?u=87246aa073fcc6ed49229c80e&amp;id=6ff3a3df7d', :method => 'post', :target => '_blank', :novalidate => ''}
 						%input#email{ :name => 'EMAIL', :type => 'email', :placeholder => 'GET UPDATES', :spellcheck => 'false', :autocomplete => 'false' }
+						%input#dummySubmit{ :type => 'submit' }
 					#submitButton.invalid
 					#arrow.invalid
 				#copyright 

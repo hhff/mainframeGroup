@@ -29,9 +29,16 @@ define(['jquery'], function($){
 		$parallaxOne = $('.one'),
 		$parallaxTwo = $('.two'),
 		$outro = $('#outro'),
-		$intro = $('#intro');
+		$intro = $('#intro'),
+		docHeight,
+		windowHeight,
+		panelHeight;
 		
 	controller.init = function(){
+
+		docHeight = $(document).height(),
+		windowHeight = $(window).height(),
+		panelHeight = Math.max(500, windowHeight);
 
 		controller._setupSizeCover();
 
@@ -51,6 +58,14 @@ define(['jquery'], function($){
 			}
 		});
 
+		$('#email').on('focus', function(){
+			$(this).attr('placeholder', '')
+		})
+
+		$('#email').on('blur', function(){
+			$(this).attr('placeholder', 'GET UPDATES')
+		})
+
 		$('#js-emailForm').submit(function(e){
 			if (validEmail == true){
 				//submit
@@ -61,8 +76,20 @@ define(['jquery'], function($){
 		})
 
 		$window.on('resize', function(){
+			docHeight = $(document).height(),
+			windowHeight = $(window).height(),
+			panelHeight = Math.max(500, windowHeight);
+			
 			controller._setupSizeCover();
 		});
+
+		$('.button').on('click touchstart', function(){
+			$(this).addClass('clicked')
+		})
+
+		$('.button').on('mouseleave', function(){
+			$(this).removeClass('clicked')
+		})
 
 		//DOM is ready at this point
 		//Load in elements here
@@ -86,28 +113,37 @@ define(['jquery'], function($){
 		}, 3300);
 
 
-		var scroll = window.requestAnimationFrame ||
-		             window.webkitRequestAnimationFrame ||
-		             window.mozRequestAnimationFrame ||
-		             window.msRequestAnimationFrame ||
-		             window.oRequestAnimationFrame ||
-		             // IE Fallback, you can even fallback to onscroll
-		             function(callback){ window.setTimeout(callback, 1000/60) };
 
-		function loop(){
-			controller._scroll();			
-			scroll( loop );	
-		}
-		loop();
 
-		//Bindings
-		// $(window).on('scroll', function(){
-		// 	if($(window).scrollTop() > $(window).height()){
-		// 		parallaxOn = false;
-		// 	}else{
-		// 		parallaxOn = true;
-		// 	}
-		// });
+
+		// var scroll = window.requestAnimationFrame ||
+		//              window.webkitRequestAnimationFrame ||
+		//              window.mozRequestAnimationFrame ||
+		//              window.msRequestAnimationFrame ||
+		//              window.oRequestAnimationFrame ||
+		//              // IE Fallback, you can even fallback to onscroll
+		//              function(callback){ window.setTimeout(callback, 1000/60) };
+
+		// function loop(){
+		// 	controller._scroll();			
+		// 	scroll( loop );	
+		// }
+		// loop();
+
+		$window.on('scroll', function(){
+			$('.button').removeClass('clicked');
+			controller._scroll();
+		})
+
+
+
+		var video = document.getElementById('outroVid');
+
+		video.addEventListener('loadeddata', function() {
+		   $('#outroVid').removeClass('loading')
+		}, false);
+
+		$('#outroVid').append('<source src="./vid/outro.mp4" type="video/mp4"><source src="./vid/outro.ogv" type="video/ogg"><source src="./vid/outro.webm" type="video/webm">')
 
 		//Passwords
 		$('.js-password').on('keyup', function(e){
@@ -198,14 +234,11 @@ define(['jquery'], function($){
 		previousNavPanel = 1;
 
 	controller._scroll = function(){
-		var docHeight = $(document).height(),
-			windowHeight = $(window).height(),
-			panelHeight = Math.max(500, windowHeight),
-			scrollTop = Math.max(0, $(document).scrollTop()),
-			navPanel = Math.floor(Math.abs((scrollTop+(panelHeight*0.25))/panelHeight))+1,
+		var	scrollTop = Math.max(0, $(document).scrollTop()),
+			navPanel = Math.floor(Math.abs((scrollTop+(panelHeight*0.4))/panelHeight))+1,
 			topActivePanel = Math.floor(Math.abs((scrollTop)/panelHeight))+1,
-			activePercentage = Math.min(1, 1-((scrollTop/panelHeight) - topActivePanel +1)),
-			inverseActivePercentage = Math.abs((scrollTop/panelHeight) - topActivePanel +1);
+			activePercentage = Math.min(1, 1-((scrollTop/panelHeight) - topActivePanel +1));
+			//inverseActivePercentage = Math.abs((scrollTop/panelHeight) - topActivePanel +1);
 
 
 			if (initialScroll){
@@ -235,25 +268,25 @@ define(['jquery'], function($){
 			}
 
 			//Parallax Background
-			var parallaxOneTranslate = ((inverseActivePercentage*0.90)-0.15)*windowHeight*1.2;
+			//var parallaxOneTranslate = ((inverseActivePercentage*0.90)-0.15)*windowHeight*1.2;
 
 			$parallaxOne.css({
-				'-webkit-transform': 'translate3d(0px,'+parallaxOneTranslate+'px,0px)',
-				'-moz-transform': 'translate3d(0px,'+parallaxOneTranslate+'px,0px)',
-				'-ms-transform': 'translate3d(0px,'+parallaxOneTranslate+'px,0px)',
-				'-o-transform': 'translate3d(0px,'+parallaxOneTranslate+'px,0px)',
-				'transform': 'translate3d(0px,'+parallaxOneTranslate+'px,0px)',
+				// '-webkit-transform': 'translate3d(0px,'+parallaxOneTranslate+'px,0px)',
+				// '-moz-transform': 'translate3d(0px,'+parallaxOneTranslate+'px,0px)',
+				// '-ms-transform': 'translate3d(0px,'+parallaxOneTranslate+'px,0px)',
+				// '-o-transform': 'translate3d(0px,'+parallaxOneTranslate+'px,0px)',
+				// 'transform': 'translate3d(0px,'+parallaxOneTranslate+'px,0px)',
 				opacity: activePercentage*0.9,
 			})
 
-			var parallaxTwoTranslate = ((inverseActivePercentage*0.80)-0.05)*windowHeight*1.1;
+			//var parallaxTwoTranslate = ((inverseActivePercentage*0.80)-0.05)*windowHeight*1.1;
 
 			$parallaxTwo.css({
-				'-webkit-transform': 'translate3d(0px,'+parallaxTwoTranslate+'px,0px)',
-				'-moz-transform': 'translate3d(0px,'+parallaxTwoTranslate+'px,0px)',
-				'-ms-transform': 'translate3d(0px,'+parallaxTwoTranslate+'px,0px)',
-				'-o-transform': 'translate3d(0px,'+parallaxTwoTranslate+'px,0px)',
-				'transform': 'translate3d(0px,'+parallaxTwoTranslate+'px,0px)',
+				// '-webkit-transform': 'translate3d(0px,'+parallaxTwoTranslate+'px,0px)',
+				// '-moz-transform': 'translate3d(0px,'+parallaxTwoTranslate+'px,0px)',
+				// '-ms-transform': 'translate3d(0px,'+parallaxTwoTranslate+'px,0px)',
+				// '-o-transform': 'translate3d(0px,'+parallaxTwoTranslate+'px,0px)',
+				// 'transform': 'translate3d(0px,'+parallaxTwoTranslate+'px,0px)',
 				opacity: activePercentage*0.7,
 			})
 
