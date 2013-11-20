@@ -43,7 +43,7 @@ define(['jquery'], function($){
 		controller._setupSizeCover();
 
 		//Email Validation
-		$('#email').on('keyup', function(){
+		$('#email').on('keyup', function(e){
 			formVal = $(this).val();
 			if (controller._validateEmail(formVal) == true){
 				validEmail = true;
@@ -56,6 +56,11 @@ define(['jquery'], function($){
 			if (!formVal){
 				$('#submitButton, #arrow').addClass('invalid');
 			}
+
+			if (e.keyCode === 13) {
+				$('#js-emailForm').submit();
+			}
+
 		});
 
 		$('#email').on('focus', function(){
@@ -79,7 +84,7 @@ define(['jquery'], function($){
 			docHeight = $(document).height(),
 			windowHeight = $(window).height(),
 			panelHeight = Math.max(500, windowHeight);
-			
+
 			controller._setupSizeCover();
 		});
 
