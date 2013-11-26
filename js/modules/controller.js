@@ -33,8 +33,14 @@ define(['jquery'], function($){
 		docHeight,
 		windowHeight,
 		panelHeight;
+
+		var isFirefox = typeof InstallTrigger !== 'undefined';
 		
 	controller.init = function(){
+
+		if (isFirefox) {
+			$body.removeClass('scrollLocked');		
+		}
 
 		docHeight = $(document).height(),
 		windowHeight = $(window).height(),
@@ -80,17 +86,31 @@ define(['jquery'], function($){
 			}
 		})
 
+		$('#logoWhite').on('click touchstart', function(){
+			controller._scrollTo(0);
+		})
+
 		$window.on('resize', function(){
 			docHeight = $(document).height(),
 			windowHeight = $(window).height(),
-			panelHeight = Math.max(500, windowHeight);
+			panelHeight = Math.max(600, windowHeight);
 
 			controller._setupSizeCover();
 		});
 
-		$('.button').on('click touchstart', function(){
+		$('.button').on('click', function(){
 			$(this).addClass('clicked')
+			$(this).siblings().removeClass('clicked')
 		})
+
+		// $('.button').on('touchstart', function(){
+		// 	$(this).addClass('clicked')
+		// 	$(this).siblings().removeClass('clicked')
+		// })
+
+		// $('.button').on('touchend', function(){
+		// 	$('.button').removeClass('clicked')
+		// })
 
 		$('.button').on('mouseleave', function(){
 			$(this).removeClass('clicked')
@@ -100,8 +120,8 @@ define(['jquery'], function($){
 		//Load in elements here
 		$mobileNav.removeClass('loading');
 		$logo.removeClass('loading pulsing');
+		$parallax.removeClass('hidden');
 		window.setTimeout(function(){
-			$parallax.removeClass('hidden');
 			$('.triangle').removeClass('loading');
 			$('nav,	 #mobile').addClass('menuTrans');
 		}, 1500);
@@ -110,7 +130,7 @@ define(['jquery'], function($){
 			$desktopNav.removeClass('hidden');
 			$introText.removeClass('hidden');
 			$body.removeClass('scrollLocked');
-		}, 2500);
+		}, 1800);
 
 		window.setTimeout(function(){
 			$introText.removeClass('introTrans');
@@ -120,25 +140,26 @@ define(['jquery'], function($){
 
 
 
+		//Quicker than window on scroll
+		var scroll = window.requestAnimationFrame ||
+		             window.webkitRequestAnimationFrame ||
+		             window.mozRequestAnimationFrame ||
+		             window.msRequestAnimationFrame ||
+		             window.oRequestAnimationFrame ||
+		             // IE Fallback, you can even fallback to onscroll
+		             function(loop){ window.setTimeout(loop, 1000/60) };
 
-		// var scroll = window.requestAnimationFrame ||
-		//              window.webkitRequestAnimationFrame ||
-		//              window.mozRequestAnimationFrame ||
-		//              window.msRequestAnimationFrame ||
-		//              window.oRequestAnimationFrame ||
-		//              // IE Fallback, you can even fallback to onscroll
-		//              function(callback){ window.setTimeout(callback, 1000/60) };
+		function loop(){
+			controller._scroll();			
+			scroll( loop );	
+		}
 
-		// function loop(){
-		// 	controller._scroll();			
-		// 	scroll( loop );	
-		// }
-		// loop();
+		loop();
 
-		$window.on('scroll', function(){
-			$('.button').removeClass('clicked');
-			controller._scroll();
-		})
+		// $window.on('scroll', function(){
+		// 	$('.button').removeClass('clicked');
+		// 	//controller._scroll();
+		// })
 
 
 
@@ -240,10 +261,10 @@ define(['jquery'], function($){
 
 	controller._scroll = function(){
 		var	scrollTop = Math.max(0, $(document).scrollTop()),
-			navPanel = Math.floor(Math.abs((scrollTop+(panelHeight*0.4))/panelHeight))+1,
+			navPanel = Math.floor(Math.abs((scrollTop+(panelHeight*0.6))/panelHeight))+1,
 			topActivePanel = Math.floor(Math.abs((scrollTop)/panelHeight))+1,
-			activePercentage = Math.min(1, 1-((scrollTop/panelHeight) - topActivePanel +1));
-			//inverseActivePercentage = Math.abs((scrollTop/panelHeight) - topActivePanel +1);
+			activePercentage = Math.min(1, 1-((scrollTop/panelHeight) - topActivePanel +1)),
+			inverseActivePercentage = Math.abs((scrollTop/panelHeight) - topActivePanel +1);
 
 
 			if (initialScroll){
@@ -284,14 +305,14 @@ define(['jquery'], function($){
 				opacity: activePercentage*0.9,
 			})
 
-			//var parallaxTwoTranslate = ((inverseActivePercentage*0.80)-0.05)*windowHeight*1.1;
+			var parallaxTwoTranslate = ((inverseActivePercentage*0.80)-0.05)*windowHeight*1.1;
 
 			$parallaxTwo.css({
-				// '-webkit-transform': 'translate3d(0px,'+parallaxTwoTranslate+'px,0px)',
-				// '-moz-transform': 'translate3d(0px,'+parallaxTwoTranslate+'px,0px)',
-				// '-ms-transform': 'translate3d(0px,'+parallaxTwoTranslate+'px,0px)',
-				// '-o-transform': 'translate3d(0px,'+parallaxTwoTranslate+'px,0px)',
-				// 'transform': 'translate3d(0px,'+parallaxTwoTranslate+'px,0px)',
+				'-webkit-transform': 'translate3d(0px,'+parallaxTwoTranslate+'px,0px)',
+				'-moz-transform': 'translate3d(0px,'+parallaxTwoTranslate+'px,0px)',
+				'-ms-transform': 'translate3d(0px,'+parallaxTwoTranslate+'px,0px)',
+				'-o-transform': 'translate3d(0px,'+parallaxTwoTranslate+'px,0px)',
+				'transform': 'translate3d(0px,'+parallaxTwoTranslate+'px,0px)',
 				opacity: activePercentage*0.7,
 			})
 
@@ -311,7 +332,7 @@ define(['jquery'], function($){
 			// })
 
 			//Trigger Dropins
-			if (activePercentage < 0.4){
+			if (activePercentage < 0.65){
 				var $me = $($panels[topActivePanel]).find($('.js-lasso'));
 
 					$me.removeClass('hidden');
@@ -385,7 +406,7 @@ define(['jquery'], function($){
 
 	controller._scrollTo = function(index){
 		initialScroll = false;
-		var windowHeight = $(window).height();
+		var windowHeight = Math.max(600,$(window).height());
 
 		$('html, body').animate({
 			scrollTop: index*windowHeight+1
@@ -409,10 +430,10 @@ define(['jquery'], function($){
 		  		phoneScroll = $('#believe').offset().top;
 		  		break;
 			case 2:
-		  		phoneScroll = $('#theyare').offset().top;
+		  		phoneScroll = $('#building').offset().top;
 		  		break;
 			case 3:
-		  		phoneScroll = $('#building').offset().top;
+		  		phoneScroll = $('#theyare').offset().top;
 		  		break;
 			case 4:
 		  		phoneScroll = $('#outro').offset().top;
@@ -431,7 +452,7 @@ define(['jquery'], function($){
 
 
 	controller._setupSizeCover = function() {
-		windowHeight = $window.height();
+		windowHeight = Math.max(600,$window.height());
 		windowWidth = $window.width();
 		windowFactor = windowHeight/windowWidth;
 		coverWidth = windowHeight/videoFactor;

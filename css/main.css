@@ -393,6 +393,13 @@ body {
   -o-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
 }
+/* line 14, ../scss/main.scss */
+body.scrollLocked {
+  position: fixed;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+}
 
 /* line 22, ../scss/main.scss */
 a {
@@ -575,7 +582,7 @@ h6 {
   height: 100%;
   display: block;
   position: absolute;
-  min-height: 500px;
+  min-height: 600px;
 }
 /* line 2, ../scss/navDesktop.scss */
 #container nav#desktop {
@@ -1398,6 +1405,7 @@ h6 {
   font-family: "Neuzeit Grotesk T Regular";
   letter-spacing: 2px;
   color: white;
+  cursor: pointer;
 }
 /* line 3, ../scss/buildingButtons.scss */
 #container .panel#building .buttonContainer {
@@ -1526,22 +1534,34 @@ h6 {
   opacity: 0;
   -webkit-transform-style: preserve-3d;
 }
-/* line 96, ../scss/buildingButtons.scss */
-#container .panel#building .buttonContainer .button:hover .backing15, #container .panel#building .buttonContainer .button:hover .backing25, #container .panel#building .buttonContainer .button:hover .backing35, #container .panel#building .buttonContainer .button:hover .backing40 {
-  background-color: #323454;
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
-  opacity: 0.8;
+@media (min-width: 650px) {
+  /* line 97, ../scss/buildingButtons.scss */
+  #container .panel#building .buttonContainer .button:hover .backing15, #container .panel#building .buttonContainer .button:hover .backing25, #container .panel#building .buttonContainer .button:hover .backing35, #container .panel#building .buttonContainer .button:hover .backing40 {
+    background-color: #323454;
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
+    opacity: 0.8;
+  }
 }
-/* line 105, ../scss/buildingButtons.scss */
+/* line 107, ../scss/buildingButtons.scss */
 #container .panel#building .buttonContainer .button.clicked .blurb {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=1);
   opacity: 0.01;
 }
-/* line 109, ../scss/buildingButtons.scss */
+/* line 111, ../scss/buildingButtons.scss */
 #container .panel#building .buttonContainer .button.clicked .password {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
   display: block;
+}
+/* line 116, ../scss/buildingButtons.scss */
+#container .panel#building .buttonContainer .button.clicked #password {
+  cursor: auto;
+}
+/* line 120, ../scss/buildingButtons.scss */
+#container .panel#building .buttonContainer .button.clicked .backing15, #container .panel#building .buttonContainer .button.clicked .backing25, #container .panel#building .buttonContainer .button.clicked .backing35, #container .panel#building .buttonContainer .button.clicked .backing40 {
+  background-color: #323454;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
+  opacity: 0.8;
 }
 @media (max-width: 650px) {
   /* line 488, ../scss/main.scss */
@@ -1554,23 +1574,23 @@ h6 {
     height: 1600px;
   }
 }
-/* line 529, ../scss/main.scss */
+/* line 530, ../scss/main.scss */
 #container .panel#outro {
   background-color: pink;
   background: url("../img/backgroundOutro.jpg") 25% center;
   background-size: cover;
 }
 @media (max-width: 650px) {
-  /* line 529, ../scss/main.scss */
+  /* line 530, ../scss/main.scss */
   #container .panel#outro {
     height: 88%;
   }
 }
-/* line 538, ../scss/main.scss */
+/* line 539, ../scss/main.scss */
 #container .panel#outro.hidden {
   visibility: hidden;
 }
-/* line 542, ../scss/main.scss */
+/* line 543, ../scss/main.scss */
 #container .panel#outro form {
   width: 90%;
   max-width: 300px;
@@ -1581,7 +1601,7 @@ h6 {
   -o-border-radius: 0px;
   border-radius: 0px;
 }
-/* line 549, ../scss/main.scss */
+/* line 550, ../scss/main.scss */
 #container .panel#outro #outroVid {
   -webkit-transition-property: opacity;
   -moz-transition-property: opacity;
@@ -1600,17 +1620,17 @@ h6 {
   opacity: 1;
 }
 @media (max-width: 650px) {
-  /* line 549, ../scss/main.scss */
+  /* line 550, ../scss/main.scss */
   #container .panel#outro #outroVid {
     display: none;
   }
 }
-/* line 560, ../scss/main.scss */
+/* line 561, ../scss/main.scss */
 #container .panel#outro #outroVid.loading {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   opacity: 0;
 }
-/* line 566, ../scss/main.scss */
+/* line 567, ../scss/main.scss */
 #container .panel#outro #logoWhite {
   background: url("../img/logoWhite.png") no-repeat center center;
   width: 10%;
@@ -1620,14 +1640,15 @@ h6 {
   position: absolute;
   top: 10%;
   left: 45%;
+  cursor: pointer;
 }
 @media (max-width: 650px) {
-  /* line 566, ../scss/main.scss */
+  /* line 567, ../scss/main.scss */
   #container .panel#outro #logoWhite {
     display: none;
   }
 }
-/* line 581, ../scss/main.scss */
+/* line 583, ../scss/main.scss */
 #container .panel#outro #email {
   border: none;
   border-bottom: 1px solid white;
@@ -1641,12 +1662,12 @@ h6 {
   text-transform: uppercase;
 }
 @media (max-width: 650px) {
-  /* line 581, ../scss/main.scss */
+  /* line 583, ../scss/main.scss */
   #container .panel#outro #email {
     text-align: center;
   }
 }
-/* line 598, ../scss/main.scss */
+/* line 600, ../scss/main.scss */
 #container .panel#outro #submitButton {
   -webkit-transition-property: opacity;
   -moz-transition-property: opacity;
@@ -1677,24 +1698,24 @@ h6 {
   -webkit-backface-visibility: hidden;
   cursor: pointer;
 }
-/* line 613, ../scss/main.scss */
+/* line 615, ../scss/main.scss */
 #container .panel#outro #submitButton.invalid {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   opacity: 0;
   pointer-events: none;
 }
 @media (max-width: 650px) {
-  /* line 598, ../scss/main.scss */
+  /* line 600, ../scss/main.scss */
   #container .panel#outro #submitButton {
     display: none;
   }
 }
-/* line 622, ../scss/main.scss */
+/* line 624, ../scss/main.scss */
 #container .panel#outro #submitButton:hover {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);
   opacity: 0.7;
 }
-/* line 627, ../scss/main.scss */
+/* line 629, ../scss/main.scss */
 #container .panel#outro #arrow {
   -webkit-transition-property: opacity;
   -moz-transition-property: opacity;
@@ -1720,17 +1741,17 @@ h6 {
   -webkit-backface-visibility: hidden;
 }
 @media (max-width: 650px) {
-  /* line 627, ../scss/main.scss */
+  /* line 629, ../scss/main.scss */
   #container .panel#outro #arrow {
     display: none;
   }
 }
-/* line 645, ../scss/main.scss */
+/* line 647, ../scss/main.scss */
 #container .panel#outro #arrow.invalid {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   opacity: 0;
 }
-/* line 650, ../scss/main.scss */
+/* line 652, ../scss/main.scss */
 #container .panel#outro #copyright {
   position: absolute;
   bottom: 20px;
@@ -1739,7 +1760,7 @@ h6 {
   text-align: center;
   color: white;
 }
-/* line 658, ../scss/main.scss */
+/* line 660, ../scss/main.scss */
 #container .panel#outro #copyright h5 {
   font-family: "Neuzeit Grotesk T Regular";
   font-size: 12px;

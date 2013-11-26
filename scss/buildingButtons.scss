@@ -93,9 +93,11 @@
 
 		&:hover{
 
-			.backing15, .backing25, .backing35, .backing40{
-				background-color:$navy;
-				@include opacity(0.8);
+			@include breakpoint(desktop){
+				.backing15, .backing25, .backing35, .backing40{
+					background-color:$navy;
+					@include opacity(0.8);
+				}				
 			}
 
 		}
@@ -109,6 +111,15 @@
 			.password{
 				@include opacity(1);
 				display:block;
+			}
+
+			#password{
+				cursor: auto;				
+			}
+
+			.backing15, .backing25, .backing35, .backing40{
+				background-color:$navy;
+				@include opacity(0.8);
 			}
 
 		}

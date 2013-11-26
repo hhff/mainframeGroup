@@ -11,12 +11,12 @@ body {
     -o-font-smoothing: antialiased;
     @include trans(all, 800ms, ease-in-out);
 
-	// &.scrollLocked{
-	// 	position: fixed;
-	// 	overflow: hidden;
-	// 	height: 100%;
-	// 	width: 100%;
-	// }
+	&.scrollLocked{
+		position: fixed;
+		overflow: hidden;
+		height: 100%;
+		width: 100%;
+	}
 }
 
 a {
@@ -143,7 +143,7 @@ h6{
 	height:100%;
 	display:block;
 	position:absolute;
-	min-height:500px;
+	min-height:600px;
 
 	@import "navDesktop";
 
@@ -516,6 +516,7 @@ h6{
 				font-family:"Neuzeit Grotesk T Regular";
 				letter-spacing: 2px;
 				color:white;
+				cursor: pointer;
 			}
 
 			@import "buildingButtons";
@@ -572,6 +573,7 @@ h6{
 				position: absolute;
 				top: 10%;
 				left:45%;
+				cursor:pointer;
 
 				@include breakpoint(phone) { 
 					display: none;
